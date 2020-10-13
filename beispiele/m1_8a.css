@@ -1,0 +1,27 @@
+*{
+  font-family: Arial;
+}
+h1{
+  font-size: 40px;
+  border-bottom: 1px solid blue;
+  display: inline-block;
+  margin: 0px;
+}
+h3{
+  margin: 0px;
+  font-size: 17px;
+  font-style: italic;
+}
+
+ul li:first-child, ul li:last-child {
+  font-weight: bold;
+}
+ul{
+  margin-left: 15px;
+}
+li{
+  font-size: 19px;
+}
+.beilage{
+  color: green;
+}
