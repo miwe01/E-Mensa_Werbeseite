@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!--
+- Praktikum DBWT. Autoren:
+- Mika, Weber, 3252173
+- Ben, Loos, 3207009
+-->
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Anmeldung</title>
+</head>
+<body>
+    <form action="formdata.html" method="post">
+        <fieldset>
+            <legend>Anmeldung</legend>
+            <label>Anrede</label>
+            <br>
+            <input type="radio" id="frau" name="anrede" value="Frau">
+            <label for="frau">Frau</label>
+            <br>
+            <input type="radio" id="mann" name="anrede" value="Herr">
+            <label for="mann">Mann</label>
+            <br><br>
+            <label for="vor">Vorname*</label>
+            <br>
+            <input type="text" id="vor" placeholder="Bitte geben Sie Ihren Vornamen ein" required>
+            <br><br>
+            <label for="nach">Nachname*</label>
+            <br>
+            <input type="text" id="nach" placeholder="Bitte geben Sie Ihren Nachnamen ein" required>
+            <br><br>
+            <label for="mail">E-Mail*</label>
+            <br>
+            <input type="email" id="mail" placeholder="Bitte geben Sie Ihre E-Mail ein" required>
+            <br><br>
+            <label for="inter">Benachrichtigungsinterval</label>
+            <br>
+            <select id="inter">
+                <option value="0">Tag</option>
+                <option value="1" selected>Woche</option>
+                <option value="2">Monat</option>
+            </select>
+            <br><br>
+            <input type="checkbox" id="daten" required>
+            <label for="daten">Datenschutzhinweise gelesen</label>
+            <br><br>
+            <input type="submit" title="Abschicken">
+            <br><br>
+            *)Eingaben sind Pflicht
+            <br>
+        </fieldset>
+    </form>
+</body>
+</html>
