@@ -1,0 +1,197 @@
+*{
+  font-family: sans-serif;
+}
+body{
+  margin: 0;
+  padding: 0;
+  background-color: lightgray;
+
+}
+#wrapper{
+  width: 75%;
+  margin: 5px auto;
+  background-color: white;
+}
+
+
+/* all tags */
+a{
+  color: black;
+  text-decoration: none;
+}
+a:hover, #autor1:hover, #autor2:hover{
+  transition: 0.3s;
+  color: #00B5AD;
+}
+h1{
+
+}
+h2{
+  margin-bottom: 0px;
+}
+hr{
+  margin: 15px 0px;
+  background-color: #00B5AD;
+}
+li{
+  list-style-type: none;
+}
+
+/*
+
+/* start Header */
+header{
+  display: flex;
+  align-items: flex-end;
+  padding: 5px 15px;
+  border-bottom: 1px dotted #00B5AD;
+}
+#ul-nav{
+  display: flex;
+  margin: 0px;
+
+}
+#ul-nav li{
+  margin: 10px;
+}
+
+/* end header */
+
+
+/* start main */
+main, footer{
+  padding: 5px 15px;
+}
+#mensa{
+  padding-left: 8px;
+}
+#ankuendigung-text{
+  margin-top: 13px;
+  margin-bottom: 30px;
+  padding-left: 8px;
+  line-height: 1.35;
+  text-align: justify;
+  width: 85%;
+}
+#speisen{
+  margin-bottom: 13px;
+}
+/* start table */
+#speisekarte{
+  border: 1px dotted #00B5AD;
+  background-color: #e6e6e6;
+  width: 50%;
+  padding-left: 7px;
+  padding-bottom: 10px;
+}
+table{
+  border-collapse: collapse;
+  margin-left: 8px;
+}
+.speisen-td-th{
+  text-align: left;
+  border: 1px solid black;
+}
+.speisen-th{
+  padding: 4px 5px 4px 5px;
+}
+.speisen-td:first-child{
+  padding: 4px 7px 4px 7px;
+}
+.speisen-td:not(:first-child){
+  text-align: right;
+  padding-right: 5px;
+}
+/* end table */
+
+/* start zahlen */
+#zahlen-text{
+  padding-left: 8px;
+}
+#stats{
+  display: flex;
+  padding-left: 8px;
+  text-align: center;
+}
+#stats div{
+  margin-right: 50px;
+}
+#stats div div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  width: 200px;
+  height: 100px;
+}
+.zahlen-p{
+  margin-top: 0px;
+}
+
+.span-zahlen{
+  font-weight: bold;
+  font-size: 50px;
+  text-shadow: 1px 1px #00B5AD;
+}
+.span-zahlen:hover{
+  transition: 0.5s;
+  font-size: 70px;
+  -webkit-animation:spin 1s linear infinite;
+  -moz-animation:spin 1s linear infinite;
+  animation:spin 1s linear infinite;
+}
+@keyframes spin {
+  50% { color: red; -webkit-transform: rotate(180deg); transform:rotate(180deg);}
+  75% { color: yellow; -webkit-transform: rotate(270deg); transform:rotate(270deg);}
+  100% {color: green; -webkit-transform: rotate(360deg); transform:rotate(360deg); }
+}
+/* end zahlen */
+
+/* start newsletter */
+form{
+  padding-left: 8px;
+}
+label{
+  display: inline-block;
+  margin-top: 12px;
+  padding-right: 5px;
+}
+input[type="text"], input[type="submit"]{
+  margin-top: 12px;
+}
+select{
+  margin-top: 12px;
+  height: 20px;
+}
+.newsletter-checkbox{
+  display: inline-block;
+  margin-top: 15px;
+}
+/* end newsletter */
+/* start wichtig */
+#wichtig-ul{
+  padding-left: 8px;
+}
+/* end wichtig */
+/* start footer */
+footer{
+  border-top: 1px dotted #00B5AD;
+
+}
+
+#footer-container{
+  display: flex;
+
+}
+#footer-container div{
+  margin-top: 25px;
+  margin-right: 50px;
+  margin-bottom: 10px;
+}
+
+#footer-container div:first-child{
+  padding-left: 8px;
+}
+
+/* end footer */
+/* end main */
