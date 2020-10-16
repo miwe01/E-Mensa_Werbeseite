@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <title>Ihre E-Mensa</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <!-- start wrapper -->
+  <div id="wrapper">
+    <!-- start header -->
+    <header>
+      <img src="https://via.placeholder.com/100x100" alt="Mensa Logo">
+      <!-- start navigation -->
+      <nav>
+        <ul id="ul-nav">
+          <li><a href="#ankuendigung">Ankündigung</a></li>
+          <li><a href="#speisen">Speisen</a></li>
+          <li><a href="#zahlen">Zahlen</a></li>
+          <li><a href="#newsletter">Kontakt</a></li>
+          <li><a href="#wichtig">Wichtig für uns</a></li>
+          <li><a href="#">Impressum</a></li>
+        </ul>
+      </nav>
+      <!-- end navigation -->
+    </header>
+    <!-- end header -->
+
+    <!-- start main -->
+    <main>
+      <h1>Ihre E-Mensa in Aachen</h1>
+      <!-- maybe slideshow -->
+      <img src="https://via.placeholder.com/700x250" alt="Bild von Mensa" id="mensa">
+
+      <!-- ankuendigung -->
+      <h2 id="ankuendigung">Bald gibt es Essen auch online</h2>
+      <p id="ankuendigung-text">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </p>
+      <!-- end ankuendigung -->
+
+      <!-- Start Speisen -->
+      <h2 id="speisen">Köstlichkeiten, die Sie erwarten</h2>
+      <div id="speisekarte">
+      <h3>Nicht vegetarische Speisen</h3>
+      <table class="speisen-table">
+        <tr>
+          <th class="speisen-td-th speisen-th">Speise</th>
+          <th class="speisen-td-th speisen-th">Preis intern</th>
+          <th class="speisen-td-th speisen-th">Preis extern</th>
+        </tr>
+
+        <tr>
+          <td class="speisen-td-th speisen-td">Rindfleisch mit Kartoffeln</td> <td class="speisen-td-th speisen-td">3,50€</td> <td class="speisen-td-th speisen-td">4,50€</td>
+        </tr>
+        <tr>
+          <td class="speisen-td-th speisen-td">Hausgemachte Lasagne</td> <td class="speisen-td-th speisen-td">3,70€</td> <td class="speisen-td-th speisen-td">5,50€</td>
+        </tr>
+      </table>
+      <hr>
+      <h3>Vegetarische Speisen</h3>
+      <table class="speisen-table">
+        <tr>
+          <th class="speisen-td-th speisen-th">Speise</th>
+          <th class="speisen-td-th speisen-th">Preis intern</th>
+          <th class="speisen-td-th speisen-th">Preis extern</th>
+        </tr>
+
+        <tr>
+          <td class="speisen-td-th speisen-td">Feuersteinsalat</td> <td class="speisen-td-th speisen-td">3,50€</td> <td class="speisen-td-th speisen-td">4,50€</td>
+        </tr>
+        <tr>
+          <td class="speisen-td-th speisen-td">Tofu mit Gemüse</td> <td class="speisen-td-th speisen-td">3,70€</td> <td class="speisen-td-th speisen-td">5,50€</td>
+        </tr>
+      </table>
+
+    </div>
+      <!-- end speisen -->
+
+      <!-- start Zahlen -->
+      <h2 id="zahlen">E-Mensa in Zahlen</h2>
+      <p id="zahlen-text">Dieses Jahr hat die E-Mensa folgende Zahlen erreicht:</p>
+      <div id="stats">
+        <div class="container">
+          <div class="zahl-container">
+            <span class="span-zahlen">X</span>
+          </div>
+          <p class="zahlen-p">Besuche jeden Tag</p>
+        </div>
+
+        <div class="container">
+          <div class="zahl-container">
+            <span class="span-zahlen">Y</span>
+          </div>
+          <p class="zahlen-p">Anmeldungen für Newsletter</p>
+        </div>
+
+        <div class="container">
+          <div class="zahl-container">
+            <span class="span-zahlen">Z</span>
+          </div>
+          <p class="zahlen-p">Servierte Speisen</p>
+        </div>
+      </div>
+      <!-- end Zahlen -->
+
+      <!-- start Newsletter -->
+      <h2 id="newsletter">Newsletter</h2>
+      <form class="" action="index.html" method="post">
+        <table>
+          <tr>
+            <td>
+              <label for="nachname">Nachname:</label>
+            </td>
+            <td> <input type="text" id="nachname" name="nachname">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="vorname">Vorname:</label>
+            </td>
+            <td>
+              <input type="text" id="vorname" name="vorname">
+            </td>
+          </tr>
+          <tr>
+            <td><label for="sprache">Sprache:</label></td>
+            <td>
+              <select id="sprache" name="sprache">
+                <option>Deutsch</option>
+                <option>Englisch</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>
+            </td><td><span class="newsletter-checkbox"><input type="checkbox"> AGBs akzeptieren</span></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <input type="submit" value="Bestätigen" name="bestaetigen">
+            </td>
+          </table>
+        </form>
+        <!-- end Newsletter -->
+
+        <!-- start wichtig -->
+        <h2 id="wichtig">Das ist uns wichtig!</h2>
+        <ul id="wichtig-ul">
+          <li class="wichtig-li">- Zufriedenheit</li>
+          <li class="wichtig-li">- Qualität</li>
+          <li class="wichtig-li">- Sehr viel Geld</li>
+          <li class="wichtig-li">- Keine Klausuren rechtzeitig verbessern</li>
+        </ul>
+        <!--end wichtig  -->
+      </main>
+      <!-- end main -->
+      <!-- start footer -->
+      <footer>
+        <h2>Wir freuen uns auf ihren Besuch!</h2>
+        <div id="footer-container">
+        <div>&copy; E-Mensa</div>
+        <div><span id="autor1">Mika Weber</span>,<span id="autor2"> Ben Loos</span></div>
+        <div><a href="#">Impressum</a></div>
+      </div>
+      </footer>
+      <!-- end footer -->
+    </div>
+    <!-- end wrapper -->
+  </body>
+  </html>
