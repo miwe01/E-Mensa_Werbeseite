@@ -1,6 +1,6 @@
-a)
-
 Aufgabe 6
+
+a)
 
 Cache-Control: max-age=0 = bedeutet keine Dateien sollen zwischengespeichert werden
 Connection: keep-alive = persistentes HTTP
@@ -12,3 +12,18 @@ Accept: text/html,application/xhtml+xml,application... = der Client möchte eine
 
 
 b)
+
+Accept: text/html,application/xhtml+xml,application... = der Client möchte einer von diesen Dateien das "q" steht für die Priorität
+Accept-Encoding: gzip, deflate, br = Welche Encoding Algorithmen der Client versteht
+Accept-Language:en,fr-FR;q=0.9,fr;q=0.8,en-US;q=0.7 = sagt dem Server welchen Sprachen der Benutzer "versteht"
+Cache-Control: max-age=0 = bedeutet keine Dateien sollen zwischengespeichert werden
+Connection: keep-alive = persistentes HTTP
+Content-Length: 11 = Größe des Entity-Body
+Content-Type: application/x-www-form-urlencoded = Media Typ der Ressource
+Host: localhost:63342 = Host und Portnummer des empfangenden Servers
+Origin: http://localhost:63342 = Server name
+Referer: http://localhost:63342/E-Mensa_Werbeseite/beispiele... = Adresse der Seite die den Request macht
+Sec-Fetch-Dest: document = Destination des Request
+Sec-Fetch-Mode: navigate = Modus des Request
+Sec-Fetch-Site: same-origin = Relation zwischen Request Origin und Ressource
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64)... = sagt dem Server welchen Browser der Client benutzt

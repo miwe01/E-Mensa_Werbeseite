@@ -10,7 +10,7 @@
   <div id="wrapper">
     <!-- start header -->
     <header>
-      <img id="logo" src="https://via.placeholder.com/100x30" alt="Mensa Logo">
+      <img src="https://via.placeholder.com/100x30" alt="Mensa Logo">
       <!-- start navigation -->
       <nav>
         <ul id="ul-nav">
@@ -35,10 +35,7 @@
       <!-- ankuendigung -->
       <h2 id="ankuendigung">Bald gibt es Essen auch online</h2>
       <p id="ankuendigung-text">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-        enim ad minim veniam, quis nostrud exercitation ullamco <span class="ankuendigung-span">laboris nisi</span> ut aliquip ex ea commodo consequat. Duis aute
-        irure dolor <span class="ankuendigung-span">in reprehenderit</span> in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-         non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
       </p>
       <!-- end ankuendigung -->
 
@@ -59,13 +56,8 @@
         <tr>
           <td class="speisen-td-th speisen-td">Hausgemachte Lasagne</td> <td class="speisen-td-th speisen-td">3,70€</td> <td class="speisen-td-th speisen-td">5,50€</td>
         </tr>
-        <tr>
-          <td class="speisen-td-th speisen-td">Spaghetti Bolognese</td> <td class="speisen-td-th speisen-td">3,80€</td> <td class="speisen-td-th speisen-td">5,60€</td>
-        </tr>
-        <tr>
-          <td class="speisen-td-th speisen-td">Wildlachs mit Risotto</td> <td class="speisen-td-th speisen-td">4,20€</td> <td class="speisen-td-th speisen-td">6,00€</td>
-        </tr>
       </table>
+      <hr>
       <h3>Vegetarische Speisen</h3>
       <table class="speisen-table">
         <tr>
@@ -91,21 +83,21 @@
       <div id="stats">
         <div class="container">
           <div class="zahl-container">
-            <span class="span-zahlen zahl-x">X</span>
+            <span class="span-zahlen">X</span>
           </div>
           <p class="zahlen-p">Besuche jeden Tag</p>
         </div>
 
         <div class="container">
           <div class="zahl-container">
-            <span class="span-zahlen zahl-y">Y</span>
+            <span class="span-zahlen">Y</span>
           </div>
           <p class="zahlen-p">Anmeldungen für Newsletter</p>
         </div>
 
         <div class="container">
           <div class="zahl-container">
-            <span class="span-zahlen zahl-z">Z</span>
+            <span class="span-zahlen">Z</span>
           </div>
           <p class="zahlen-p">Servierte Speisen</p>
         </div>
@@ -118,49 +110,37 @@
         <table>
           <tr>
             <td>
-              <label for="nachname">Nachname</label>
+              <label for="nachname">Nachname:</label>
             </td>
-            <td>
-              <label for="vorname">Vorname</label>
+            <td> <input type="text" id="nachname" name="nachname">
             </td>
           </tr>
           <tr>
             <td>
-              <input type="text" id="nachname" name="nachname">
+              <label for="vorname">Vorname:</label>
             </td>
-
             <td>
               <input type="text" id="vorname" name="vorname">
             </td>
           </tr>
           <tr>
-            <td><label for="sprache" id="sprach-label">Sprache</label></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td colspan="2">
+            <td><label for="sprache">Sprache:</label></td>
+            <td>
               <select id="sprache" name="sprache">
                 <option>Deutsch</option>
                 <option>Englisch</option>
               </select>
             </td>
-
           </tr>
           <tr>
             <td>
-               <label><span class="newsletter-checkbox" id="newsletter-checkbox-id"><input type="checkbox">AGBs akzeptieren</span></label>
-            </td>
-            <td></td>
+            </td><td><span class="newsletter-checkbox"><input type="checkbox"> AGBs akzeptieren</span></td>
           </tr>
           <tr>
+            <td></td>
             <td>
               <input type="submit" value="Bestätigen" name="bestaetigen">
-              <input type="reset" value="Reset" name="reset">
             </td>
-            <td>
-
-            </td>
-          </tr>
           </table>
         </form>
         <!-- end Newsletter -->
