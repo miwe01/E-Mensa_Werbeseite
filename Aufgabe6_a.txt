@@ -1,0 +1,14 @@
+a)
+
+Aufgabe 6
+
+Cache-Control: max-age=0 = bedeutet keine Dateien sollen zwischengespeichert werden
+Connection: keep-alive = persistentes HTTP
+
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64)... = sagt dem Server welchen Browser der Client benutzt
+
+Accept-Language:en,fr-FR;q=0.9,fr;q=0.8,en-US;q=0.7 = sagt dem Server welchen Sprachen der Benutzer "versteht"
+Accept: text/html,application/xhtml+xml,application... = der Client möchte einer von diesen Dateien das "q" steht für die Priorität
+
+
+b)
