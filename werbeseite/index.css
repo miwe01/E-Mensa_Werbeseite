@@ -11,6 +11,7 @@ body{
   width: 75%;
   margin: 5px auto;
   background-color: white;
+  box-shadow: 1px 1px #a6a6a6;
 }
 
 
@@ -20,14 +21,21 @@ a{
   text-decoration: none;
 }
 a:hover, #autor1:hover, #autor2:hover{
-  transition: 0.3s;
+  transition: 0.5s;
   color: #00B5AD;
 }
 h1{
-
+  color: #0d0d0d;
+  text-shadow: 1px 1px lightgray;
 }
 h2{
   margin-bottom: 0px;
+  color: #1a1a1a;
+  text-shadow: 1px 1px lightgray;
+}
+h3{
+  color: #262626;
+  font-size: 22px;
 }
 hr{
   margin: 15px 0px;
@@ -36,6 +44,10 @@ hr{
 li{
   list-style-type: none;
 }
+input, select{
+  background-color: white;
+}
+
 
 /*
 
@@ -43,16 +55,20 @@ li{
 header{
   display: flex;
   align-items: flex-end;
-  padding: 5px 15px;
-  border-bottom: 1px dotted #00B5AD;
+  padding: 30px 35px 10px 10px;
+  border-bottom: 2px dotted #00B5AD;
+}
+#logo{
+
 }
 #ul-nav{
   display: flex;
   margin: 0px;
+  padding-left: 5px;
 
 }
 #ul-nav li{
-  margin: 10px;
+  margin: 0px 10px;
 }
 
 /* end header */
@@ -60,10 +76,11 @@ header{
 
 /* start main */
 main, footer{
-  padding: 5px 15px;
+  padding: 5px 125px;
 }
 #mensa{
-  padding-left: 8px;
+  margin-left: 8px;
+  border: 1px solid #00B5AD;
 }
 #ankuendigung-text{
   margin-top: 13px;
@@ -71,7 +88,10 @@ main, footer{
   padding-left: 8px;
   line-height: 1.35;
   text-align: justify;
-  width: 85%;
+}
+.ankuendigung-span{
+  color: #B50008;
+  font-weight: bold;
 }
 #speisen{
   margin-bottom: 13px;
@@ -79,28 +99,67 @@ main, footer{
 /* start table */
 #speisekarte{
   border: 1px dotted #00B5AD;
-  background-color: #e6e6e6;
-  width: 50%;
-  padding-left: 7px;
-  padding-bottom: 10px;
+  background-color: #f0f5f4;
+  width: 100%;
+  padding: 0px 7px 22px 15px;
+  margin: 30px 0px;
 }
-table{
+/* erster table unterer abstand (speisekarte) */
+.speisen-table:first-of-type{
+  margin-bottom: 60px;
+}
+
+.speisen-table{
   border-collapse: collapse;
   margin-left: 8px;
+  width: 95%;
+  border: 2px solid black;
 }
+/* alle Zellen in Speisekarte*/
 .speisen-td-th{
   text-align: left;
-  border: 1px solid black;
+  border: 2px dotted #546664;
+  padding: 15px 10px;
 }
+/* th in speisekarte*/
 .speisen-th{
   padding: 4px 5px 4px 5px;
+  background-color: #B50008;
+  color: #d9d9d9;
+  font-size: 19px;
+  padding: 10px;
 }
+/* die zweite und dritte Spalte rechtsbuendig */
+.speisen-th:not(:first-Child){
+  text-align: right;
+}
+/* die erste td Spalte */
 .speisen-td:first-child{
   padding: 4px 7px 4px 7px;
+/*background-color: #00AA9E; */
+
+  font-size: 18px;
 }
+/* nicht die erste td Spalte */
 .speisen-td:not(:first-child){
   text-align: right;
-  padding-right: 5px;
+/*  background-color: #00B5AD; */
+
+  font-size: 17px;
+}
+.speisen-td:first-child{
+  width: 60%;
+}
+
+.speisen-table tr:nth-child(even) {
+  background-color: #00B5AD;
+  color: #e6e6e6;
+  width: 40%;
+}
+
+.speisen-table tr:nth-child(odd) {
+  background-color: #00AA9E;
+  color: #f2f2f2;
 }
 /* end table */
 
@@ -108,10 +167,14 @@ table{
 #zahlen-text{
   padding-left: 8px;
 }
+#zahlen-p{
+  color: #262626;
+}
 #stats{
   display: flex;
   padding-left: 8px;
   text-align: center;
+  margin-bottom: 30px;
 }
 #stats div{
   margin-right: 50px;
@@ -133,6 +196,19 @@ table{
   font-size: 50px;
   text-shadow: 1px 1px #00B5AD;
 }
+.zahl-x{
+  color: #00B5AD;
+  text-shadow: 1px 1px black;
+}
+.zahl-y{
+  color: #B50008;
+  text-shadow: 1px 1px black;
+}
+.zahl-z{
+  color: #00B5AD;
+  text-shadow: 1px 1px black;
+}
+
 .span-zahlen:hover{
   transition: 0.5s;
   font-size: 70px;
@@ -149,33 +225,92 @@ table{
 
 /* start newsletter */
 form{
-  padding-left: 8px;
+  padding: 8px;
+  background-color: #e6e6e6;
+  margin: 20px 0px 35px 0px;
+  width: 100%;
+  border: 1px solid #B50008;
 }
 label{
   display: inline-block;
-  margin-top: 12px;
   padding-right: 5px;
+  font-size: 13px;
+  color: #000807;
+
 }
-input[type="text"], input[type="submit"]{
-  margin-top: 12px;
+input[type="text"]{
+  padding-left: 5px;
+  margin-right: 8px;
+  height: 25px;
+  font-size: 15px;
+  border: 1px solid #808080;
+}
+
+input[type="text"]:focus{
+  border: 1px solid #00B5AD;
+  outline: none;
 }
 select{
-  margin-top: 12px;
-  height: 20px;
+  outline: none;
+}
+select:focus, select:active, select:hover{
+  outline: #00B5AD auto 5px;
+}
+input[type="submit"]:focus, input[type="reset"]:focus{
+  border: 1px solid #00B5AD;
+  transform: translateY(1px);
+  outline: none;
+}
+
+
+
+ input[type="submit"], input[type="reset"]{
+   font-size: 16px;
+   height: 30px;
+   margin-right: 8px;
+   border: 1px solid #00B5AD;
+ }
+ #sprach-label{
+   margin-top: 10px;
+ }
+select{
+  width: 384px;
+  font-size: 15px;
+  height: 30px;
 }
 .newsletter-checkbox{
   display: inline-block;
-  margin-top: 15px;
+  margin-top: 12px;
+  font-size: 15px;
+}
+input[type="checkbox"]{
+  margin-left: 4px;
+  margin-bottom: 30px;
+  transform: scale(1.5);
+  margin-right: 8px;
+  margin-top: 5px;
+}
+input:hover, select:hover{
+  border: 1px solid #007873;
 }
 /* end newsletter */
 /* start wichtig */
 #wichtig-ul{
   padding-left: 8px;
+  margin-bottom: 35px;
+}
+.wichtig-li{
+  padding: 3px 2px;
+}
+
+.wichtig-li:hover{
+  transition: 0.5s;
+  color: #00B5AD;
 }
 /* end wichtig */
 /* start footer */
 footer{
-  border-top: 1px dotted #00B5AD;
+  border-top: 2px dotted #00B5AD;
 
 }
 
