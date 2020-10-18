@@ -7,7 +7,7 @@
 </head>
 <body>
   <!-- start wrapper -->
-  <div id="wrapper">
+
     <!-- start header -->
     <header>
       <img src="https://via.placeholder.com/100x30" alt="Mensa Logo">
@@ -27,10 +27,11 @@
     <!-- end header -->
 
     <!-- start main -->
-    <main>
+    <div class="wrapper">
+    <section id="mensa-section">
       <h1>Ihre E-Mensa in Aachen</h1>
       <!-- maybe slideshow -->
-      <img src="https://via.placeholder.com/700x250" alt="Bild von Mensa" id="mensa">
+      <img src="https://via.placeholder.com/800x250" alt="Bild von Mensa" id="mensa">
 
       <!-- ankuendigung -->
       <h2 id="ankuendigung">Bald gibt es Essen auch online</h2>
@@ -40,8 +41,11 @@
       <!-- end ankuendigung -->
 
       <!-- Start Speisen -->
-      <h2 id="speisen">Köstlichkeiten, die Sie erwarten</h2>
+    </section>
+    </div>
+    <div id="speise-wrapper">
       <div id="speisekarte">
+      <h2 id="speisen">Köstlichkeiten, die Sie erwarten</h2>
       <h3>Nicht vegetarische Speisen</h3>
       <table class="speisen-table">
         <tr>
@@ -54,10 +58,16 @@
           <td class="speisen-td-th speisen-td">Rindfleisch mit Kartoffeln</td> <td class="speisen-td-th speisen-td">3,50€</td> <td class="speisen-td-th speisen-td">4,50€</td>
         </tr>
         <tr>
-          <td class="speisen-td-th speisen-td">Hausgemachte Lasagne</td> <td class="speisen-td-th speisen-td">3,70€</td> <td class="speisen-td-th speisen-td">5,50€</td>
+          <td class="speisen-td-th speisen-td">Hausgemachte Lasagne</td> <td class="speisen-td-th speisen-td">3,70€</td> <td class="speisen-td-th speisen-td">4,70€</td>
+        </tr>
+        <tr>
+          <td class="speisen-td-th speisen-td">Rumsteak mit frischen Bohnen</td> <td class="speisen-td-th speisen-td">4,00€</td> <td class="speisen-td-th speisen-td">6,00€</td>
+        </tr>
+        <tr>
+          <td class="speisen-td-th speisen-td">Pizza Primavera</td> <td class="speisen-td-th speisen-td">3,50€</td> <td class="speisen-td-th speisen-td">4,50€</td>
         </tr>
       </table>
-      <hr>
+
       <h3>Vegetarische Speisen</h3>
       <table class="speisen-table">
         <tr>
@@ -72,9 +82,15 @@
         <tr>
           <td class="speisen-td-th speisen-td">Tofu mit Gemüse</td> <td class="speisen-td-th speisen-td">3,70€</td> <td class="speisen-td-th speisen-td">5,50€</td>
         </tr>
+        <tr>
+          <td class="speisen-td-th speisen-td">Bohnensuppe</td> <td class="speisen-td-th speisen-td">3,40€</td> <td class="speisen-td-th speisen-td">5,20€</td>
+        </tr>
       </table>
 
     </div>
+  </div>
+    <div class="wrapper">
+      <section id="zahlen-section">
       <!-- end speisen -->
 
       <!-- start Zahlen -->
@@ -102,30 +118,51 @@
           <p class="zahlen-p">Servierte Speisen</p>
         </div>
       </div>
+
       <!-- end Zahlen -->
 
+      <!-- start wichtig -->
+      <h2 id="wichtig">Das ist uns wichtig!</h2>
+      <ul id="wichtig-ul">
+        <li class="wichtig-li">- Schnelligkeit</li>
+        <li class="wichtig-li">- Qualität</li>
+        <li class="wichtig-li">- Zufriedenheit</li>
+      </ul>
+      <!--end wichtig  -->
+    </section>
+    </div>
+
+
       <!-- start Newsletter -->
-      <h2 id="newsletter">Newsletter</h2>
+      <div id="newsletter-wrapper">
+
       <form class="" action="index.html" method="post">
+        <h2 id="newsletter">Newsletter</h2>
         <table>
           <tr>
             <td>
               <label for="nachname">Nachname:</label>
             </td>
-            <td> <input type="text" id="nachname" name="nachname">
-            </td>
-          </tr>
-          <tr>
             <td>
               <label for="vorname">Vorname:</label>
             </td>
+          </tr>
+          <tr>
+
             <td>
               <input type="text" id="vorname" name="vorname">
             </td>
+            <td>
+              <input type="text" id="nachname" name="nachname">
+            </td>
           </tr>
+
           <tr>
             <td><label for="sprache">Sprache:</label></td>
-            <td>
+            <td></td>
+          </tr>
+          <tr>
+            <td colspan="2">
               <select id="sprache" name="sprache">
                 <option>Deutsch</option>
                 <option>Englisch</option>
@@ -133,30 +170,23 @@
             </td>
           </tr>
           <tr>
-            <td>
-            </td><td><span class="newsletter-checkbox"><input type="checkbox"> AGBs akzeptieren</span></td>
+            <td><span class="newsletter-checkbox"><input type="checkbox"> AGBs akzeptieren</span></td>
           </tr>
           <tr>
-            <td></td>
             <td>
-              <input type="submit" value="Bestätigen" name="bestaetigen">
+              <input type="submit" value="Bestätigen" name="bestaetigen" disabled>
+              <input type="reset" value="Reset" name="reset" disabled>
             </td>
+          </tr>
           </table>
         </form>
+      </div>
         <!-- end Newsletter -->
 
-        <!-- start wichtig -->
-        <h2 id="wichtig">Das ist uns wichtig!</h2>
-        <ul id="wichtig-ul">
-          <li class="wichtig-li">- Zufriedenheit</li>
-          <li class="wichtig-li">- Qualität</li>
-          <li class="wichtig-li">- Sehr viel Geld</li>
-          <li class="wichtig-li">- Keine Klausuren rechtzeitig verbessern</li>
-        </ul>
-        <!--end wichtig  -->
-      </main>
+
       <!-- end main -->
       <!-- start footer -->
+      <div class="wrapper">
       <footer>
         <h2>Wir freuen uns auf ihren Besuch!</h2>
         <div id="footer-container">

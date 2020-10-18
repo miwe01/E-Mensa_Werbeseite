@@ -1,5 +1,6 @@
 *{
   font-family: sans-serif;
+  box-sizing: border-box;
 }
 body{
   margin: 0;
@@ -7,9 +8,10 @@ body{
   background-color: lightgray;
 
 }
-#wrapper{
+.wrapper, #speise-wrapper, #newsletter-wrapper, header{
   width: 75%;
-  margin: 5px auto;
+  margin: 2px auto;
+
   background-color: white;
   box-shadow: 1px 1px #a6a6a6;
 }
@@ -36,9 +38,10 @@ h2{
 h3{
   color: #262626;
   font-size: 22px;
+  padding-left: 8px;
 }
 hr{
-  margin: 15px 0px;
+  margin: 0px 0px;
   background-color: #00B5AD;
 }
 li{
@@ -56,7 +59,6 @@ header{
   display: flex;
   align-items: flex-end;
   padding: 30px 35px 10px 10px;
-  border-bottom: 2px dotted #00B5AD;
 }
 #logo{
 
@@ -67,6 +69,9 @@ header{
   padding-left: 5px;
 
 }
+#ul-nav li:first-child a{
+  color: #00B5AD;
+}
 #ul-nav li{
   margin: 0px 10px;
 }
@@ -75,8 +80,16 @@ header{
 
 
 /* start main */
-main, footer{
+section, footer{
   padding: 5px 125px;
+}
+#mensa-section, footer{
+  background: rgb(255,255,255);
+  background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(239,249,248,1) 100%);
+}
+#zahlen-section{
+  background: rgb(239,249,248);
+background: linear-gradient(180deg, rgba(239,249,248,1) 0%, rgba(255,255,255,1) 50%, rgba(239,249,248,1) 100%);
 }
 #mensa{
   margin-left: 8px;
@@ -88,31 +101,35 @@ main, footer{
   padding-left: 8px;
   line-height: 1.35;
   text-align: justify;
+  max-width: 900px;
 }
 .ankuendigung-span{
   color: #B50008;
   font-weight: bold;
+}
+#speise-wrapper{
+    background-color: #eff9f8;
 }
 #speisen{
   margin-bottom: 13px;
 }
 /* start table */
 #speisekarte{
-  border: 1px dotted #00B5AD;
-  background-color: #f0f5f4;
+
+
   width: 100%;
-  padding: 0px 7px 22px 15px;
-  margin: 30px 0px;
+  padding: 5px 125px 40px 125px;
 }
 /* erster table unterer abstand (speisekarte) */
 .speisen-table:first-of-type{
-  margin-bottom: 60px;
+  margin-bottom: 50px;
 }
 
 .speisen-table{
   border-collapse: collapse;
   margin-left: 8px;
-  width: 95%;
+  width: 100%;
+  max-width: 900PX;
   border: 2px solid black;
 }
 /* alle Zellen in Speisekarte*/
@@ -124,8 +141,8 @@ main, footer{
 /* th in speisekarte*/
 .speisen-th{
   padding: 4px 5px 4px 5px;
-  background-color: #B50008;
-  color: #d9d9d9;
+  background-color: #00B5AD;
+  color: white;
   font-size: 19px;
   padding: 10px;
 }
@@ -152,14 +169,14 @@ main, footer{
 }
 
 .speisen-table tr:nth-child(even) {
-  background-color: #00B5AD;
-  color: #e6e6e6;
+  background-color: white;
+  color: black;
   width: 40%;
 }
 
 .speisen-table tr:nth-child(odd) {
-  background-color: #00AA9E;
-  color: #f2f2f2;
+  background-color: #F2F2F2;
+  color: black;
 }
 /* end table */
 
@@ -172,23 +189,34 @@ main, footer{
 }
 #stats{
   display: flex;
+  flex-wrap: wrap;
   padding-left: 8px;
   text-align: center;
   margin-bottom: 30px;
+  max-width: 900px;
+
 }
-#stats div{
-  margin-right: 50px;
-}
-#stats div div{
+/* erster container von stats */
+
+#stats{
   display: flex;
-  justify-content: center;
   align-items: center;
-  margin: 0;
-  width: 200px;
+
+
+}
+.container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 20px 100px 20px 0px;
+  width: 100px;
   height: 100px;
 }
+.zahl-container{
+
+}
 .zahlen-p{
-  margin-top: 0px;
+  margin: 0;
 }
 
 .span-zahlen{
@@ -212,24 +240,29 @@ main, footer{
 .span-zahlen:hover{
   transition: 0.5s;
   font-size: 70px;
-  -webkit-animation:spin 1s linear infinite;
-  -moz-animation:spin 1s linear infinite;
-  animation:spin 1s linear infinite;
+  -webkit-animation:big 1s linear infinite;
+  -moz-animation:big 1s linear infinite;
+  animation:big 1s linear infinite;
 }
-@keyframes spin {
-  50% { color: red; -webkit-transform: rotate(180deg); transform:rotate(180deg);}
-  75% { color: yellow; -webkit-transform: rotate(270deg); transform:rotate(270deg);}
-  100% {color: green; -webkit-transform: rotate(360deg); transform:rotate(360deg); }
+@keyframes big {
+  50% { color: red; }
+  75% { color: yellow; }
+  100% {color: green; }
 }
 /* end zahlen */
 
 /* start newsletter */
+
+#newsletter-wrapper{
+    background-color: #eff9f8;
+}
 form{
-  padding: 8px;
-  background-color: #e6e6e6;
-  margin: 20px 0px 35px 0px;
-  width: 100%;
-  border: 1px solid #B50008;
+  padding: 5px 125px 40px 125px;
+
+}
+form table{
+  padding-left: 7px;
+  margin-top: 15px;
 }
 label{
   display: inline-block;
@@ -249,6 +282,9 @@ input[type="text"]{
 input[type="text"]:focus{
   border: 1px solid #00B5AD;
   outline: none;
+}
+label[for="sprache"]{
+  margin-top: 10px;
 }
 select{
   outline: none;
@@ -301,6 +337,7 @@ input:hover, select:hover{
 }
 .wichtig-li{
   padding: 3px 2px;
+
 }
 
 .wichtig-li:hover{
@@ -310,7 +347,7 @@ input:hover, select:hover{
 /* end wichtig */
 /* start footer */
 footer{
-  border-top: 2px dotted #00B5AD;
+
 
 }
 
