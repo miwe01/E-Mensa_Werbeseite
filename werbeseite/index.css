@@ -1,3 +1,4 @@
+/* start all tags */
 *{
   font-family: sans-serif;
   box-sizing: border-box;
@@ -6,18 +7,8 @@ body{
   margin: 0;
   padding: 0;
   background-color: lightgray;
-
-}
-.wrapper, #speise-wrapper, #newsletter-wrapper, header{
-  width: 75%;
-  margin: 2px auto;
-
-  background-color: white;
-  box-shadow: 1px 1px #a6a6a6;
 }
 
-
-/* all tags */
 a{
   color: black;
   text-decoration: none;
@@ -51,8 +42,34 @@ input, select{
   background-color: white;
 }
 
+/* end all tags */
 
-/*
+/* start sections */
+#mensa-section, #speise-wrapper, #newsletter-wrapper, #zahlen-section, header, footer{
+  width: 75%;
+  margin: 2px auto;
+
+  background-color: white;
+  box-shadow: 1px 1px #a6a6a6;
+}
+section, footer{
+  padding: 5px 125px;
+}
+/* end sections */
+
+
+/* start gradient */
+
+#mensa-section, footer{
+  background: rgb(255,255,255);
+  background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(239,249,248,1) 100%);
+}
+#zahlen-section{
+  background: rgb(239,249,248);
+  background: linear-gradient(180deg, rgba(239,249,248,1) 0%, rgba(255,255,255,1) 50%, rgba(239,249,248,1) 100%);
+}
+/* end gradient */
+
 
 /* start Header */
 header{
@@ -75,22 +92,11 @@ header{
 #ul-nav li{
   margin: 0px 10px;
 }
-
 /* end header */
 
 
-/* start main */
-section, footer{
-  padding: 5px 125px;
-}
-#mensa-section, footer{
-  background: rgb(255,255,255);
-  background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(239,249,248,1) 100%);
-}
-#zahlen-section{
-  background: rgb(239,249,248);
-background: linear-gradient(180deg, rgba(239,249,248,1) 0%, rgba(255,255,255,1) 50%, rgba(239,249,248,1) 100%);
-}
+/* start Mensa section */
+
 #mensa{
   margin-left: 8px;
   border: 1px solid #00B5AD;
@@ -104,9 +110,12 @@ background: linear-gradient(180deg, rgba(239,249,248,1) 0%, rgba(255,255,255,1) 
   max-width: 900px;
 }
 .ankuendigung-span{
-  color: #B50008;
+  color: #00B5AD;
   font-weight: bold;
 }
+/* end mensa section */
+
+/* start speise section */
 #speise-wrapper{
     background-color: #eff9f8;
 }
@@ -115,8 +124,6 @@ background: linear-gradient(180deg, rgba(239,249,248,1) 0%, rgba(255,255,255,1) 
 }
 /* start table */
 #speisekarte{
-
-
   width: 100%;
   padding: 5px 125px 40px 125px;
 }
@@ -178,9 +185,10 @@ background: linear-gradient(180deg, rgba(239,249,248,1) 0%, rgba(255,255,255,1) 
   background-color: #F2F2F2;
   color: black;
 }
-/* end table */
+/* end speise section */
 
-/* start zahlen */
+
+/* start zahlen section */
 #zahlen-text{
   padding-left: 8px;
 }
@@ -194,16 +202,10 @@ background: linear-gradient(180deg, rgba(239,249,248,1) 0%, rgba(255,255,255,1) 
   text-align: center;
   margin-bottom: 30px;
   max-width: 900px;
+    align-items: center;
 
 }
-/* erster container von stats */
 
-#stats{
-  display: flex;
-  align-items: center;
-
-
-}
 .container{
   display: flex;
   flex-direction: column;
@@ -249,10 +251,26 @@ background: linear-gradient(180deg, rgba(239,249,248,1) 0%, rgba(255,255,255,1) 
   75% { color: yellow; }
   100% {color: green; }
 }
-/* end zahlen */
 
-/* start newsletter */
+/* start wichtig */
+#wichtig-ul{
+  padding-left: 8px;
+  margin-bottom: 35px;
+}
+.wichtig-li{
+  padding: 3px 2px;
 
+}
+
+.wichtig-li:hover{
+  transition: 0.5s;
+  color: #00B5AD;
+}
+/* end wichtig */
+/* end zahlen  section*/
+
+
+/* start newsletter section */
 #newsletter-wrapper{
     background-color: #eff9f8;
 }
@@ -292,20 +310,19 @@ select{
 select:focus, select:active, select:hover{
   outline: #00B5AD auto 5px;
 }
+
+input[type="submit"], input[type="reset"]{
+  font-size: 16px;
+  height: 30px;
+  margin-right: 8px;
+  border: 1px solid #00B5AD;
+}
+
 input[type="submit"]:focus, input[type="reset"]:focus{
   border: 1px solid #00B5AD;
   transform: translateY(1px);
   outline: none;
 }
-
-
-
- input[type="submit"], input[type="reset"]{
-   font-size: 16px;
-   height: 30px;
-   margin-right: 8px;
-   border: 1px solid #00B5AD;
- }
  #sprach-label{
    margin-top: 10px;
  }
@@ -329,26 +346,11 @@ input[type="checkbox"]{
 input:hover, select:hover{
   border: 1px solid #007873;
 }
-/* end newsletter */
-/* start wichtig */
-#wichtig-ul{
-  padding-left: 8px;
-  margin-bottom: 35px;
-}
-.wichtig-li{
-  padding: 3px 2px;
+/* end newsletter  section*/
 
-}
 
-.wichtig-li:hover{
-  transition: 0.5s;
-  color: #00B5AD;
-}
-/* end wichtig */
 /* start footer */
 footer{
-
-
 }
 
 #footer-container{
@@ -359,11 +361,10 @@ footer{
   margin-top: 25px;
   margin-right: 50px;
   margin-bottom: 10px;
+  font-size: 13px;
 }
 
 #footer-container div:first-child{
   padding-left: 8px;
 }
-
 /* end footer */
-/* end main */
