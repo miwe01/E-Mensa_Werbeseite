@@ -1,0 +1,16 @@
+{
+	"team" : "INF_B",
+	"mitglieder":
+	[
+	  {
+		"matrikelnummer": 3252173,
+		"name": "Mika Weber",
+		"ilias" : "mw7655s"
+	  },
+	  {
+		"matrikelnummer": 3207009,
+		"name": "Ben Loos",
+		"ilias" : ""
+	  }
+	]
+}
