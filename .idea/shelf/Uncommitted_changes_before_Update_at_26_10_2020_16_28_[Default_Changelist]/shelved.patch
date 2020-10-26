@@ -1,0 +1,16 @@
+Index: beispiele/erstesPHP.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?php\r\necho \"Mika CLoos ist ein brot <br>\";\r\nphpinfo();\r\n?>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- beispiele/erstesPHP.php	(revision 58bedffed24da25df6626a2dc2b140e829ce0917)
++++ beispiele/erstesPHP.php	(date 1603726075563)
+@@ -1,4 +1,4 @@
+ <?php
+-echo "Mika CLoos ist ein brot <br>";
++echo "Mika ist ein brot <br>";
+ phpinfo();
+ ?>
+\ No newline at end of file

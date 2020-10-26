@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="a085a392-cd31-4eab-89f3-1c367f081829" name="Default Changelist" comment="commit v7" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP-7.4" />
+  <component name="ProjectId" id="1jQ62fZheXP69J1lHWCLj7LOSM5" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Documents/Studium/drittes_Semester/DBWT/Praktikum/php/php.exe" />
+    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a085a392-cd31-4eab-89f3-1c367f081829" name="Default Changelist" comment="" />
+      <created>1603723763841</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1603723763841</updated>
+      <workItem from="1603723766747" duration="3198000" />
+    </task>
+    <task id="LOCAL-00001" summary="COMMIT">
+      <created>1603724450807</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1603724450807</updated>
+    </task>
+    <task id="LOCAL-00002" summary="commit v2">
+      <created>1603724996189</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1603724996189</updated>
+    </task>
+    <task id="LOCAL-00003" summary="commit v3">
+      <created>1603725191167</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1603725191167</updated>
+    </task>
+    <task id="LOCAL-00004" summary="commit v4">
+      <created>1603726542566</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1603726542566</updated>
+    </task>
+    <task id="LOCAL-00005" summary="commit v5">
+      <created>1603726782543</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1603726782543</updated>
+    </task>
+    <task id="LOCAL-00006" summary="commit v6">
+      <created>1603726847163</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1603726847163</updated>
+    </task>
+    <task id="LOCAL-00007" summary="commit v7">
+      <created>1603726881718</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1603726881718</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="COMMIT" />
+    <MESSAGE value="commit v2" />
+    <MESSAGE value="commit v3" />
+    <MESSAGE value="commit v4" />
+    <MESSAGE value="commit v5" />
+    <MESSAGE value="commit v6" />
+    <MESSAGE value="commit v7" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit v7" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="348" y="67" key="#CLI_Interpreters" timestamp="1603724233319">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="348" y="67" key="#CLI_Interpreters/0.0.1536.824@0.0.1536.824" timestamp="1603724233319" />
+    <state x="548" y="166" key="FileChooserDialogImpl" timestamp="1603724212441">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="548" y="166" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1603724212441" />
+    <state x="147" y="64" key="MergeDialog" timestamp="1603725093832">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="147" y="64" key="MergeDialog/0.0.1536.824@0.0.1536.824" timestamp="1603725093832" />
+    <state x="384" y="185" key="MultipleFileMergeDialog" timestamp="1603725093884">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="384" y="185" key="MultipleFileMergeDialog/0.0.1536.824@0.0.1536.824" timestamp="1603725093884" />
+    <state x="277" y="57" key="SettingsEditor" timestamp="1603724243025">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="277" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1603724243025" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1603726893235">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1603726893235" />
+    <state x="586" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1603726988910">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="586" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1603726988910" />
+  </component>
+</project>
