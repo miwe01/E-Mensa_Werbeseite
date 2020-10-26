@@ -1,0 +1,17 @@
+Index: beispiele/erstesPHP.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?php\r\necho \"beN ISt EIN nASE\";\r\nphpinfo();
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- beispiele/erstesPHP.php	(revision f618f112addb7619148e6f4b294945dfbdec8d0d)
++++ beispiele/erstesPHP.php	(date 1603724743997)
+@@ -1,3 +1,4 @@
+ <?php
+ echo "beN ISt EIN nASE";
+-phpinfo();
+\ No newline at end of file
++phpinfo();
++?>
+\ No newline at end of file
