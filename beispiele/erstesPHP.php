@@ -1,3 +1,3 @@
 <?php
-echo "Erstes PHP Skript <br>";
+echo "beN ISt EIN nASE";
 phpinfo();
