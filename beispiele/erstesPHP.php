@@ -1,3 +1,3 @@
 <?php
-echo "Mika ist ein Brot <br>";
+echo "Mika ist ein brot <br>";
 phpinfo();
