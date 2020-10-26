@@ -1,4 +1,4 @@
 <?php
-echo "Mika ist das brot <br>";
+echo "Mika CLoos ist ein brot <br>";
 phpinfo();
 ?>
