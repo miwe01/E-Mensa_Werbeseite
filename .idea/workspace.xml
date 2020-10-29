@@ -16,27 +16,21 @@
         <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </expand>
-    <select />
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:workspace" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a085a392-cd31-4eab-89f3-1c367f081829" name="Default Changelist" comment="Aufgabe 6, Dossier Update">
-      <change afterPath="$PROJECT_DIR$/beispiele/erstesPHP.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/werbeseite/gerichte.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/werbeseite/img/bohnensuppe.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/werbeseite/img/lasagne.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/werbeseite/img/pizza_primavera.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/werbeseite/img/rumpsteak.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/werbeseite/img/salat.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/werbeseite/img/schweinefilet.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/werbeseite/img/tofu.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/werbeseite/test.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/werbeseite/v_gerichte.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/beispiele/meal.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_26_10_2020_16_05__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_26_10_2020_16_05__Default_Changelist_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_26_10_2020_16_28__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_26_10_2020_16_28__Default_Changelist_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Gruppennummer_dossier.docx" beforeDir="false" afterPath="$PROJECT_DIR$/Gruppennummer_dossier.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/werbeseite/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/werbeseite/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/werbeseite/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/werbeseite/index.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,16 +48,26 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP-7.4" />
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP v7.4" />
   <component name="ProjectId" id="1jQ62fZheXP69J1lHWCLj7LOSM5" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$USER_HOME$/Documents/Studium/drittes_Semester/DBWT/Praktikum/php/php.exe" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -162,6 +166,7 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="COMMIT" />
     <MESSAGE value="commit v2" />
     <MESSAGE value="commit v3" />
@@ -177,14 +182,19 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="348" y="67" key="#CLI_Interpreters/0.0.1536.824@0.0.1536.824" timestamp="1603724233319" />
+    <state x="667" y="162" key="#PHP" timestamp="1603976024259">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="667" y="162" key="#PHP/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1603976024259" />
     <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1603826523294">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1603826523294" />
-    <state x="513" y="214" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1603870637622">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="641" y="270" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1603989225567">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="513" y="214" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1603870637622" />
+    <state x="641" y="270" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1603989225567" />
     <state x="548" y="166" key="FileChooserDialogImpl" timestamp="1603724212441">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -197,10 +207,11 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="384" y="185" key="MultipleFileMergeDialog/0.0.1536.824@0.0.1536.824" timestamp="1603725093884" />
-    <state x="604" y="335" key="NewPhpFileDialog" timestamp="1603826340404">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="755" y="423" key="NewPhpFileDialog" timestamp="1603980342531">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="604" y="335" key="NewPhpFileDialog/0.0.1536.824@0.0.1536.824" timestamp="1603826340404" />
+    <state x="755" y="423" key="NewPhpFileDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1603980342531" />
     <state x="277" y="57" key="SettingsEditor" timestamp="1603728182674">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
