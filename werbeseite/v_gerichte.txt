@@ -1,0 +1,3 @@
+Feuersteinsalat;salat.png;3,50€;4,50€
+Tofu mit Gemüse;tofu.jpg;3,70€;5,50€
+Bohnensuppe;bohnensuppe.jpg;3,40€;5,20€

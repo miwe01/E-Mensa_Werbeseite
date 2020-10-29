@@ -1,0 +1,4 @@
+Schweinefilet mit Karotten;schweinefilet.jpg;4,00€;4,80€
+Hausgemachte Lasagne;lasagne.jpg;3,70€;4,70€
+Rumpsteak mit frischen Bohnen;rumpsteak.jpg;4,00€;6,00€
+Pizza Primavera;pizza_primavera.jpg;3,50€;4,50€
