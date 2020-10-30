@@ -43,33 +43,36 @@ $ratings = [
         'stars' => 3 ]
 ];
 
-$deutsch = [
-    'meal' => 'Gericht',
-    'external' => 'Externer Preis',
-    'internal' => 'Interner Preis',
-    'allergens' => 'Allergene',
-    'ratings' => 'Bewertungen',
-    'average' => 'Insgesamt',
-    'filter' => 'Filter',
-    'search' => 'Suchen',
-    'text' => 'Text',
-    'author' => 'Author',
-    'stars' => 'Sterne'
+$words = [
+    'meal' => ['de' => 'Gericht',
+            'en' => 'Meal'],
+    'external' => ['de' => 'Externer Preis',
+            'en' => 'External price'],
+    'internal' => ['de' => 'Interner Preis',
+        'en' => 'Internal price'],
+    'allergens' => ['de' => 'Allergene',
+        'en' => 'Allergens'],
+    'ratings' => ['de' => 'Bewertungen',
+        'en' => 'Ratings'],
+    'average' => ['de' => 'Insgesamt',
+        'en' => 'Average'],
+    'filter' => ['de' => 'Filter',
+        'en' => 'Filter'],
+    'search' => ['de' => 'Suchen',
+        'en' => 'Search'],
+    'text' => ['de' => 'Text',
+        'en' => 'Text'],
+    'author' => ['de' => 'Author',
+        'en' => 'Author'],
+    'stars' => ['de' => 'Sterne',
+        'en' => 'Stars']
 ];
 
-$english = [
-    'meal' => 'Meal',
-    'external' => 'External price',
-    'internal' => 'Internal price',
-    'allergens' => 'Allergens',
-    'ratings' => 'Ratings',
-    'average' => 'Average',
-    'filter' => 'Filter',
-    'search' => 'Search',
-    'text' => 'Text',
-    'author' => 'Author',
-    'stars' => 'Stars'
-];
+function setLanguage($word, $words) : void {
+    if (isset($_GET[GET_PARAM_LANGUAGE])) {
+        echo $words[$word][$_GET[GET_PARAM_LANGUAGE]];
+    } else echo $words[$word]['de'];
+}
 
 $showRatings = [];
 if (!empty($_GET[GET_PARAM_SEARCH_TEXT])) {
@@ -127,15 +130,7 @@ function calcMeanStars($ratings) : float { // : float gibt an, dass der Rückgab
 <html lang="de">
 <head>
     <meta charset="UTF-8"/>
-    <title><?php
-        if (isset($_GET['language'])) {
-            if ($_GET['language'] === 'de')
-                echo $deutsch['meal'];
-            elseif ($_GET['language'] === 'en')
-                echo $english['meal'];
-        } else echo $deutsch['meal'];
-        echo $meal['name'];
-        ?></title>
+    <title>Gericht: <?php echo $meal['name']; ?></title>
     <style type="text/css">
         * {
             font-family: Arial, serif;
@@ -146,13 +141,17 @@ function calcMeanStars($ratings) : float { // : float gibt an, dass der Rückgab
     </style>
 </head>
 <body>
-<h1>Gericht: <?php echo $meal['name']; ?></h1>
+<h1><?php setLanguage('meal',$words); ?>: <?php
+    echo $meal['name'];
+    ?></h1>
 <!-- h) -->
-<p><?php echo "Externer Preis: "; echo number_format($meal['price_extern'],2);?>&euro;</p>
-<p><?php echo "Interner Preis: "; echo number_format($meal['price_intern'],2);?>&euro;</p>
+<p><?php setLanguage('external',$words); ?>: <?php
+    echo number_format($meal['price_extern'],2);?>&euro;</p>
+<p><?php setLanguage('internal',$words); ?>: <?php
+    echo number_format($meal['price_intern'],2);?>&euro;</p>
 <p><?php echo $meal['description']; ?></p>
 <!-- b) -->
-<label for="allergens">Allergene:</label>
+<label for="allergens"><?php setLanguage('allergens',$words); ?>: </label>
 <ul id="allergens">
     <?php
     foreach ($meal["allergens"] as $allerg){
@@ -160,19 +159,20 @@ function calcMeanStars($ratings) : float { // : float gibt an, dass der Rückgab
     }
     ?>
 </ul>
-<h1>Bewertungen (Insgesamt: <?php echo calcMeanStars($ratings); ?>)</h1>
+<h1><?php setLanguage('ratings',$words);
+?> (<?php setLanguage('average',$words); ?>: <?php echo calcMeanStars($ratings); ?>)</h1>
 <form method="get">
-    <label for="search_text">Filter:</label>
+    <label for="search_text"><?php setLanguage('filter',$words); ?>: </label>
     <!-- f) -->
-    <input id="search_text" type="text" name="search_text" value="<?php if (isset($_GET['search_text'])) echo $_GET['search_text']; ?>">
-    <input type="submit" value="Suchen">
+    <input id="search_text" type="text" name="search_text" value="<?php if (isset($_GET[GET_PARAM_SEARCH_TEXT])) echo $_GET[GET_PARAM_SEARCH_TEXT]; ?>">
+    <input type="submit" value=<?php setLanguage('search',$words); ?>>
 </form>
 <table class="rating">
     <thead>
     <tr>
-        <td>Text</td>
-        <td>Author</td>
-        <td>Sterne</td>
+        <td><?php setLanguage('text',$words); ?></td>
+        <td><?php setLanguage('author',$words); ?></td>
+        <td><?php setLanguage('stars',$words); ?></td>
     </tr>
     </thead>
     <tbody>
@@ -182,7 +182,7 @@ function calcMeanStars($ratings) : float { // : float gibt an, dass der Rückgab
                       <!-- a) -->
                       <td class='rating_text'>{$rating['author']}</td> 
                       <td class='rating_stars'>{$rating['stars']}</td>
-                  </tr>";
+                </tr>";
     }
     ?>
     </tbody>
