@@ -1,7 +1,7 @@
 <?php
 const GET_PARAM_MIN_STARS = 'search_min_stars';
 const GET_PARAM_SEARCH_TEXT = 'search_text';
-const GET_PARAM_LANGUAGE = 'sprache';
+const GET_PARAM_LANGUAGE = 'language';
 
 /**
  * Liste aller möglichen Allergene.
@@ -41,6 +41,34 @@ $ratings = [
     [   'text' => 'Kartoffel ist gut. Das Grüne ist mir suspekt.',
         'author' => 'Marta M.',
         'stars' => 3 ]
+];
+
+$deutsch = [
+    'meal' => 'Gericht',
+    'external' => 'Externer Preis',
+    'internal' => 'Interner Preis',
+    'allergens' => 'Allergene',
+    'ratings' => 'Bewertungen',
+    'average' => 'Insgesamt',
+    'filter' => 'Filter',
+    'search' => 'Suchen',
+    'text' => 'Text',
+    'author' => 'Author',
+    'stars' => 'Sterne'
+];
+
+$english = [
+    'meal' => 'Meal',
+    'external' => 'External price',
+    'internal' => 'Internal price',
+    'allergens' => 'Allergens',
+    'ratings' => 'Ratings',
+    'average' => 'Average',
+    'filter' => 'Filter',
+    'search' => 'Search',
+    'text' => 'Text',
+    'author' => 'Author',
+    'stars' => 'Stars'
 ];
 
 $showRatings = [];
@@ -99,7 +127,15 @@ function calcMeanStars($ratings) : float { // : float gibt an, dass der Rückgab
 <html lang="de">
 <head>
     <meta charset="UTF-8"/>
-    <title>Gericht: <?php echo $meal['name']; ?></title>
+    <title><?php
+        if (isset($_GET['language'])) {
+            if ($_GET['language'] === 'de')
+                echo $deutsch['meal'];
+            elseif ($_GET['language'] === 'en')
+                echo $english['meal'];
+        } else echo $deutsch['meal'];
+        echo $meal['name'];
+        ?></title>
     <style type="text/css">
         * {
             font-family: Arial, serif;
@@ -111,6 +147,9 @@ function calcMeanStars($ratings) : float { // : float gibt an, dass der Rückgab
 </head>
 <body>
 <h1>Gericht: <?php echo $meal['name']; ?></h1>
+<!-- h) -->
+<p><?php echo "Externer Preis: "; echo number_format($meal['price_extern'],2);?>&euro;</p>
+<p><?php echo "Interner Preis: "; echo number_format($meal['price_intern'],2);?>&euro;</p>
 <p><?php echo $meal['description']; ?></p>
 <!-- b) -->
 <label for="allergens">Allergene:</label>
@@ -149,7 +188,7 @@ function calcMeanStars($ratings) : float { // : float gibt an, dass der Rückgab
     </tbody>
 </table>
 <form method="get">
-    <input id="sprache" name="sprache" type="hidden">
+    <input id="language" name="language" type="hidden">
 </form>
 </body>
 </html>
