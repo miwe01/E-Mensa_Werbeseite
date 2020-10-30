@@ -60,7 +60,7 @@ section, footer{
 
 /* start gradient */
 
-#mensa-section, footer{
+#mensa-section{
   background: rgb(255,255,255);
   background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgb(239, 249, 248) 100%);
 }
@@ -68,6 +68,12 @@ section, footer{
   background: rgb(239,249,248);
   background: linear-gradient(180deg, rgba(239,249,248,1) 0%, rgba(255,255,255,1) 50%, rgba(239,249,248,1) 100%);
 }
+
+footer{
+  background: rgb(255,255,255);
+  background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgb(239, 249, 248) 100%);
+}
+
 /* end gradient */
 
 
