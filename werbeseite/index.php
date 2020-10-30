@@ -95,6 +95,7 @@
         </tr>
           <?php
 
+
           $file = fopen('v_gerichte.txt', 'r');
 
           if(!$file)
