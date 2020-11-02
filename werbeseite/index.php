@@ -179,11 +179,27 @@
           </td>
         </tr>
         <!-- dritte Reihe -->
+          <tr>
+              <td>
+                  <label for="email">Email:</label>
+              </td>
+              <td></td>
+          </tr>
+
+          <!-- vierte Reihe -->
+          <tr>
+              <td colspan="2">
+                  <input type="email" name="email" id="email">
+              </td>
+          </tr>
+
+
+        <!-- vierte Reihe -->
         <tr>
           <td><label for="sprache">Sprache:</label></td>
           <td></td>
         </tr>
-        <!-- vierte Reihe -->
+        <!-- fünfte Reihe -->
         <tr>
           <td colspan="2">
             <select id="sprache" name="sprache">
@@ -192,11 +208,11 @@
             </select>
           </td>
         </tr>
-        <!-- fünfte Reihe -->
+        <!-- sechste Reihe -->
         <tr>
           <td><label for="check"><span class="newsletter-checkbox"><input type="checkbox" id="check" name="check"> AGBs akzeptieren</span></label></td><td></td>
         </tr>
-        <!--sechste Reihe -->
+        <!--siebte Reihe -->
         <tr>
           <td>
             <input type="submit" value="Bestätigen" name="bestaetigen" disabled>

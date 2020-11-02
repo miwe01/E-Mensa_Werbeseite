@@ -299,15 +299,25 @@ label{
   color: #000807;
 
 }
-input[type="text"]{
+
+label[for="email"]{
+  margin-top: 7px;
+}
+#email{
+  width: 98%;
+  margin-bottom: 7px;
+
+}
+
+input[type="text"], input[type="email"]{
   padding-left: 5px;
   margin-right: 8px;
-  height: 25px;
+  height: 28px;
   font-size: 15px;
   border: 1px solid #808080;
 }
 
-input[type="text"]:focus{
+input[type="text"]:focus, input[type="email"]:focus{
   border: 1px solid #00B5AD;
   outline: none;
 }
@@ -321,7 +331,7 @@ select:focus, select:active, select:hover{
   outline: #00B5AD auto 5px;
 }
 
-input[type="submit"], input[type="reset"]{
+input[type="submit"], input[type="r eset"]{
   font-size: 16px;
   height: 30px;
   margin-right: 8px;
