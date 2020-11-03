@@ -172,10 +172,10 @@
         <!-- zweite Reihe -->
         <tr>
           <td>
-            <input type="text" id="vorname" name="vorname">
+            <input type="text" id="vorname" name="vorname" required>
           </td>
           <td>
-            <input type="text" id="nachname" name="nachname">
+            <input type="text" id="nachname" name="nachname" required>
           </td>
         </tr>
         <!-- dritte Reihe -->
@@ -189,7 +189,7 @@
           <!-- vierte Reihe -->
           <tr>
               <td colspan="2">
-                  <input type="email" name="email" id="email">
+                  <input type="email" name="email" id="email" required>
               </td>
           </tr>
 
@@ -210,13 +210,38 @@
         </tr>
         <!-- sechste Reihe -->
         <tr>
-          <td><label for="check"><span class="newsletter-checkbox"><input type="checkbox" id="check" name="check"> AGBs akzeptieren</span></label></td><td></td>
+          <td><label for="check"><span class="newsletter-checkbox"><input type="checkbox" id="check" name="check" required> AGBs akzeptieren</span></label></td><td></td>
         </tr>
         <!--siebte Reihe -->
         <tr>
           <td>
-            <input type="submit" value="Bestätigen" name="bestaetigen" disabled>
-            <input type="reset" value="Reset" name="reset" disabled>
+            <input type="submit" value="Bestätigen" name="bestaetigen">
+              <?php
+              $newsletterDaten = ['newsNachname' => $_POST['nachname'],
+                  'newsVorname' => $_POST['vorname'],
+                  'newsEmail' => $_POST['email'],
+                  'newsSprache' => $_POST['sprache']];
+
+              if (isset($_POST['submit'])) {
+                  $newsletterDaten[0] = FILTER_SANITIZE_STRING($newsletterDaten[0]);
+                  $newsletterDaten[1] = FILTER_SANITIZE_STRING($newsletterDaten[1]);
+                  if ($newsletterDaten[0] = null || $newsletterDaten[1] = null) {
+                      die('Fehlende Daten.');
+                  }
+                  $newsletterDaten[2] = FILTER_SANITIZE_EMAIL($newsletterDaten[2]);
+                  if(isset($_POST['check']) && isset($_POST['bestaetigen'])) {
+                      $newsFile = fopen('./werbeseite/data.txt','w');
+                      if (!newsFile)
+                          die("Unable to open");
+
+                      $newsData = "$newsletterDaten[0];$newsletterDaten[1];$newsletterDaten[2];$newsletterDaten[3]\n";
+                      fwrite($newsFile,$newsData);
+
+                      fclose($newsFile);
+                  }
+              }
+              ?>
+            <input type="reset" value="Reset" name="reset">
           </td>
           <td></td>
         </tr>
