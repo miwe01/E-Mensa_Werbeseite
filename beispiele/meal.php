@@ -151,8 +151,12 @@ function calcMeanStars($ratings) : float { // : float gibt an, dass der Rückgab
 <p><?php setLanguage('internal',$words); ?>: <?php
     echo number_format($meal['price_intern'],2);?>&euro;</p>
 <p><?php
-    if (isset($_POST[GET_PARAM_SHOW_DESCRIPTION]) && $_POST[GET_PARAM_SHOW_DESCRIPTION] === true)
-        echo $meal['description'];?></p>
+    if (isset($_GET[GET_PARAM_SHOW_DESCRIPTION])){
+        if($_GET[GET_PARAM_SHOW_DESCRIPTION] == true) {
+            echo $meal['description'];
+        }
+    }
+   ?></p>
 <!-- b) -->
 <label for="allergens"><?php setLanguage('allergens',$words); ?>: </label>
 <ul id="allergens">
