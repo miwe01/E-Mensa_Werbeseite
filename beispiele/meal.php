@@ -103,7 +103,7 @@ if (!empty($_GET[GET_PARAM_SEARCH_TEXT])) {
     $showRatings = $ratings;
 }
 
-function calcMeanStars($ratings) : float { // : float gibt an, dass der Rückgabewert vom Typ "float" ist
+function calcMeanStars($ratings) { // : float gibt an, dass der Rückgabewert vom Typ "float" ist
     /*
      * d)
      * $sum muss mit 0 inititalisiert werden anstelle von 1
