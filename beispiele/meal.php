@@ -2,6 +2,7 @@
 const GET_PARAM_MIN_STARS = 'search_min_stars';
 const GET_PARAM_SEARCH_TEXT = 'search_text';
 const GET_PARAM_LANGUAGE = 'language';
+const GET_PARAM_SHOW_DESCRIPTION = 'show_description';
 
 /**
  * Liste aller möglichen Allergene.
@@ -149,7 +150,9 @@ function calcMeanStars($ratings) : float { // : float gibt an, dass der Rückgab
     echo number_format($meal['price_extern'],2);?>&euro;</p>
 <p><?php setLanguage('internal',$words); ?>: <?php
     echo number_format($meal['price_intern'],2);?>&euro;</p>
-<p><?php echo $meal['description']; ?></p>
+<p><?php
+    if (isset($_POST[GET_PARAM_SHOW_DESCRIPTION]) && $_POST[GET_PARAM_SHOW_DESCRIPTION] === true)
+        echo $meal['description'];?></p>
 <!-- b) -->
 <label for="allergens"><?php setLanguage('allergens',$words); ?>: </label>
 <ul id="allergens">
@@ -189,6 +192,9 @@ function calcMeanStars($ratings) : float { // : float gibt an, dass der Rückgab
 </table>
 <form method="get">
     <input id="language" name="language" type="hidden">
+</form>
+<form method="get">
+    <input id="show_description" name="show_description" type="hidden">
 </form>
 </body>
 </html>
