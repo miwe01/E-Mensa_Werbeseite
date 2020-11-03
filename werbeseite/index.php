@@ -217,29 +217,40 @@
           <td>
             <input type="submit" value="Bestätigen" name="bestaetigen">
               <?php
-              $newsletterDaten = ['newsNachname' => $_POST['nachname'],
-                  'newsVorname' => $_POST['vorname'],
-                  'newsEmail' => $_POST['email'],
-                  'newsSprache' => $_POST['sprache']];
 
-              if (isset($_POST['submit'])) {
-                  $newsletterDaten[0] = FILTER_SANITIZE_STRING($newsletterDaten[0]);
-                  $newsletterDaten[1] = FILTER_SANITIZE_STRING($newsletterDaten[1]);
-                  if ($newsletterDaten[0] = null || $newsletterDaten[1] = null) {
-                      die('Fehlende Daten.');
+              function is_temp_mail($mail) {
+                  $mail_domains_ko = array('rcpt.at','damnthespam.at','wegwerfmail.de');
+
+                  foreach($mail_domains_ko as $ko_mail) {
+                      list(,$mail_domain) = explode('@',$mail);
+                      if(strcasecmp($mail_domain, $ko_mail) == 0){
+                          return true;
+                      }
                   }
-                  $newsletterDaten[2] = FILTER_SANITIZE_EMAIL($newsletterDaten[2]);
-                  if(isset($_POST['check']) && isset($_POST['bestaetigen'])) {
-                      $newsFile = fopen('./werbeseite/data.txt','w');
-                      if (!newsFile)
+                  if(preg_match('/trashmail./',$mail) == 1){
+                      return true;
+                  }
+                  return false;
+              }
+
+              if(isset($_POST['check']) && isset($_POST['bestaetigen'])) {
+                      $newsFile = fopen('data.txt','w');
+
+                      if (!$newsFile)
                           die("Unable to open");
 
-                      $newsData = "$newsletterDaten[0];$newsletterDaten[1];$newsletterDaten[2];$newsletterDaten[3]\n";
-                      fwrite($newsFile,$newsData);
+                      $nachname = filter_var($_POST['nachname'],FILTER_SANITIZE_STRING);
+                      $vorname = filter_var($_POST['vorname'],FILTER_SANITIZE_STRING);
+                      $email = filter_var($_POST['email'],FILTER_SANITIZE_EMAIL);
+                      if (preg_match('/[\'‎^£$%&*()}{@#~?><,|=_+¬-]/', $vorname) || preg_match('/[\'‎^£$%&*()}{@#~?><,|=_+¬-]/', $nachname) || is_temp_mail($email))
+                          die("Invalid input");
 
+                      $sprache = $_POST['sprache'];
+
+                      $newsData = "$nachname;$vorname;$email;$sprache\n";
+                      fwrite($newsFile,$newsData);
                       fclose($newsFile);
                   }
-              }
               ?>
             <input type="reset" value="Reset" name="reset">
           </td>
