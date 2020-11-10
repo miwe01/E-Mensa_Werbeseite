@@ -22,7 +22,7 @@ h1{
   text-shadow: 1px 1px lightgray;
 }
 h2{
-  margin-bottom: 0px;
+  margin-bottom: 0;
   color: #1a1a1a;
   text-shadow: 1px 1px lightgray;
 }
@@ -32,7 +32,7 @@ h3{
   padding-left: 8px;
 }
 hr{
-  margin: 0px 0px;
+  margin: 0;
   background-color: #00B5AD;
 }
 li{
@@ -60,14 +60,20 @@ section, footer{
 
 /* start gradient */
 
-#mensa-section, footer{
+#mensa-section{
   background: rgb(255,255,255);
-  background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(239,249,248,1) 100%);
+  background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgb(239, 249, 248) 100%);
 }
 #zahlen-section{
   background: rgb(239,249,248);
   background: linear-gradient(180deg, rgba(239,249,248,1) 0%, rgba(255,255,255,1) 50%, rgba(239,249,248,1) 100%);
 }
+
+footer{
+  background: rgb(255,255,255);
+  background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgb(239, 249, 248) 100%);
+}
+
 /* end gradient */
 
 
@@ -82,7 +88,7 @@ header{
 }
 #ul-nav{
   display: flex;
-  margin: 0px;
+  margin: 0;
   padding-left: 5px;
 
 }
@@ -90,7 +96,7 @@ header{
   color: #00B5AD;
 }
 #ul-nav li{
-  margin: 0px 10px;
+  margin: 0 10px;
 }
 /* end header */
 
@@ -151,7 +157,6 @@ header{
   background-color: #00B5AD;
   color: white;
   font-size: 19px;
-  padding: 10px;
 }
 /* die zweite und dritte Spalte rechtsbuendig */
 .speisen-th:not(:first-Child){
@@ -161,7 +166,6 @@ header{
 .speisen-td:first-child{
   padding: 4px 7px 4px 7px;
 /*background-color: #00AA9E; */
-
   font-size: 18px;
 }
 /* nicht die erste td Spalte */
@@ -172,7 +176,13 @@ header{
   font-size: 17px;
 }
 .speisen-td:first-child{
-  width: 60%;
+  width: 50%;
+}
+
+.gericht-img{
+  width: 150px;
+  height: auto;
+  padding: 2px;
 }
 
 .speisen-table tr:nth-child(even) {
@@ -210,7 +220,7 @@ header{
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 20px 100px 20px 0px;
+  margin: 20px 100px 20px 0;
   width: 100px;
   height: 100px;
 }
@@ -289,15 +299,25 @@ label{
   color: #000807;
 
 }
-input[type="text"]{
+
+label[for="email"]{
+  margin-top: 7px;
+}
+#email{
+  width: 98%;
+  margin-bottom: 7px;
+
+}
+
+input[type="text"], input[type="email"]{
   padding-left: 5px;
   margin-right: 8px;
-  height: 25px;
+  height: 28px;
   font-size: 15px;
   border: 1px solid #808080;
 }
 
-input[type="text"]:focus{
+input[type="text"]:focus, input[type="email"]:focus{
   border: 1px solid #00B5AD;
   outline: none;
 }
@@ -311,7 +331,7 @@ select:focus, select:active, select:hover{
   outline: #00B5AD auto 5px;
 }
 
-input[type="submit"], input[type="reset"]{
+input[type="submit"], input[type="r eset"]{
   font-size: 16px;
   height: 30px;
   margin-right: 8px;
