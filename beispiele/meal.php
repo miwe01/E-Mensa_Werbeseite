@@ -152,7 +152,7 @@ function calcMeanStars($ratings) { // : float gibt an, dass der Rückgabewert vo
     echo number_format($meal['price_intern'],2);?>&euro;</p>
 <p><?php
     if (isset($_GET[GET_PARAM_SHOW_DESCRIPTION])){
-        if($_GET[GET_PARAM_SHOW_DESCRIPTION] == true) {
+        if($_GET[GET_PARAM_SHOW_DESCRIPTION] == "true") {
             echo $meal['description'];
         }
     }

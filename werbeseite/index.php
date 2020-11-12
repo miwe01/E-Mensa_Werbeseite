@@ -157,7 +157,7 @@
 
   <!-- start Newsletter -->
   <div id="newsletter-wrapper">
-    <form class="form-Newsletter" action="index.php" method="post">
+    <form class="form-Newsletter" action="index.php#newsletter-wrapper" method="post">
       <h2 id="newsletter">Newsletter</h2>
       <table>
         <!-- erste Reihe -->
@@ -216,14 +216,17 @@
         <tr>
           <td>
             <input type="submit" value="Bestätigen" name="bestaetigen">
+            <input type="reset" value="Reset" name="reset">
+          </td>
+          <td>
               <?php
 
               function is_temp_mail($mail) {
                   $mail_domains_ko = array('rcpt.at','damnthespam.at','wegwerfmail.de');
 
                   foreach($mail_domains_ko as $ko_mail) {
-                      list(,$mail_domain) = explode('@',$mail);
-                      if(strcasecmp($mail_domain, $ko_mail) == 0){
+                      list($mail_domain) = explode('@',$mail);
+                      if(stripos($mail_domain, $ko_mail) == true){
                           return true;
                       }
                   }
@@ -234,27 +237,32 @@
               }
 
               if(isset($_POST['check']) && isset($_POST['bestaetigen'])) {
-                      $newsFile = fopen('data.txt','w');
+                  $newsFile = fopen('data.txt','a');
 
-                      if (!$newsFile)
-                          die("Unable to open");
+                  if (!$newsFile)
+                      die("Unable to open");
 
-                      $nachname = filter_var($_POST['nachname'],FILTER_SANITIZE_STRING);
-                      $vorname = filter_var($_POST['vorname'],FILTER_SANITIZE_STRING);
-                      $email = filter_var($_POST['email'],FILTER_SANITIZE_EMAIL);
-                      if (preg_match('/[\'‎^£$%&*()}{@#~?><,|=_+¬-]/', $vorname) || preg_match('/[\'‎^£$%&*()}{@#~?><,|=_+¬-]/', $nachname) || is_temp_mail($email))
-                          die("Invalid input");
-
-                      $sprache = $_POST['sprache'];
-
+                  $sprache = $_POST['sprache'];
+                  $nachname = filter_var($_POST['nachname'],FILTER_SANITIZE_STRING);
+                  $vorname = filter_var($_POST['vorname'],FILTER_SANITIZE_STRING);
+                  $email = filter_var($_POST['email'],FILTER_VALIDATE_EMAIL);
+                  list($mail_domain) = explode('@',$email);
+                  if(stripos($mail_domain, ".") == false)
+                      echo "Mail Adresse benötigt Top Level Domain";
+                  elseif (preg_match('/[\'‎^£$%&*()}{@#~?><,|=_+¬-]/', $vorname))
+                      echo "Ungültige Eingabe bei: Vorname.";
+                  elseif (preg_match('/[\'‎^£$%&*()}{@#~?><,|=_+¬-]/', $nachname))
+                      echo "Ungültige Eingabe bei: Nachname.";
+                  elseif (is_temp_mail($email))
+                      echo "Wegwerf-Mailadressen werden nicht akzeptiert.";
+                  else {
                       $newsData = "$nachname;$vorname;$email;$sprache\n";
-                      fwrite($newsFile,$newsData);
+                      fwrite($newsFile, $newsData);
                       fclose($newsFile);
                   }
+              }
               ?>
-            <input type="reset" value="Reset" name="reset">
           </td>
-          <td></td>
         </tr>
       </table>
     </form>
