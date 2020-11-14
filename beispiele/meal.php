@@ -203,10 +203,11 @@ function calcMeanStars($ratings) { // : float gibt an, dass der Rückgabewert vo
 <br>
 <div>
     <form method="get">
-        <label for="language"><?php setLanguage('lang',$words); ?></label>
-        <input id="language" name="language" value="<?php if (isset($_GET[GET_PARAM_LANGUAGE])) echo $_GET[GET_PARAM_LANGUAGE]; ?>" required>
+        <label for="language"><?php setLanguage('lang',$words); ?>: </label>
+        <input type="radio" id="langde" name="language" value="de" required>Deutsch
+        <input type="radio" id="langen" name="language" value="en">English
         <br>
-        <label for="show_description"><?php setLanguage('show_desc',$words); ?>?</label>
+        <label for="show_description"><?php setLanguage('show_desc',$words); ?>? </label>
         <input type="radio" id="descyes" name="show_description" value="true" required>Yes
         <input type="radio" id="descno" name="show_description" value="false">No
         <br>
