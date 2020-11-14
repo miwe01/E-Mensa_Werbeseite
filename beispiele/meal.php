@@ -61,8 +61,14 @@ $words = [
         'en' => 'Filter'],
     'search' => ['de' => 'Suchen',
         'en' => 'Search'],
+    'submit' => ['de' => 'Abschicken',
+        'en' => 'Submit'],
     'text' => ['de' => 'Text',
         'en' => 'Text'],
+    'show_desc' => ['de' => 'Beschreibung anzeigen',
+        'en' => 'Show description'],
+    'lang' => ['de' => 'Sprache',
+        'en' => 'Language'],
     'author' => ['de' => 'Author',
         'en' => 'Author'],
     'stars' => ['de' => 'Sterne',
@@ -194,11 +200,18 @@ function calcMeanStars($ratings) { // : float gibt an, dass der Rückgabewert vo
     ?>
     </tbody>
 </table>
-<form method="get">
-    <input id="language" name="language" type="hidden">
-</form>
-<form method="get">
-    <input id="show_description" name="show_description" type="hidden">
-</form>
+<br>
+<div>
+    <form method="get">
+        <label for="language"><?php setLanguage('lang',$words); ?></label>
+        <input id="language" name="language" value="<?php if (isset($_GET[GET_PARAM_LANGUAGE])) echo $_GET[GET_PARAM_LANGUAGE]; ?>" required>
+        <br>
+        <label for="show_description"><?php setLanguage('show_desc',$words); ?>?</label>
+        <input type="radio" id="descyes" name="show_description" value="true" required>Yes
+        <input type="radio" id="descno" name="show_description" value="false">No
+        <br>
+        <input type="submit" value="<?php setLanguage('submit',$words); ?>">
+    </form>
+</div>
 </body>
 </html>
