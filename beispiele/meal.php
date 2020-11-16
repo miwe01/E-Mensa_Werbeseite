@@ -75,7 +75,7 @@ $words = [
         'en' => 'Stars']
 ];
 
-function setLanguage($word, $words) : void {
+function setLanguage($word, $words){
     if (isset($_GET[GET_PARAM_LANGUAGE])) {
         echo $words[$word][$_GET[GET_PARAM_LANGUAGE]];
     } else echo $words[$word]['de'];
