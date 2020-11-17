@@ -1,3 +1,7 @@
+<?php
+session_start();
+$_SESSION['besuche']++;
+?>
 <!DOCTYPE html>
 <!--
 - Praktikum DBWT. Autoren:
@@ -66,6 +70,7 @@
            * Ben, Loos, 3207009
            */
 
+          $anzahlspeisen = 0;
           $file = fopen('gerichte.txt', 'r');
 
           if(!$file)
@@ -73,7 +78,7 @@
 
           while(!feof($file)) {
               $pfad = 'img/';
-
+              $anzahlspeisen++;
               $line = fgets($file, 1024);
               $array = explode(';',$line);
               echo '<tr><td class="speisen-td-th speisen-td">' . $array[0] . '</td><td class="speisen-td-th speisen-td"> <img class="gericht-img" src="' . $pfad . $array[1] . '" alt="gericht"> </td>  <td class="speisen-td-th speisen-td">' . $array[2] . '</td><td class="speisen-td-th speisen-td">'. $array[3] .'</td></tr>';
@@ -101,7 +106,9 @@
           if(!$file)
               die("Unable to open");
 
+
           while(!feof($file)) {
+              $anzahlspeisen++;
               $line = fgets($file, 1024);
               $array = explode(';',$line);
               echo '<tr><td class="speisen-td-th speisen-td">' . $array[0] . '</td><td class="speisen-td-th speisen-td"> <img class="gericht-img" src="' . $pfad . $array[1] . '" alt="gericht"> </td>  <td class="speisen-td-th speisen-td">' . $array[2] . '</td><td class="speisen-td-th speisen-td">'. $array[3] .'</td></tr>';
@@ -116,6 +123,24 @@
   <!-- end speise -->
 
     <!-- start Zahlen -->
+    <?php
+    $file = fopen('data.txt', 'r');
+    $anzahlanmeldungen = 0;
+    if(!$file)
+        die("Unable to open");
+
+
+    while(!feof($file)) {
+        $anzahlanmeldungen++;
+        $line = fgets($file, 1024);
+    }
+    fclose($file);
+        $zahlen = [
+            'besuche' => $_SESSION['besuche'],
+            'anmeldungen' => $anzahlanmeldungen,
+            'speisen' => $anzahlspeisen
+        ]
+    ?>
     <section id="zahlen-section">
       <h2 id="zahlen">E-Mensa in Zahlen</h2>
       <p id="zahlen-text">Dieses Jahr hat die E-Mensa folgende Zahlen erreicht:</p>
@@ -123,21 +148,21 @@
       <div id="stats">
         <div class="container">
           <div class="zahl-container">
-            <span class="span-zahlen">X</span>
+            <span class="span-zahlen"><?php echo $zahlen['besuche'] ?></span>
           </div>
           <p class="zahlen-p">Besuche jeden Tag</p>
         </div>
 
         <div class="container">
           <div class="zahl-container">
-            <span class="span-zahlen">Y</span>
+            <span class="span-zahlen"><?php echo $zahlen['anmeldungen'] ?></span>
           </div>
           <p class="zahlen-p">Anmeldungen für Newsletter</p>
         </div>
 
         <div class="container">
           <div class="zahl-container">
-            <span class="span-zahlen">Z</span>
+            <span class="span-zahlen"><?php echo $zahlen['speisen'] ?></span>
           </div>
           <p class="zahlen-p">Servierte Speisen</p>
         </div>
