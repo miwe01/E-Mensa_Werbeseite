@@ -1,6 +1,7 @@
 <?php
 session_start();
 $_SESSION['besuche']++;
+
 ?>
 <!DOCTYPE html>
 <!--
@@ -197,10 +198,10 @@ $_SESSION['besuche']++;
         <!-- zweite Reihe -->
         <tr>
           <td>
-            <input type="text" id="vorname" name="vorname" required>
+            <input type="text" id="nachname" name="nachname" required>
           </td>
           <td>
-            <input type="text" id="nachname" name="nachname" required>
+            <input type="text" id="vorname" name="vorname" required>
           </td>
         </tr>
         <!-- dritte Reihe -->
@@ -274,9 +275,9 @@ $_SESSION['besuche']++;
                   list($mail_domain) = explode('@',$email);
                   if(stripos($mail_domain, ".") == false)
                       echo "Mail Adresse benötigt Top Level Domain";
-                  elseif (preg_match('/[\'‎^£$%&*()}{@#~?><,|=_+¬-]/', $vorname))
+                  elseif (preg_match('/[\' ‎^£$%&*()}{@#~?><,|=_+¬-]/', $vorname))
                       echo "Ungültige Eingabe bei: Vorname.";
-                  elseif (preg_match('/[\'‎^£$%&*()}{@#~?><,|=_+¬-]/', $nachname))
+                  elseif (preg_match('/[\' ‎^£$%&*()}{@#~?><,|=_+¬-]/', $nachname))
                       echo "Ungültige Eingabe bei: Nachname.";
                   elseif (is_temp_mail($email))
                       echo "Wegwerf-Mailadressen werden nicht akzeptiert.";
@@ -285,6 +286,8 @@ $_SESSION['besuche']++;
                       fwrite($newsFile, $newsData);
                       fclose($newsFile);
                   }
+                  $sprache = null;
+
               }
               ?>
           </td>
