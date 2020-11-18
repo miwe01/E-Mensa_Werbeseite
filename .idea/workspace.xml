@@ -26,10 +26,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a085a392-cd31-4eab-89f3-1c367f081829" name="Default Changelist" comment="Aufgabe 3&#10;  1)&#10;  3)&#10;    a)-f)&#10;TODO: &#10;  g) Net ganz secher wei ech dat implementeieren kann&#10;  h) Ass easy&#10;Dossier Update">
+      <change afterPath="$PROJECT_DIR$/M3_Aufabe_8.docx" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/~$uppennummer_dossier.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/~WRL1983.tmp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Gruppennummer_dossier.docx" beforeDir="false" afterPath="$PROJECT_DIR$/Gruppennummer_dossier.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/beispiele/meal.php" beforeDir="false" afterPath="$PROJECT_DIR$/beispiele/meal.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/werbeseite/data.txt" beforeDir="false" afterPath="$PROJECT_DIR$/werbeseite/data.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/werbeseite/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/werbeseite/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/werbeseite/nl-admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/werbeseite/nl-admin.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +51,7 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP v7.4" />
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP-7.4" />
   <component name="ProjectId" id="1jQ62fZheXP69J1lHWCLj7LOSM5" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -60,7 +64,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Documents/Studium/drittes_Semester/DBWT/Praktikum/php/php.exe" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -83,6 +87,15 @@
       <workItem from="1603824827089" duration="7139000" />
       <workItem from="1603868971767" duration="5655000" />
       <workItem from="1604062285626" duration="4809000" />
+      <workItem from="1605013947593" duration="3252000" />
+      <workItem from="1605028928817" duration="19000" />
+      <workItem from="1605294352820" duration="3220000" />
+      <workItem from="1605366681314" duration="5562000" />
+      <workItem from="1605461556420" duration="11478000" />
+      <workItem from="1605542662333" duration="2918000" />
+      <workItem from="1605550387006" duration="6997000" />
+      <workItem from="1605643224198" duration="17000" />
+      <workItem from="1605724931061" duration="128000" />
     </task>
     <task id="LOCAL-00001" summary="COMMIT">
       <created>1603724450807</created>
@@ -154,7 +167,14 @@
       <option name="project" value="LOCAL" />
       <updated>1603990878567</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Newsletter Upload and small changes">
+      <created>1605557420344</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1605557420344</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -195,16 +215,18 @@
     <MESSAGE value="commit v7" />
     <MESSAGE value="Aufgabe 6, Dossier Update" />
     <MESSAGE value="Aufgabe 3&#10;  1)&#10;  3)&#10;    a)-f)&#10;TODO: &#10;  g) Net ganz secher wei ech dat implementeieren kann&#10;  h) Ass easy&#10;Dossier Update" />
-    <option name="LAST_COMMIT_MESSAGE" value="Aufgabe 3&#10;  1)&#10;  3)&#10;    a)-f)&#10;TODO: &#10;  g) Net ganz secher wei ech dat implementeieren kann&#10;  h) Ass easy&#10;Dossier Update" />
+    <MESSAGE value="Newsletter Upload and small changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Newsletter Upload and small changes" />
   </component>
   <component name="WindowStateProjectService">
     <state x="348" y="67" key="#CLI_Interpreters" timestamp="1603724233319">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="348" y="67" key="#CLI_Interpreters/0.0.1536.824@0.0.1536.824" timestamp="1603724233319" />
-    <state x="667" y="162" key="#PHP" timestamp="1603976024259">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="534" y="110" key="#PHP" timestamp="1605014228908">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state x="534" y="110" key="#PHP/0.0.1536.824@0.0.1536.824" timestamp="1605014228908" />
     <state x="667" y="162" key="#PHP/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1603976024259" />
     <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1603826523294">
       <screen x="0" y="0" width="1536" height="824" />
@@ -215,36 +237,36 @@
     </state>
     <state x="513" y="214" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1603870637622" />
     <state x="641" y="270" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1603989225567" />
-    <state x="548" y="166" key="FileChooserDialogImpl" timestamp="1603724212441">
+    <state x="548" y="166" key="FileChooserDialogImpl" timestamp="1605643238147">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="548" y="166" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1603724212441" />
-    <state x="147" y="64" key="MergeDialog" timestamp="1603725093832">
+    <state x="548" y="166" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1605643238147" />
+    <state x="147" y="64" key="MergeDialog" timestamp="1605556005923">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="147" y="64" key="MergeDialog/0.0.1536.824@0.0.1536.824" timestamp="1603725093832" />
+    <state x="147" y="64" key="MergeDialog/0.0.1536.824@0.0.1536.824" timestamp="1605556005923" />
     <state x="384" y="185" key="MultipleFileMergeDialog" timestamp="1603725093884">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="384" y="185" key="MultipleFileMergeDialog/0.0.1536.824@0.0.1536.824" timestamp="1603725093884" />
-    <state x="755" y="423" key="NewPhpFileDialog" timestamp="1603980342531">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="604" y="335" key="NewPhpFileDialog" timestamp="1605294433300">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="604" y="335" key="NewPhpFileDialog/0.0.1536.824@0.0.1536.824" timestamp="1603826340404" />
+    <state x="604" y="335" key="NewPhpFileDialog/0.0.1536.824@0.0.1536.824" timestamp="1605294433300" />
     <state x="755" y="423" key="NewPhpFileDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1603980342531" />
     <state x="277" y="57" key="SettingsEditor" timestamp="1603728182674">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="277" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1603728182674" />
-    <state x="451" y="183" key="Vcs.Push.Dialog.v2" timestamp="1603990903169">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1605557429394">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1603727294618" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1605557429394" />
     <state x="451" y="183" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1603990903169" />
-    <state x="733" y="411" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1604062394252">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="586" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1605557294026">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="586" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1603825390899" />
+    <state x="586" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1605557294026" />
     <state x="733" y="411" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604062394252" />
     <state x="809" y="189" key="run.anything.popup" timestamp="1603872228445">
       <screen x="0" y="0" width="1536" height="824" />

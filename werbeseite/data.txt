@@ -1,6 +1,6 @@
-Klaus;Peter;peter@hotmail.com;Deutsch
+Klaus;Peter;peter1@hotmail.com;Deutsch
 Hoffman;Hans;hans.hoffmann@alumni.fh-aachen.de;Deutsch
 Moos;Ben;ben@abc.de;Deutsch
 Paul;Haus;paul@msn.com;Deutsch
-Hans;Peter;peter@hotmail.com;Deutsch
-Franz;Hans;peter@hotmail.com;Deutsch
+Hans;Peter;peter2@hotmail.com;Deutsch
+Franz;Hans;peter3@hotmail.com;Deutsch

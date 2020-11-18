@@ -151,7 +151,6 @@
             while(!feof($file)){
                 $line = fgets($file, 1024);
                 $array = explode(';',$line);
-                // array_push($name, $array[0], $array[1]);
                 $name[$array[0]] = $array[1];
             }
 
