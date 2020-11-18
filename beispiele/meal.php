@@ -209,7 +209,7 @@ function calcMeanStars($ratings) { // : float gibt an, dass der Rückgabewert vo
         <br>
         <label for="show_description"><?php setLanguage('show_desc',$words); ?>? </label>
         <input type="radio" id="descyes" name="show_description" value="true" required>Yes
-        <input type="radio" id="descno" name="show_description" value="false">No
+        <input type="radio" id="descno" name="show_description" value="false" >No
         <br>
         <input type="submit" value="<?php setLanguage('submit',$words); ?>">
     </form>

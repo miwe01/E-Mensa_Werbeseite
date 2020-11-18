@@ -1,3 +1,8 @@
+<?php
+session_start();
+$_SESSION['besuche']++;
+
+?>
 <!DOCTYPE html>
 <!--
 - Praktikum DBWT. Autoren:
@@ -66,6 +71,7 @@
            * Ben, Loos, 3207009
            */
 
+          $anzahlspeisen = 0;
           $file = fopen('gerichte.txt', 'r');
 
           if(!$file)
@@ -73,7 +79,7 @@
 
           while(!feof($file)) {
               $pfad = 'img/';
-
+              $anzahlspeisen++;
               $line = fgets($file, 1024);
               $array = explode(';',$line);
               echo '<tr><td class="speisen-td-th speisen-td">' . $array[0] . '</td><td class="speisen-td-th speisen-td"> <img class="gericht-img" src="' . $pfad . $array[1] . '" alt="gericht"> </td>  <td class="speisen-td-th speisen-td">' . $array[2] . '</td><td class="speisen-td-th speisen-td">'. $array[3] .'</td></tr>';
@@ -101,7 +107,9 @@
           if(!$file)
               die("Unable to open");
 
+
           while(!feof($file)) {
+              $anzahlspeisen++;
               $line = fgets($file, 1024);
               $array = explode(';',$line);
               echo '<tr><td class="speisen-td-th speisen-td">' . $array[0] . '</td><td class="speisen-td-th speisen-td"> <img class="gericht-img" src="' . $pfad . $array[1] . '" alt="gericht"> </td>  <td class="speisen-td-th speisen-td">' . $array[2] . '</td><td class="speisen-td-th speisen-td">'. $array[3] .'</td></tr>';
@@ -116,6 +124,24 @@
   <!-- end speise -->
 
     <!-- start Zahlen -->
+    <?php
+    $file = fopen('data.txt', 'r');
+    $anzahlanmeldungen = 0;
+    if(!$file)
+        die("Unable to open");
+
+
+    while(!feof($file)) {
+        $anzahlanmeldungen++;
+        $line = fgets($file, 1024);
+    }
+    fclose($file);
+        $zahlen = [
+            'besuche' => $_SESSION['besuche'],
+            'anmeldungen' => $anzahlanmeldungen,
+            'speisen' => $anzahlspeisen
+        ]
+    ?>
     <section id="zahlen-section">
       <h2 id="zahlen">E-Mensa in Zahlen</h2>
       <p id="zahlen-text">Dieses Jahr hat die E-Mensa folgende Zahlen erreicht:</p>
@@ -123,21 +149,21 @@
       <div id="stats">
         <div class="container">
           <div class="zahl-container">
-            <span class="span-zahlen">X</span>
+            <span class="span-zahlen"><?php echo $zahlen['besuche'] ?></span>
           </div>
           <p class="zahlen-p">Besuche jeden Tag</p>
         </div>
 
         <div class="container">
           <div class="zahl-container">
-            <span class="span-zahlen">Y</span>
+            <span class="span-zahlen"><?php echo $zahlen['anmeldungen'] ?></span>
           </div>
           <p class="zahlen-p">Anmeldungen für Newsletter</p>
         </div>
 
         <div class="container">
           <div class="zahl-container">
-            <span class="span-zahlen">Z</span>
+            <span class="span-zahlen"><?php echo $zahlen['speisen'] ?></span>
           </div>
           <p class="zahlen-p">Servierte Speisen</p>
         </div>
@@ -172,10 +198,10 @@
         <!-- zweite Reihe -->
         <tr>
           <td>
-            <input type="text" id="vorname" name="vorname" required>
+            <input type="text" id="nachname" name="nachname" required>
           </td>
           <td>
-            <input type="text" id="nachname" name="nachname" required>
+            <input type="text" id="vorname" name="vorname" required>
           </td>
         </tr>
         <!-- dritte Reihe -->
@@ -249,9 +275,9 @@
                   list($mail_domain) = explode('@',$email);
                   if(stripos($mail_domain, ".") == false)
                       echo "Mail Adresse benötigt Top Level Domain";
-                  elseif (preg_match('/[\'‎^£$%&*()}{@#~?><,|=_+¬-]/', $vorname))
+                  elseif (preg_match('/[\' ‎^£$%&*()}{@#~?><,|=_+¬-]/', $vorname))
                       echo "Ungültige Eingabe bei: Vorname.";
-                  elseif (preg_match('/[\'‎^£$%&*()}{@#~?><,|=_+¬-]/', $nachname))
+                  elseif (preg_match('/[\' ‎^£$%&*()}{@#~?><,|=_+¬-]/', $nachname))
                       echo "Ungültige Eingabe bei: Nachname.";
                   elseif (is_temp_mail($email))
                       echo "Wegwerf-Mailadressen werden nicht akzeptiert.";
@@ -260,6 +286,8 @@
                       fwrite($newsFile, $newsData);
                       fclose($newsFile);
                   }
+                  $sprache = null;
+
               }
               ?>
           </td>
