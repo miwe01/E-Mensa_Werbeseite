@@ -25,15 +25,10 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a085a392-cd31-4eab-89f3-1c367f081829" name="Default Changelist" comment="Aufgabe 3&#10;  1)&#10;  3)&#10;    a)-f)&#10;TODO: &#10;  g) Net ganz secher wei ech dat implementeieren kann&#10;  h) Ass easy&#10;Dossier Update">
-      <change afterPath="$PROJECT_DIR$/M3_Aufabe_8.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/~$uppennummer_dossier.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/~WRL1983.tmp" afterDir="false" />
+    <list default="true" id="a085a392-cd31-4eab-89f3-1c367f081829" name="Default Changelist" comment="M2 A6 TODO">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Gruppennummer_dossier.docx" beforeDir="false" afterPath="$PROJECT_DIR$/Gruppennummer_dossier.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/werbeseite/data.txt" beforeDir="false" afterPath="$PROJECT_DIR$/werbeseite/data.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/werbeseite/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/werbeseite/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/werbeseite/nl-admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/werbeseite/nl-admin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/beispiele/m3_8a_testdatenbank.php" beforeDir="false" afterPath="$PROJECT_DIR$/beispiele/m3_8a_testdatenbank.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,8 +45,9 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
-  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP-7.4" />
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP v7.4" />
   <component name="ProjectId" id="1jQ62fZheXP69J1lHWCLj7LOSM5" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -64,7 +60,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/werbeseite/emensawerbeseite.sql" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -96,6 +92,8 @@
       <workItem from="1605550387006" duration="6997000" />
       <workItem from="1605643224198" duration="17000" />
       <workItem from="1605724931061" duration="128000" />
+      <workItem from="1605804339993" duration="542000" />
+      <workItem from="1605804893912" duration="1031000" />
     </task>
     <task id="LOCAL-00001" summary="COMMIT">
       <created>1603724450807</created>
@@ -174,7 +172,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605557420344</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="M2 A6 TODO">
+      <created>1605803537803</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1605803537803</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -216,18 +221,20 @@
     <MESSAGE value="Aufgabe 6, Dossier Update" />
     <MESSAGE value="Aufgabe 3&#10;  1)&#10;  3)&#10;    a)-f)&#10;TODO: &#10;  g) Net ganz secher wei ech dat implementeieren kann&#10;  h) Ass easy&#10;Dossier Update" />
     <MESSAGE value="Newsletter Upload and small changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Newsletter Upload and small changes" />
+    <MESSAGE value="M2 A6 TODO" />
+    <option name="LAST_COMMIT_MESSAGE" value="M2 A6 TODO" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="348" y="67" key="#CLI_Interpreters" timestamp="1603724233319">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="435" y="85" key="#CLI_Interpreters" timestamp="1605804359014">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="348" y="67" key="#CLI_Interpreters/0.0.1536.824@0.0.1536.824" timestamp="1603724233319" />
-    <state x="534" y="110" key="#PHP" timestamp="1605014228908">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="435" y="85" key="#CLI_Interpreters/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1605804359014" />
+    <state x="667" y="162" key="#PHP" timestamp="1605800290223">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="534" y="110" key="#PHP/0.0.1536.824@0.0.1536.824" timestamp="1605014228908" />
-    <state x="667" y="162" key="#PHP/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1603976024259" />
+    <state x="667" y="162" key="#PHP/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1605800290223" />
     <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1603826523294">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -237,10 +244,11 @@
     </state>
     <state x="513" y="214" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1603870637622" />
     <state x="641" y="270" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1603989225567" />
-    <state x="548" y="166" key="FileChooserDialogImpl" timestamp="1605643238147">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="685" y="210" key="FileChooserDialogImpl" timestamp="1605799715586">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="548" y="166" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1605643238147" />
+    <state x="685" y="210" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1605799715586" />
     <state x="147" y="64" key="MergeDialog" timestamp="1605556005923">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -254,15 +262,16 @@
     </state>
     <state x="604" y="335" key="NewPhpFileDialog/0.0.1536.824@0.0.1536.824" timestamp="1605294433300" />
     <state x="755" y="423" key="NewPhpFileDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1603980342531" />
-    <state x="277" y="57" key="SettingsEditor" timestamp="1603728182674">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="346" y="72" key="SettingsEditor" timestamp="1605804880285">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="277" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1603728182674" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1605557429394">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="346" y="72" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1605804880285" />
+    <state x="451" y="183" key="Vcs.Push.Dialog.v2" timestamp="1605803548081">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1605557429394" />
-    <state x="451" y="183" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1603990903169" />
+    <state x="451" y="183" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1605803548081" />
     <state x="586" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1605557294026">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
