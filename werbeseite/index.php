@@ -55,8 +55,6 @@ $_SESSION['besuche']++;
       <h2 id="speisen">Köstlichkeiten, die Sie erwarten</h2>
       <h3>Nicht vegetarische Speisen</h3>
       <!-- nicht vegetarische Karte -->
-
-
       <table class="speisen-table">
         <tr>
           <th class="speisen-td-th speisen-th">Speise</th>
@@ -65,29 +63,40 @@ $_SESSION['besuche']++;
           <th class="speisen-td-th speisen-th">Preis extern</th>
         </tr>
           <?php
-          /**
-           * Praktikum DBWT. Autoren:
-           * Mika, Weber, 3252173
-           * Ben, Loos, 3207009
-           */
+          $link = mysqli_connect("localhost", // Host der Datenbank
+              "root",                 // Benutzername zur Anmeldung
+              "",    // Passwort
+              "emensawerbeseite",     // Auswahl der Datenbanken (bzw. des Schemas)
+              3306// optional port der Datenbank
+          );
 
-          $anzahlspeisen = 0;
-          $file = fopen('gerichte.txt', 'r');
-
-          if(!$file)
-              die("Unable to open");
-
-          while(!feof($file)) {
-              $pfad = 'img/';
-              $anzahlspeisen++;
-              $line = fgets($file, 1024);
-              $array = explode(';',$line);
-              echo '<tr><td class="speisen-td-th speisen-td">' . $array[0] . '</td><td class="speisen-td-th speisen-td"> <img class="gericht-img" src="' . $pfad . $array[1] . '" alt="gericht"> </td>  <td class="speisen-td-th speisen-td">' . $array[2] . '</td><td class="speisen-td-th speisen-td">'. $array[3] .'</td></tr>';
+          if (!$link) {
+              echo "Verbindung fehlgeschlagen: ", mysqli_connect_error();
+              exit();
           }
-          fclose($file);
 
+          $sql = "SELECT gericht.name,  Group_Concat(allergen.code) AS 'Allergen', gericht.preis_intern, gericht.preis_extern
+FROM gericht
+LEFT JOIN gericht_hat_allergen
+ON gericht.id = gericht_hat_allergen.gericht_id
+LEFT JOIN allergen
+ON gericht_hat_allergen.code = allergen.code
+GROUP BY gericht.name LIMIT 5;";
+
+          /*$result = mysqli_query($link, $sql);
+          if (!$result) {
+              echo "Fehler während der Abfrage:  ", mysqli_error($link);
+              exit();
+          }
+          echo '<table><tr><th>Gerichtsname</th><th>Erfassungsdatum</th></tr>';
+          while ($row = mysqli_fetch_assoc($result)) {
+              echo '<tr><td>'.$row['gerichtsname'].'</td><td>'.$row['erfasst_am']. '</td></tr>';
+          }
+          echo '</table>';
+
+          mysqli_free_result($result);
+          mysqli_close($link);*/
           ?>
-
       </table>
       <!-- karte ende -->
       <!-- vegetarische Karte -->
@@ -99,25 +108,46 @@ $_SESSION['besuche']++;
           <th class="speisen-td-th speisen-th">Preis intern</th>
           <th class="speisen-td-th speisen-th">Preis extern</th>
         </tr>
-          <?php
-
-
-          $file = fopen('v_gerichte.txt', 'r');
-
-          if(!$file)
-              die("Unable to open");
-
-
-          while(!feof($file)) {
-              $anzahlspeisen++;
-              $line = fgets($file, 1024);
-              $array = explode(';',$line);
-              echo '<tr><td class="speisen-td-th speisen-td">' . $array[0] . '</td><td class="speisen-td-th speisen-td"> <img class="gericht-img" src="' . $pfad . $array[1] . '" alt="gericht"> </td>  <td class="speisen-td-th speisen-td">' . $array[2] . '</td><td class="speisen-td-th speisen-td">'. $array[3] .'</td></tr>';
-          }
-          fclose($file);
-
-          ?>
+          <!--SELECT gericht.name, Group_Concat(allergen.code) AS "Allergen", gericht.preis_intern, gericht.preis_extern
+          FROM gericht
+          LEFT JOIN gericht_hat_allergen
+          ON gericht.id = gericht_hat_allergen.gericht_id
+          LEFT JOIN allergen
+          ON gericht_hat_allergen.code = allergen.code
+          WHERE gericht.vegetarisch = 1
+          GROUP BY gericht.name LIMIT 5;-->
       </table>
+        <!-- karte ende -->
+        <!-- Liste der Allergene -->
+        <?php
+        $link = mysqli_connect("localhost", // Host der Datenbank
+            "root",                 // Benutzername zur Anmeldung
+            "",    // Passwort
+            "emensawerbeseite",     // Auswahl der Datenbanken (bzw. des Schemas)
+            3306// optional port der Datenbank
+        );
+
+        if (!$link) {
+            echo "Verbindung fehlgeschlagen: ", mysqli_connect_error();
+            exit();
+        }
+
+        $sql = "SELECT code, name AS 'allergenname' FROM allergen";
+
+        $result = mysqli_query($link, $sql);
+        if (!$result) {
+            echo "Fehler während der Abfrage:  ", mysqli_error($link);
+            exit();
+        }
+        echo '<table><tr><th>Allergen</th><th>Code</th></tr>';
+        while ($row = mysqli_fetch_assoc($result)) {
+            echo '<tr><td>'.$row['allergenname'].'</td><td>'.$row['code']. '</td></tr>';
+        }
+        echo '</table>';
+
+        mysqli_free_result($result);
+        mysqli_close($link);
+        ?>
       <!-- karte ende -->
     </div>
   </div>
@@ -125,6 +155,18 @@ $_SESSION['besuche']++;
 
     <!-- start Zahlen -->
     <?php
+    $anzahlspeisen = 0;
+    $file = fopen('gerichte.txt', 'r');
+
+    if(!$file)
+        die("Unable to open");
+
+    while(!feof($file)) {
+        $pfad = 'img/';
+        $anzahlspeisen++;
+        $line = fgets($file, 1024);
+    }
+    fclose($file);
     $file = fopen('data.txt', 'r');
     $anzahlanmeldungen = 0;
     if(!$file)

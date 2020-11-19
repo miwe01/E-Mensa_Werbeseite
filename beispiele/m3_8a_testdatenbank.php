@@ -17,7 +17,7 @@ if (!$link) {
     exit();
 }
 
-$sql = "SELECT erfasst_am, name AS 'gerichtsname' FROM gericht ORDER BY gerichtsname desc";
+$sql = "SELECT name AS 'gerichtsname', erfasst_am FROM gericht ORDER BY gerichtsname asc";
 
 $result = mysqli_query($link, $sql);
 if (!$result) {
