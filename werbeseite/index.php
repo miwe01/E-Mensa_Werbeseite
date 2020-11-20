@@ -58,7 +58,54 @@ $_SESSION['besuche']++;
       <table class="speisen-table">
         <tr>
           <th class="speisen-td-th speisen-th">Speise</th>
-            <th class="speisen-td-th speisen-th">Bild</th>
+          <th class="speisen-td-th speisen-th">Preis intern</th>
+          <th class="speisen-td-th speisen-th">Preis extern</th>
+        </tr>
+          <?php
+          $allergenList = array();
+
+          $link = mysqli_connect("localhost", // Host der Datenbank
+              "root",                 // Benutzername zur Anmeldung
+              "",    // Passwort
+              "emensawerbeseite",     // Auswahl der Datenbanken (bzw. des Schemas)
+              3306// optional port der Datenbank
+          );
+
+          if (!$link) {
+              echo "Verbindung fehlgeschlagen: ", mysqli_connect_error();
+              exit();
+          }
+
+          $sql = "SELECT gericht.name,  Group_Concat(allergen.code) AS 'Allergen', gericht.preis_intern, gericht.preis_extern
+          FROM gericht
+          LEFT JOIN gericht_hat_allergen
+          ON gericht.id = gericht_hat_allergen.gericht_id
+          LEFT JOIN allergen
+          ON gericht_hat_allergen.code = allergen.code
+          GROUP BY gericht.name LIMIT 5;";
+
+          $result = mysqli_query($link, $sql);
+          if (!$result) {
+              echo "Fehler während der Abfrage:  ", mysqli_error($link);
+              exit();
+          }
+          while ($row = mysqli_fetch_assoc($result)) {
+              echo '<tr><td>'.$row['name'].'<sub><b>'.$row['Allergen'].'</b></sub></td><td>'.$row['preis_intern']. '</td><td>'.$row['preis_extern']. '</td></tr>';
+              while ($row['Allergen'] !== NULL) {
+                  array_push($allergenList, $row['Allergen'].explode(','));
+              }
+          }
+
+          mysqli_free_result($result);
+          mysqli_close($link);
+          ?>
+      </table>
+      <!-- karte ende -->
+      <!-- vegetarische Karte -->
+      <h3>Vegetarische Speisen</h3>
+      <table class="speisen-table">
+        <tr>
+          <th class="speisen-td-th speisen-th">Speise</th>
           <th class="speisen-td-th speisen-th">Preis intern</th>
           <th class="speisen-td-th speisen-th">Preis extern</th>
         </tr>
@@ -75,51 +122,40 @@ $_SESSION['besuche']++;
               exit();
           }
 
-          $sql = "SELECT gericht.name,  Group_Concat(allergen.code) AS 'Allergen', gericht.preis_intern, gericht.preis_extern
-FROM gericht
-LEFT JOIN gericht_hat_allergen
-ON gericht.id = gericht_hat_allergen.gericht_id
-LEFT JOIN allergen
-ON gericht_hat_allergen.code = allergen.code
-GROUP BY gericht.name LIMIT 5;";
-
-          /*$result = mysqli_query($link, $sql);
-          if (!$result) {
-              echo "Fehler während der Abfrage:  ", mysqli_error($link);
-              exit();
-          }
-          echo '<table><tr><th>Gerichtsname</th><th>Erfassungsdatum</th></tr>';
-          while ($row = mysqli_fetch_assoc($result)) {
-              echo '<tr><td>'.$row['gerichtsname'].'</td><td>'.$row['erfasst_am']. '</td></tr>';
-          }
-          echo '</table>';
-
-          mysqli_free_result($result);
-          mysqli_close($link);*/
-          ?>
-      </table>
-      <!-- karte ende -->
-      <!-- vegetarische Karte -->
-      <h3>Vegetarische Speisen</h3>
-      <table class="speisen-table">
-        <tr>
-          <th class="speisen-td-th speisen-th">Speise</th>
-            <th class="speisen-td-th speisen-th">Bild</th>
-          <th class="speisen-td-th speisen-th">Preis intern</th>
-          <th class="speisen-td-th speisen-th">Preis extern</th>
-        </tr>
-          <!--SELECT gericht.name, Group_Concat(allergen.code) AS "Allergen", gericht.preis_intern, gericht.preis_extern
+          $sql = "SELECT gericht.name, Group_Concat(allergen.code) AS 'Allergen', gericht.preis_intern, gericht.preis_extern
           FROM gericht
           LEFT JOIN gericht_hat_allergen
           ON gericht.id = gericht_hat_allergen.gericht_id
           LEFT JOIN allergen
           ON gericht_hat_allergen.code = allergen.code
           WHERE gericht.vegetarisch = 1
-          GROUP BY gericht.name LIMIT 5;-->
+          GROUP BY gericht.name LIMIT 5;";
+
+          $result = mysqli_query($link, $sql);
+          if (!$result) {
+              echo "Fehler während der Abfrage:  ", mysqli_error($link);
+              exit();
+          }
+          while ($row = mysqli_fetch_assoc($result)) {
+              echo '<tr><td>'.$row['name'].'<sub><b>'.$row['Allergen'].'</b></sub></td><td>'.$row['preis_intern']. '</td><td>'.$row['preis_extern']. '</td></tr>';
+              while ($row['Allergen'] !== NULL) {
+                  array_push($allergenList, $row['Allergen'].explode(','));
+              }
+          }
+
+          mysqli_free_result($result);
+          mysqli_close($link);
+          ?>
       </table>
         <!-- karte ende -->
         <!-- Liste der Allergene -->
+        <table class="speisen-table">
+            <tr>
+                <th class="speisen-td-th speisen-th">Allergencode</th>
+                <th class="speisen-td-th speisen-th">Name</th>
+            </tr>
         <?php
+        $allergenList = array_unique($allergenList);
         $link = mysqli_connect("localhost", // Host der Datenbank
             "root",                 // Benutzername zur Anmeldung
             "",    // Passwort
@@ -132,22 +168,24 @@ GROUP BY gericht.name LIMIT 5;";
             exit();
         }
 
-        $sql = "SELECT code, name AS 'allergenname' FROM allergen";
+        $sql = "SELECT code, name AS 'allergenname' FROM allergen ORDER BY code asc";
 
         $result = mysqli_query($link, $sql);
         if (!$result) {
             echo "Fehler während der Abfrage:  ", mysqli_error($link);
             exit();
         }
-        echo '<table><tr><th>Allergen</th><th>Code</th></tr>';
+
         while ($row = mysqli_fetch_assoc($result)) {
-            echo '<tr><td>'.$row['allergenname'].'</td><td>'.$row['code']. '</td></tr>';
+            if (in_array($row['code'],$allergenList)) {
+                echo '<tr><td><sub><b>'.$row['Allergen'].'</b></sub></td><td>'.$row['allergenname']. '</td></tr>';
+            }
         }
-        echo '</table>';
 
         mysqli_free_result($result);
         mysqli_close($link);
         ?>
+        </table>
       <!-- karte ende -->
     </div>
   </div>
