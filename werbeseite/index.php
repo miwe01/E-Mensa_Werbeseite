@@ -206,6 +206,19 @@ $_SESSION['besuche']++;
         $line = fgets($file, 1024);
     }
     fclose($file);
+
+    $file = fopen('v_gerichte.txt', 'r');
+
+    if(!$file)
+        die("Unable to open");
+
+    while(!feof($file)) {
+        $pfad = 'img/';
+        $anzahlspeisen++;
+        $line = fgets($file, 1024);
+    }
+    fclose($file);
+
     $file = fopen('data.txt', 'r');
     $anzahlanmeldungen = 0;
     if(!$file)
