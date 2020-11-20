@@ -151,16 +151,20 @@
             while(!feof($file)){
                 $line = fgets($file, 1024);
                 $array = explode(';',$line);
-                $name[$array[0]] = $array[1];
+                $name[$array[0]] = $array;
             }
 
-            echo '<th>Vorname</th><th>Nachname</th>';
+            printTableHeader();
 
             // checkt ob Übereinstimmung. Wenn ja dann gib aus.
             foreach($name as $key=>$value){
-                $check = stripos($key, $_GET["textfeld"]);
-                if (is_numeric($check)){
-                    echo '<tr><td>' . $key. '</td><td>'. $value. '</td></tr>';
+                $checkVorname = stripos($key, $_GET["textfeld"]);
+                $checkNachname = stripos($value[1], $_GET["textfeld"]);
+                if (is_numeric($checkVorname) || is_numeric($checkNachname)){
+                    echo '<tr>';
+                    for ($i=0;$i<count($value);$i++)
+                     echo '<td>' . $value[$i] . '</td>';
+                    echo '</tr>';
                 }
             }
         }
