@@ -91,9 +91,7 @@ $_SESSION['besuche']++;
           }
           while ($row = mysqli_fetch_assoc($result)) {
               echo '<tr><td>'.$row['name'].'<sub><b>'.$row['Allergen'].'</b></sub></td><td>'.$row['preis_intern']. '</td><td>'.$row['preis_extern']. '</td></tr>';
-              while ($row['Allergen'] !== NULL) {
-                  array_push($allergenList, $row['Allergen'].explode(','));
-              }
+              array_merge($allergenList,$row['Allergen'].explode(','));
           }
 
           mysqli_free_result($result);
@@ -138,9 +136,7 @@ $_SESSION['besuche']++;
           }
           while ($row = mysqli_fetch_assoc($result)) {
               echo '<tr><td>'.$row['name'].'<sub><b>'.$row['Allergen'].'</b></sub></td><td>'.$row['preis_intern']. '</td><td>'.$row['preis_extern']. '</td></tr>';
-              while ($row['Allergen'] !== NULL) {
-                  array_push($allergenList, $row['Allergen'].explode(','));
-              }
+              array_merge($allergenList,$row['Allergen'].explode(','));
           }
 
           mysqli_free_result($result);
