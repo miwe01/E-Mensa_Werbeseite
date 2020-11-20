@@ -157,9 +157,9 @@ header{
 /* end mensa section */
 
 /*
-=====================
-5.1 Speisekarte
-=====================
+=================================
+5.1 Speisekarte und Allergenliste
+=================================
  */
 #speise-wrapper{
     background-color: #eff9f8;
@@ -173,10 +173,6 @@ header{
   width: 100%;
   padding: 5px 125px 40px 125px;
 }
-/* erster table unterer abstand (speisekarte) */
-.speisen-table:first-of-type{
-  margin-bottom: 50px;
-}
 
 .speisen-table{
   border-collapse: collapse;
@@ -184,6 +180,7 @@ header{
   width: 100%;
   max-width: 900PX;
   border: 2px solid black;
+  margin-bottom: 50px;
 }
 /* alle Zellen in Speisekarte*/
 .speisen-td-th{
@@ -207,6 +204,8 @@ header{
   padding: 4px 7px 4px 7px;
 /*background-color: #00AA9E; */
   font-size: 18px;
+  width: 50%;
+
 }
 /* nicht die erste td Spalte */
 .speisen-td:not(:first-child){
@@ -214,9 +213,6 @@ header{
 /*  background-color: #00B5AD; */
 
   font-size: 17px;
-}
-.speisen-td:first-child{
-  width: 50%;
 }
 
 .gericht-img{
@@ -232,6 +228,46 @@ header{
 }
 
 .speisen-table tr:nth-child(odd) {
+  background-color: #F2F2F2;
+  color: black;
+}
+
+.allergen-table{
+  border-collapse: collapse;
+  margin-left: 8px;
+  width: 25%;
+  max-width: 900PX;
+  border: 2px solid black;
+}
+
+/* alle Zellen in Allergenliste*/
+.allergen-td-th{
+  text-align: left;
+  border: 2px dotted #546664;
+  padding: 15px 10px;
+}
+/* th in Allergenliste*/
+.allergen-th{
+  padding: 4px 5px 4px 5px;
+  background-color: #00B5AD;
+  color: white;
+  font-size: 19px;
+}
+
+/* die erste td Spalte */
+.allergen-td:first-child{
+  padding: 4px 7px 4px 7px;
+  /*background-color: #00AA9E; */
+  font-size: 18px;
+}
+
+.allergen-table tr:nth-child(even) {
+  background-color: white;
+  color: black;
+  width: 40%;
+}
+
+.allergen-table tr:nth-child(odd) {
   background-color: #F2F2F2;
   color: black;
 }

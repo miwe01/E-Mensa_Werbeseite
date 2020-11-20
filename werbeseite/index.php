@@ -62,6 +62,7 @@ $_SESSION['besuche']++;
           <th class="speisen-td-th speisen-th">Preis extern</th>
         </tr>
           <?php
+          //Speisen aus der Datenbank holen
           $allergenList = array();
 
           $link = mysqli_connect("localhost", // Host der Datenbank
@@ -91,7 +92,7 @@ $_SESSION['besuche']++;
           }
           while ($row = mysqli_fetch_assoc($result)) {
               echo '<tr><td>'.$row['name'].'<sub><b>'.$row['Allergen'].'</b></sub></td><td>'.$row['preis_intern']. '</td><td>'.$row['preis_extern']. '</td></tr>';
-              array_merge($allergenList,explode(',',$row['Allergen']));
+              $allergenList = array_merge($allergenList,explode(',',$row['Allergen']));
           }
 
           mysqli_free_result($result);
@@ -108,6 +109,7 @@ $_SESSION['besuche']++;
           <th class="speisen-td-th speisen-th">Preis extern</th>
         </tr>
           <?php
+          //Vegetarische Speisen aus der Datenbank holen
           $link = mysqli_connect("localhost", // Host der Datenbank
               "root",                 // Benutzername zur Anmeldung
               "",    // Passwort
@@ -136,7 +138,7 @@ $_SESSION['besuche']++;
           }
           while ($row = mysqli_fetch_assoc($result)) {
               echo '<tr><td>'.$row['name'].'<sub><b>'.$row['Allergen'].'</b></sub></td><td>'.$row['preis_intern']. '</td><td>'.$row['preis_extern']. '</td></tr>';
-              array_merge($allergenList,explode(',',$row['Allergen']));
+              $allergenList = array_merge($allergenList,explode(',',$row['Allergen']));
           }
 
           mysqli_free_result($result);
@@ -145,13 +147,16 @@ $_SESSION['besuche']++;
       </table>
         <!-- karte ende -->
         <!-- Liste der Allergene -->
-        <table class="speisen-table">
+        <h3>Liste der vorhandenen Allergene</h3>
+        <table class="allergen-table">
             <tr>
-                <th class="speisen-td-th speisen-th">Allergencode</th>
-                <th class="speisen-td-th speisen-th">Name</th>
+                <th class="allergen-td-th allergen-th">Code</th>
+                <th class="allergen-td-th allergen-th">Name</th>
             </tr>
         <?php
-        $allergenList = array_unique($allergenList);
+        //Allergenliste aus der Datenbank holen aund vergleichen welche vorgekommen sind
+        $allergenList = array_unique($allergenList); //Duplikate entfernen
+
         $link = mysqli_connect("localhost", // Host der Datenbank
             "root",                 // Benutzername zur Anmeldung
             "",    // Passwort
@@ -174,7 +179,7 @@ $_SESSION['besuche']++;
 
         while ($row = mysqli_fetch_assoc($result)) {
             if (in_array($row['code'],$allergenList)) {
-                echo '<tr><td><sub><b>'.$row['Allergen'].'</b></sub></td><td>'.$row['allergenname']. '</td></tr>';
+                echo '<tr><td><sub><b>'.$row['code'].'</b></sub></td><td>'.$row['allergenname']. '</td></tr>';
             }
         }
 
