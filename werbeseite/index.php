@@ -1,3 +1,8 @@
+<?php
+session_start();
+$_SESSION['besuche']++;
+
+?>
 <!DOCTYPE html>
 <!--
 - Praktikum DBWT. Autoren:
@@ -50,38 +55,49 @@
       <h2 id="speisen">Köstlichkeiten, die Sie erwarten</h2>
       <h3>Nicht vegetarische Speisen</h3>
       <!-- nicht vegetarische Karte -->
-
-
       <table class="speisen-table">
         <tr>
           <th class="speisen-td-th speisen-th">Speise</th>
-            <th class="speisen-td-th speisen-th">Bild</th>
           <th class="speisen-td-th speisen-th">Preis intern</th>
           <th class="speisen-td-th speisen-th">Preis extern</th>
         </tr>
           <?php
-          /**
-           * Praktikum DBWT. Autoren:
-           * Mika, Weber, 3252173
-           * Ben, Loos, 3207009
-           */
+          //Speisen aus der Datenbank holen
+          $allergenList = array();
 
-          $file = fopen('gerichte.txt', 'r');
+          $link = mysqli_connect("localhost", // Host der Datenbank
+              "root",                 // Benutzername zur Anmeldung
+              "",    // Passwort
+              "emensawerbeseite",     // Auswahl der Datenbanken (bzw. des Schemas)
+              3306// optional port der Datenbank
+          );
 
-          if(!$file)
-              die("Unable to open");
-
-          while(!feof($file)) {
-              $pfad = 'img/';
-
-              $line = fgets($file, 1024);
-              $array = explode(';',$line);
-              echo '<tr><td class="speisen-td-th speisen-td">' . $array[0] . '</td><td class="speisen-td-th speisen-td"> <img class="gericht-img" src="' . $pfad . $array[1] . '" alt="gericht"> </td>  <td class="speisen-td-th speisen-td">' . $array[2] . '</td><td class="speisen-td-th speisen-td">'. $array[3] .'</td></tr>';
+          if (!$link) {
+              echo "Verbindung fehlgeschlagen: ", mysqli_connect_error();
+              exit();
           }
-          fclose($file);
 
+          $sql = "SELECT gericht.name,  Group_Concat(allergen.code) AS 'Allergen', gericht.preis_intern, gericht.preis_extern
+          FROM gericht
+          LEFT JOIN gericht_hat_allergen
+          ON gericht.id = gericht_hat_allergen.gericht_id
+          LEFT JOIN allergen
+          ON gericht_hat_allergen.code = allergen.code
+          GROUP BY gericht.name LIMIT 5;";
+
+          $result = mysqli_query($link, $sql);
+          if (!$result) {
+              echo "Fehler während der Abfrage:  ", mysqli_error($link);
+              exit();
+          }
+          while ($row = mysqli_fetch_assoc($result)) {
+              echo '<tr><td>'.$row['name'].'<sub><b>'.$row['Allergen'].'</b></sub></td><td>'.$row['preis_intern']. '</td><td>'.$row['preis_extern']. '</td></tr>';
+              $allergenList = array_merge($allergenList,explode(',',$row['Allergen']));
+          }
+
+          mysqli_free_result($result);
+          mysqli_close($link);
           ?>
-
       </table>
       <!-- karte ende -->
       <!-- vegetarische Karte -->
@@ -89,33 +105,137 @@
       <table class="speisen-table">
         <tr>
           <th class="speisen-td-th speisen-th">Speise</th>
-            <th class="speisen-td-th speisen-th">Bild</th>
           <th class="speisen-td-th speisen-th">Preis intern</th>
           <th class="speisen-td-th speisen-th">Preis extern</th>
         </tr>
           <?php
+          //Vegetarische Speisen aus der Datenbank holen
+          $link = mysqli_connect("localhost", // Host der Datenbank
+              "root",                 // Benutzername zur Anmeldung
+              "",    // Passwort
+              "emensawerbeseite",     // Auswahl der Datenbanken (bzw. des Schemas)
+              3306// optional port der Datenbank
+          );
 
-
-          $file = fopen('v_gerichte.txt', 'r');
-
-          if(!$file)
-              die("Unable to open");
-
-          while(!feof($file)) {
-              $line = fgets($file, 1024);
-              $array = explode(';',$line);
-              echo '<tr><td class="speisen-td-th speisen-td">' . $array[0] . '</td><td class="speisen-td-th speisen-td"> <img class="gericht-img" src="' . $pfad . $array[1] . '" alt="gericht"> </td>  <td class="speisen-td-th speisen-td">' . $array[2] . '</td><td class="speisen-td-th speisen-td">'. $array[3] .'</td></tr>';
+          if (!$link) {
+              echo "Verbindung fehlgeschlagen: ", mysqli_connect_error();
+              exit();
           }
-          fclose($file);
 
+          $sql = "SELECT gericht.name, Group_Concat(allergen.code) AS 'Allergen', gericht.preis_intern, gericht.preis_extern
+          FROM gericht
+          LEFT JOIN gericht_hat_allergen
+          ON gericht.id = gericht_hat_allergen.gericht_id
+          LEFT JOIN allergen
+          ON gericht_hat_allergen.code = allergen.code
+          WHERE gericht.vegetarisch = 1
+          GROUP BY gericht.name LIMIT 5;";
+
+          $result = mysqli_query($link, $sql);
+          if (!$result) {
+              echo "Fehler während der Abfrage:  ", mysqli_error($link);
+              exit();
+          }
+          while ($row = mysqli_fetch_assoc($result)) {
+              echo '<tr><td>'.$row['name'].'<sub><b>'.$row['Allergen'].'</b></sub></td><td>'.$row['preis_intern']. '</td><td>'.$row['preis_extern']. '</td></tr>';
+              $allergenList = array_merge($allergenList,explode(',',$row['Allergen']));
+          }
+
+          mysqli_free_result($result);
+          mysqli_close($link);
           ?>
       </table>
+        <!-- karte ende -->
+        <!-- Liste der Allergene -->
+        <h3>Liste der vorhandenen Allergene</h3>
+        <table class="allergen-table">
+            <tr>
+                <th class="allergen-td-th allergen-th">Code</th>
+                <th class="allergen-td-th allergen-th">Name</th>
+            </tr>
+        <?php
+        //Allergenliste aus der Datenbank holen aund vergleichen welche vorgekommen sind
+        $allergenList = array_unique($allergenList); //Duplikate entfernen
+
+        $link = mysqli_connect("localhost", // Host der Datenbank
+            "root",                 // Benutzername zur Anmeldung
+            "",    // Passwort
+            "emensawerbeseite",     // Auswahl der Datenbanken (bzw. des Schemas)
+            3306// optional port der Datenbank
+        );
+
+        if (!$link) {
+            echo "Verbindung fehlgeschlagen: ", mysqli_connect_error();
+            exit();
+        }
+
+        $sql = "SELECT code, name AS 'allergenname' FROM allergen ORDER BY code asc";
+
+        $result = mysqli_query($link, $sql);
+        if (!$result) {
+            echo "Fehler während der Abfrage:  ", mysqli_error($link);
+            exit();
+        }
+
+        while ($row = mysqli_fetch_assoc($result)) {
+            if (in_array($row['code'],$allergenList)) {
+                echo '<tr><td><sub><b>'.$row['code'].'</b></sub></td><td>'.$row['allergenname']. '</td></tr>';
+            }
+        }
+
+        mysqli_free_result($result);
+        mysqli_close($link);
+        ?>
+        </table>
       <!-- karte ende -->
     </div>
   </div>
   <!-- end speise -->
 
     <!-- start Zahlen -->
+    <?php
+    $anzahlspeisen = 0;
+    $file = fopen('gerichte.txt', 'r');
+
+    if(!$file)
+        die("Unable to open");
+
+    while(!feof($file)) {
+        $pfad = 'img/';
+        $anzahlspeisen++;
+        $line = fgets($file, 1024);
+    }
+    fclose($file);
+
+    $file = fopen('v_gerichte.txt', 'r');
+
+    if(!$file)
+        die("Unable to open");
+
+    while(!feof($file)) {
+        $pfad = 'img/';
+        $anzahlspeisen++;
+        $line = fgets($file, 1024);
+    }
+    fclose($file);
+
+    $file = fopen('data.txt', 'r');
+    $anzahlanmeldungen = 0;
+    if(!$file)
+        die("Unable to open");
+
+
+    while(!feof($file)) {
+        $anzahlanmeldungen++;
+        $line = fgets($file, 1024);
+    }
+    fclose($file);
+        $zahlen = [
+            'besuche' => $_SESSION['besuche'],
+            'anmeldungen' => $anzahlanmeldungen,
+            'speisen' => $anzahlspeisen
+        ]
+    ?>
     <section id="zahlen-section">
       <h2 id="zahlen">E-Mensa in Zahlen</h2>
       <p id="zahlen-text">Dieses Jahr hat die E-Mensa folgende Zahlen erreicht:</p>
@@ -123,21 +243,21 @@
       <div id="stats">
         <div class="container">
           <div class="zahl-container">
-            <span class="span-zahlen">X</span>
+            <span class="span-zahlen"><?php echo $zahlen['besuche'] ?></span>
           </div>
           <p class="zahlen-p">Besuche jeden Tag</p>
         </div>
 
         <div class="container">
           <div class="zahl-container">
-            <span class="span-zahlen">Y</span>
+            <span class="span-zahlen"><?php echo $zahlen['anmeldungen'] ?></span>
           </div>
           <p class="zahlen-p">Anmeldungen für Newsletter</p>
         </div>
 
         <div class="container">
           <div class="zahl-container">
-            <span class="span-zahlen">Z</span>
+            <span class="span-zahlen"><?php echo $zahlen['speisen'] ?></span>
           </div>
           <p class="zahlen-p">Servierte Speisen</p>
         </div>
@@ -157,7 +277,7 @@
 
   <!-- start Newsletter -->
   <div id="newsletter-wrapper">
-    <form class="form-Newsletter" action="index.php" method="post">
+    <form class="form-Newsletter" action="index.php#newsletter-wrapper" method="post">
       <h2 id="newsletter">Newsletter</h2>
       <table>
         <!-- erste Reihe -->
@@ -172,10 +292,10 @@
         <!-- zweite Reihe -->
         <tr>
           <td>
-            <input type="text" id="vorname" name="vorname" required>
+            <input type="text" id="nachname" name="nachname" required>
           </td>
           <td>
-            <input type="text" id="nachname" name="nachname" required>
+            <input type="text" id="vorname" name="vorname" required>
           </td>
         </tr>
         <!-- dritte Reihe -->
@@ -216,14 +336,17 @@
         <tr>
           <td>
             <input type="submit" value="Bestätigen" name="bestaetigen">
+            <input type="reset" value="Reset" name="reset">
+          </td>
+          <td>
               <?php
 
               function is_temp_mail($mail) {
                   $mail_domains_ko = array('rcpt.at','damnthespam.at','wegwerfmail.de');
 
                   foreach($mail_domains_ko as $ko_mail) {
-                      list(,$mail_domain) = explode('@',$mail);
-                      if(strcasecmp($mail_domain, $ko_mail) == 0){
+                      list($mail_domain) = explode('@',$mail);
+                      if(stripos($mail_domain, $ko_mail) == true){
                           return true;
                       }
                   }
@@ -234,27 +357,34 @@
               }
 
               if(isset($_POST['check']) && isset($_POST['bestaetigen'])) {
-                      $newsFile = fopen('data.txt','w');
+                  $newsFile = fopen('data.txt','a');
 
-                      if (!$newsFile)
-                          die("Unable to open");
+                  if (!$newsFile)
+                      die("Unable to open");
 
-                      $nachname = filter_var($_POST['nachname'],FILTER_SANITIZE_STRING);
-                      $vorname = filter_var($_POST['vorname'],FILTER_SANITIZE_STRING);
-                      $email = filter_var($_POST['email'],FILTER_SANITIZE_EMAIL);
-                      if (preg_match('/[\'‎^£$%&*()}{@#~?><,|=_+¬-]/', $vorname) || preg_match('/[\'‎^£$%&*()}{@#~?><,|=_+¬-]/', $nachname) || is_temp_mail($email))
-                          die("Invalid input");
-
-                      $sprache = $_POST['sprache'];
-
+                  $sprache = $_POST['sprache'];
+                  $nachname = filter_var($_POST['nachname'],FILTER_SANITIZE_STRING);
+                  $vorname = filter_var($_POST['vorname'],FILTER_SANITIZE_STRING);
+                  $email = filter_var($_POST['email'],FILTER_VALIDATE_EMAIL);
+                  list($mail_domain) = explode('@',$email);
+                  if(stripos($mail_domain, ".") == false)
+                      echo "Mail Adresse benötigt Top Level Domain";
+                  elseif (preg_match('/[\' ‎^£$%&*()}{@#~?><,|=_+¬-]/', $vorname))
+                      echo "Ungültige Eingabe bei: Vorname.";
+                  elseif (preg_match('/[\' ‎^£$%&*()}{@#~?><,|=_+¬-]/', $nachname))
+                      echo "Ungültige Eingabe bei: Nachname.";
+                  elseif (is_temp_mail($email))
+                      echo "Wegwerf-Mailadressen werden nicht akzeptiert.";
+                  else {
                       $newsData = "$nachname;$vorname;$email;$sprache\n";
-                      fwrite($newsFile,$newsData);
+                      fwrite($newsFile, $newsData);
                       fclose($newsFile);
                   }
+                  $sprache = null;
+
+              }
               ?>
-            <input type="reset" value="Reset" name="reset">
           </td>
-          <td></td>
         </tr>
       </table>
     </form>

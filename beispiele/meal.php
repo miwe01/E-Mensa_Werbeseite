@@ -61,15 +61,21 @@ $words = [
         'en' => 'Filter'],
     'search' => ['de' => 'Suchen',
         'en' => 'Search'],
+    'submit' => ['de' => 'Abschicken',
+        'en' => 'Submit'],
     'text' => ['de' => 'Text',
         'en' => 'Text'],
+    'show_desc' => ['de' => 'Beschreibung anzeigen',
+        'en' => 'Show description'],
+    'lang' => ['de' => 'Sprache',
+        'en' => 'Language'],
     'author' => ['de' => 'Author',
         'en' => 'Author'],
     'stars' => ['de' => 'Sterne',
         'en' => 'Stars']
 ];
 
-function setLanguage($word, $words) : void {
+function setLanguage($word, $words){
     if (isset($_GET[GET_PARAM_LANGUAGE])) {
         echo $words[$word][$_GET[GET_PARAM_LANGUAGE]];
     } else echo $words[$word]['de'];
@@ -152,7 +158,7 @@ function calcMeanStars($ratings) { // : float gibt an, dass der Rückgabewert vo
     echo number_format($meal['price_intern'],2);?>&euro;</p>
 <p><?php
     if (isset($_GET[GET_PARAM_SHOW_DESCRIPTION])){
-        if($_GET[GET_PARAM_SHOW_DESCRIPTION] == true) {
+        if($_GET[GET_PARAM_SHOW_DESCRIPTION] == "true") {
             echo $meal['description'];
         }
     }
@@ -194,11 +200,19 @@ function calcMeanStars($ratings) { // : float gibt an, dass der Rückgabewert vo
     ?>
     </tbody>
 </table>
-<form method="get">
-    <input id="language" name="language" type="hidden">
-</form>
-<form method="get">
-    <input id="show_description" name="show_description" type="hidden">
-</form>
+<br>
+<div>
+    <form method="get">
+        <label for="language"><?php setLanguage('lang',$words); ?>: </label>
+        <input type="radio" id="langde" name="language" value="de" required>Deutsch
+        <input type="radio" id="langen" name="language" value="en">English
+        <br>
+        <label for="show_description"><?php setLanguage('show_desc',$words); ?>? </label>
+        <input type="radio" id="descyes" name="show_description" value="true" required>Yes
+        <input type="radio" id="descno" name="show_description" value="false" >No
+        <br>
+        <input type="submit" value="<?php setLanguage('submit',$words); ?>">
+    </form>
+</div>
 </body>
 </html>

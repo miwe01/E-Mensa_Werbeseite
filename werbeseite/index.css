@@ -1,4 +1,24 @@
-/* start all tags */
+/* Table of contents
+==========================
+1. General Styling
+2. Sections Styling
+3. Gradients for sections
+4. Header
+5. Mensa section
+ 5.1 Speisekarte und Allergenliste
+6. Zahlen section
+7. Wichtig section
+8. Newsletter
+9. Footer
+==========================
+*/
+
+/*
+=====================
+1. General Styling
+=====================
+ */
+
 *{
   font-family: sans-serif;
   box-sizing: border-box;
@@ -41,10 +61,14 @@ li{
 input, select{
   background-color: white;
 }
+/* end general tags */
 
-/* end all tags */
+/*
+=====================
+2. Section Styling
+=====================
+ */
 
-/* start sections */
 #mensa-section, #speise-wrapper, #newsletter-wrapper, #zahlen-section, header, footer{
   width: 75%;
   margin: 2px auto;
@@ -58,7 +82,11 @@ section, footer{
 /* end sections */
 
 
-/* start gradient */
+/*
+==========================
+3. Gradients for sections
+==========================
+ */
 
 #mensa-section{
   background: rgb(255,255,255);
@@ -73,11 +101,14 @@ footer{
   background: rgb(255,255,255);
   background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgb(239, 249, 248) 100%);
 }
-
 /* end gradient */
 
+/*
+=====================
+4. Header
+=====================
+ */
 
-/* start Header */
 header{
   display: flex;
   align-items: flex-end;
@@ -101,7 +132,11 @@ header{
 /* end header */
 
 
-/* start Mensa section */
+/*
+=====================
+5. Mensa section
+=====================
+ */
 
 #mensa{
   margin-left: 8px;
@@ -121,7 +156,11 @@ header{
 }
 /* end mensa section */
 
-/* start speise section */
+/*
+=================================
+5.1 Speisekarte und Allergenliste
+=================================
+ */
 #speise-wrapper{
     background-color: #eff9f8;
 }
@@ -129,13 +168,10 @@ header{
   margin-bottom: 13px;
 }
 /* start table */
+
 #speisekarte{
   width: 100%;
   padding: 5px 125px 40px 125px;
-}
-/* erster table unterer abstand (speisekarte) */
-.speisen-table:first-of-type{
-  margin-bottom: 50px;
 }
 
 .speisen-table{
@@ -144,6 +180,7 @@ header{
   width: 100%;
   max-width: 900PX;
   border: 2px solid black;
+  margin-bottom: 50px;
 }
 /* alle Zellen in Speisekarte*/
 .speisen-td-th{
@@ -167,6 +204,8 @@ header{
   padding: 4px 7px 4px 7px;
 /*background-color: #00AA9E; */
   font-size: 18px;
+  width: 50%;
+
 }
 /* nicht die erste td Spalte */
 .speisen-td:not(:first-child){
@@ -174,9 +213,6 @@ header{
 /*  background-color: #00B5AD; */
 
   font-size: 17px;
-}
-.speisen-td:first-child{
-  width: 50%;
 }
 
 .gericht-img{
@@ -195,10 +231,58 @@ header{
   background-color: #F2F2F2;
   color: black;
 }
+
+.allergen-table{
+  border-collapse: collapse;
+  margin-left: 8px;
+  width: 25%;
+  max-width: 900PX;
+  border: 2px solid black;
+}
+
+/* alle Zellen in Allergenliste*/
+.allergen-td-th{
+  text-align: left;
+  border: 2px dotted #546664;
+  padding: 15px 10px;
+}
+/* th in Allergenliste*/
+.allergen-th{
+  padding: 4px 5px 4px 5px;
+  background-color: #00B5AD;
+  color: white;
+  font-size: 19px;
+}
+
+/* die erste td Spalte */
+.allergen-td:first-child{
+  padding: 4px 7px 4px 7px;
+  /*background-color: #00AA9E; */
+  font-size: 18px;
+}
+
+.allergen-table tr:nth-child(even) {
+  background-color: white;
+  color: black;
+  width: 40%;
+}
+
+.allergen-table tr:nth-child(odd) {
+  background-color: #F2F2F2;
+  color: black;
+}
+
+sub{
+  color: darkred;
+}
 /* end speise section */
 
+/*
+=====================
+6. Zahlen section
+=====================
+ */
 
-/* start zahlen section */
 #zahlen-text{
   padding-left: 8px;
 }
@@ -261,8 +345,13 @@ header{
   75% { color: yellow; }
   100% {color: green; }
 }
+/* end zahlen  section*/
 
-/* start wichtig */
+/*
+=====================
+7. Wichtig section
+=====================
+ */
 #wichtig-ul{
   padding-left: 8px;
   margin-bottom: 35px;
@@ -277,10 +366,15 @@ header{
   color: #00B5AD;
 }
 /* end wichtig */
-/* end zahlen  section*/
 
 
-/* start newsletter section */
+
+/*
+=====================
+8. Newsletter
+=====================
+ */
+
 #newsletter-wrapper{
     background-color: #eff9f8;
 }
@@ -331,7 +425,7 @@ select:focus, select:active, select:hover{
   outline: #00B5AD auto 5px;
 }
 
-input[type="submit"], input[type="r eset"]{
+input[type="submit"], input[type="reset"]{
   font-size: 16px;
   height: 30px;
   margin-right: 8px;
@@ -369,7 +463,11 @@ input:hover, select:hover{
 /* end newsletter  section*/
 
 
-/* start footer */
+/*
+=====================
+9. Footer
+=====================
+ */
 footer{
 }
 

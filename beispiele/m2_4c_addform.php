@@ -35,5 +35,5 @@ include_once("m2_4a_standardparameter.php");
 <form action="m2_4c_addform.php" method="get">
     <label for="ersteZahl">Erste Zahl:<input type="text" placeholder="Erste Zahl" name="ersteZahl"> </label><br>
     <label for="zweiteZahl">Zweite Zahl:<input type="text" placeholder="Zweite Zahl" name="zweiteZahl"></label><br>
-    <input type="submit" value="Senden" name="addieren"> <input type="submit" value="Senden" name="multiplizieren">
+    <input type="submit" value="Addieren" name="addieren"> <input type="submit" value="Multiplizieren" name="multiplizieren">
 </form>

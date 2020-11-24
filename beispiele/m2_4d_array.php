@@ -5,6 +5,7 @@
  * Ben, Loos, 3207009
  */
 echo 'a)<br>';
+// a)
 $famousMeal = [
     1 => ['name' => 'Currywurst mit Pommes',
         'winner' => [2001, 2003, 2007, 2010, 2020]],
@@ -20,10 +21,7 @@ foreach($famousMeal as $key=>$value){
     // print_r($value);
 
     echo  $counter . ". <span style='margin-left: 8px'>". $value['name'] . "</span>";
-    // print_r($value['winner']);
-    //echo count($value['winner']);
 
-    //echo $value['winner'][0];
     if (is_array($value['winner']))
     {
         echo "<p style='margin: 0 0 3px 25px'>";
