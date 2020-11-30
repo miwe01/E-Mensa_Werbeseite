@@ -66,14 +66,14 @@ $_SESSION['besuche']++;
           $allergenList = array();
 
           $link = mysqli_connect("localhost", // Host der Datenbank
-              "root",                 // Benutzername zur Anmeldung
-              "",    // Passwort
+              "Selector",                 // Benutzername zur Anmeldung
+              "test..123",    // Passwort
               "emensawerbeseite",     // Auswahl der Datenbanken (bzw. des Schemas)
               3306// optional port der Datenbank
           );
 
           if (!$link) {
-              echo "Verbindung fehlgeschlagen: ", mysqli_connect_error();
+              echo "Error";
               exit();
           }
 
@@ -87,14 +87,13 @@ $_SESSION['besuche']++;
 
           $result = mysqli_query($link, $sql);
           if (!$result) {
-              echo "Fehler während der Abfrage:  ", mysqli_error($link);
+              echo "Error";
               exit();
           }
           while ($row = mysqli_fetch_assoc($result)) {
               echo '<tr><td>'.$row['name'].'<sub><b>'.$row['Allergen'].'</b></sub></td><td>'.$row['preis_intern']. '</td><td>'.$row['preis_extern']. '</td></tr>';
               $allergenList = array_merge($allergenList,explode(',',$row['Allergen']));
           }
-
           mysqli_free_result($result);
           mysqli_close($link);
           ?>
@@ -112,13 +111,13 @@ $_SESSION['besuche']++;
           //Vegetarische Speisen aus der Datenbank holen
           $link = mysqli_connect("localhost", // Host der Datenbank
               "root",                 // Benutzername zur Anmeldung
-              "",    // Passwort
+              "test..123",    // Passwort
               "emensawerbeseite",     // Auswahl der Datenbanken (bzw. des Schemas)
               3306// optional port der Datenbank
           );
 
           if (!$link) {
-              echo "Verbindung fehlgeschlagen: ", mysqli_connect_error();
+              echo "Error";
               exit();
           }
 
@@ -133,7 +132,7 @@ $_SESSION['besuche']++;
 
           $result = mysqli_query($link, $sql);
           if (!$result) {
-              echo "Fehler während der Abfrage:  ", mysqli_error($link);
+              echo "Error";
               exit();
           }
           while ($row = mysqli_fetch_assoc($result)) {
@@ -165,7 +164,7 @@ $_SESSION['besuche']++;
         );
 
         if (!$link) {
-            echo "Verbindung fehlgeschlagen: ", mysqli_connect_error();
+            echo "Error";
             exit();
         }
 
@@ -173,7 +172,7 @@ $_SESSION['besuche']++;
 
         $result = mysqli_query($link, $sql);
         if (!$result) {
-            echo "Fehler während der Abfrage:  ", mysqli_error($link);
+            echo "Error";
             exit();
         }
 
