@@ -1,0 +1,6 @@
+{
+    "name": "emensa/mvc",
+    "require": {
+        "eftec/bladeone": "^3.47"
+    }
+}

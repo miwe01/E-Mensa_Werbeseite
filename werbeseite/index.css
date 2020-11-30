@@ -275,6 +275,11 @@ header{
 sub{
   color: darkred;
 }
+
+a > h3:hover{
+  transition: 0.5s;
+  color: #00B5AD;
+}
 /* end speise section */
 
 /*

@@ -188,6 +188,50 @@ $_SESSION['besuche']++;
         ?>
         </table>
       <!-- karte ende -->
+        <!-- Liste der ältesten 5 Wunschgerichte -->
+        <h3>Wunschgerichte</h3>
+        <table class="speisen-table">
+            <tr>
+                <th class="speisen-td-th speisen-th">Speise</th>
+                <th class="speisen-td-th speisen-th">Beschreibung</th>
+                <th class="speisen-td-th speisen-th">Ersteller</th>
+            </tr>
+            <?php
+            //5 Wunschgerichte abrufen
+            $link = mysqli_connect("localhost", // Host der Datenbank
+                "root",                 // Benutzername zur Anmeldung
+                "",    // Passwort
+                "emensawerbeseite",     // Auswahl der Datenbanken (bzw. des Schemas)
+                3306// optional port der Datenbank
+            );
+
+            if (!$link) {
+                echo "Verbindung fehlgeschlagen: ", mysqli_connect_error();
+                exit();
+            }
+
+            $sql = "SELECT wunschgericht.name AS 'wunschgericht', wunschgericht.beschreibung AS 'beschreibung', wunschgericht.erstellungsdatum, ersteller.name AS 'ersteller'
+            FROM wunschgericht 
+            JOIN ersteller
+            ON wunschgericht.benutzerid = ersteller.benutzerid
+            ORDER BY erstellungsdatum ASC LIMIT 5";
+
+            $result = mysqli_query($link, $sql);
+            if (!$result) {
+                echo "Fehler während der Abfrage:  ", mysqli_error($link);
+                exit();
+            }
+
+            while ($row = mysqli_fetch_assoc($result)) {
+                echo '<tr><td>'.$row['wunschgericht'].'</td><td>'.$row['beschreibung']. '</td><td>'.$row['ersteller'].'</td></tr>';
+            }
+
+            mysqli_free_result($result);
+            mysqli_close($link);
+            ?>
+        </table>
+        <a href="wunschgericht.php"><h3>Ein neues Wunschgericht einschicken</h3></a>
+        <!-- karte ende -->
     </div>
   </div>
   <!-- end speise -->
@@ -250,7 +294,7 @@ $_SESSION['besuche']++;
 
         <div class="container">
           <div class="zahl-container">
-            <span class="span-zahlen"><?php echo $zahlen['anmeldungen'] ?></span>
+            <span class="span-zahlen"><?php echo $zahlen['anmeldungen']-1 ?></span>
           </div>
           <p class="zahlen-p">Anmeldungen für Newsletter</p>
         </div>

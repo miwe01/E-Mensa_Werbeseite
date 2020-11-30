@@ -8,4 +8,5 @@ Josef;Franz;jose@dns.de;Englisch
 Leon;Hirt;lihi@outlook.de;Deutsch
 Jade;Hutoro;jahu@bug.tv;Englisch
 Anna;Maus;anna@deutsche-post.de;Deutsch
-Sarah;Redinger;sarar@kika.de;Englisch
+Sarah;Redinger;sarar@kika.de;EnglischLoos;Ben;ben.loos@alumni.fh-aachen.de;Deutsch
+Loos;Ben;ben.loos@alumni.fh-aachen.de;Deutsch
