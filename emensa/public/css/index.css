@@ -1,0 +1,493 @@
+/* Table of contents
+==========================
+1. General Styling
+2. Sections Styling
+3. Gradients for sections
+4. Header
+5. Mensa section
+ 5.1 Speisekarte und Allergenliste
+6. Zahlen section
+7. Wichtig section
+8. Newsletter
+9. Footer
+==========================
+*/
+
+/*
+=====================
+1. General Styling
+=====================
+ */
+
+*{
+  font-family: sans-serif;
+  box-sizing: border-box;
+}
+body{
+  margin: 0;
+  padding: 0;
+  background-color: lightgray;
+}
+
+a{
+  color: black;
+  text-decoration: none;
+}
+a:hover, #autor1:hover, #autor2:hover{
+  transition: 0.5s;
+  color: #00B5AD;
+}
+h1{
+  color: #0d0d0d;
+  text-shadow: 1px 1px lightgray;
+}
+h2{
+  margin-bottom: 0;
+  color: #1a1a1a;
+  text-shadow: 1px 1px lightgray;
+}
+h3{
+  color: #262626;
+  font-size: 22px;
+  padding-left: 8px;
+}
+hr{
+  margin: 0;
+  background-color: #00B5AD;
+}
+li{
+  list-style-type: none;
+}
+input, select{
+  background-color: white;
+}
+/* end general tags */
+
+/*
+=====================
+2. Section Styling
+=====================
+ */
+
+#mensa-section, #speise-wrapper, #newsletter-wrapper, #zahlen-section, header, footer{
+  width: 75%;
+  margin: 2px auto;
+
+  background-color: white;
+  box-shadow: 1px 1px #a6a6a6;
+}
+section, footer{
+  padding: 5px 125px;
+}
+/* end sections */
+
+
+/*
+==========================
+3. Gradients for sections
+==========================
+ */
+
+#mensa-section{
+  background: rgb(255,255,255);
+  background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgb(239, 249, 248) 100%);
+}
+#zahlen-section{
+  background: rgb(239,249,248);
+  background: linear-gradient(180deg, rgba(239,249,248,1) 0%, rgba(255,255,255,1) 50%, rgba(239,249,248,1) 100%);
+}
+
+footer{
+  background: rgb(255,255,255);
+  background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgb(239, 249, 248) 100%);
+}
+/* end gradient */
+
+/*
+=====================
+4. Header
+=====================
+ */
+
+header{
+  display: flex;
+  align-items: flex-end;
+  padding: 30px 35px 10px 10px;
+}
+#logo{
+
+}
+#ul-nav{
+  display: flex;
+  margin: 0;
+  padding-left: 5px;
+
+}
+#ul-nav li:first-child a{
+  color: #00B5AD;
+}
+#ul-nav li{
+  margin: 0 10px;
+}
+/* end header */
+
+
+/*
+=====================
+5. Mensa section
+=====================
+ */
+
+#mensa{
+  margin-left: 8px;
+  border: 1px solid #00B5AD;
+}
+#ankuendigung-text{
+  margin-top: 13px;
+  margin-bottom: 30px;
+  padding-left: 8px;
+  line-height: 1.35;
+  text-align: justify;
+  max-width: 900px;
+}
+.ankuendigung-span{
+  color: #00B5AD;
+  font-weight: bold;
+}
+/* end mensa section */
+
+/*
+=================================
+5.1 Speisekarte und Allergenliste
+=================================
+ */
+#speise-wrapper{
+    background-color: #eff9f8;
+}
+#speisen{
+  margin-bottom: 13px;
+}
+/* start table */
+
+#speisekarte{
+  width: 100%;
+  padding: 5px 125px 40px 125px;
+}
+
+.speisen-table{
+  border-collapse: collapse;
+  margin-left: 8px;
+  width: 100%;
+  max-width: 900PX;
+  border: 2px solid black;
+  margin-bottom: 50px;
+}
+/* alle Zellen in Speisekarte*/
+.speisen-td-th{
+  text-align: left;
+  border: 2px dotted #546664;
+  padding: 15px 10px;
+}
+/* th in speisekarte*/
+.speisen-th{
+  padding: 4px 5px 4px 5px;
+  background-color: #00B5AD;
+  color: white;
+  font-size: 19px;
+}
+/* die zweite und dritte Spalte rechtsbuendig */
+.speisen-th:not(:first-Child){
+  text-align: right;
+}
+/* die erste td Spalte */
+.speisen-td:first-child{
+  padding: 4px 7px 4px 7px;
+/*background-color: #00AA9E; */
+  font-size: 18px;
+  width: 50%;
+
+}
+/* nicht die erste td Spalte */
+.speisen-td:not(:first-child){
+  text-align: right;
+/*  background-color: #00B5AD; */
+
+  font-size: 17px;
+}
+
+.gericht-img{
+  width: 150px;
+  height: auto;
+  padding: 2px;
+}
+
+.speisen-table tr:nth-child(even) {
+  background-color: white;
+  color: black;
+  width: 40%;
+}
+
+.speisen-table tr:nth-child(odd) {
+  background-color: #F2F2F2;
+  color: black;
+}
+
+.allergen-table{
+  border-collapse: collapse;
+  margin-left: 8px;
+  width: 25%;
+  max-width: 900PX;
+  border: 2px solid black;
+}
+
+/* alle Zellen in Allergenliste*/
+.allergen-td-th{
+  text-align: left;
+  border: 2px dotted #546664;
+  padding: 15px 10px;
+}
+/* th in Allergenliste*/
+.allergen-th{
+  padding: 4px 5px 4px 5px;
+  background-color: #00B5AD;
+  color: white;
+  font-size: 19px;
+}
+
+/* die erste td Spalte */
+.allergen-td:first-child{
+  padding: 4px 7px 4px 7px;
+  /*background-color: #00AA9E; */
+  font-size: 18px;
+}
+
+.allergen-table tr:nth-child(even) {
+  background-color: white;
+  color: black;
+  width: 40%;
+}
+
+.allergen-table tr:nth-child(odd) {
+  background-color: #F2F2F2;
+  color: black;
+}
+
+sub{
+  color: darkred;
+}
+
+a > h3:hover{
+  transition: 0.5s;
+  color: #00B5AD;
+}
+/* end speise section */
+
+/*
+=====================
+6. Zahlen section
+=====================
+ */
+
+#zahlen-text{
+  padding-left: 8px;
+}
+#zahlen-p{
+  color: #262626;
+}
+#stats{
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 8px;
+  text-align: center;
+  margin-bottom: 30px;
+  max-width: 900px;
+    align-items: center;
+
+}
+
+.container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 20px 100px 20px 0;
+  width: 100px;
+  height: 100px;
+}
+.zahl-container{
+
+}
+.zahlen-p{
+  margin: 0;
+}
+
+.span-zahlen{
+  font-weight: bold;
+  font-size: 50px;
+  text-shadow: 1px 1px #00B5AD;
+}
+.zahl-x{
+  color: #00B5AD;
+  text-shadow: 1px 1px black;
+}
+.zahl-y{
+  color: #B50008;
+  text-shadow: 1px 1px black;
+}
+.zahl-z{
+  color: #00B5AD;
+  text-shadow: 1px 1px black;
+}
+
+.span-zahlen:hover{
+  transition: 0.5s;
+  font-size: 70px;
+  -webkit-animation:big 1s linear infinite;
+  -moz-animation:big 1s linear infinite;
+  animation:big 1s linear infinite;
+}
+@keyframes big {
+  50% { color: red; }
+  75% { color: yellow; }
+  100% {color: green; }
+}
+/* end zahlen  section*/
+
+/*
+=====================
+7. Wichtig section
+=====================
+ */
+#wichtig-ul{
+  padding-left: 8px;
+  margin-bottom: 35px;
+}
+.wichtig-li{
+  padding: 3px 2px;
+
+}
+
+.wichtig-li:hover{
+  transition: 0.5s;
+  color: #00B5AD;
+}
+/* end wichtig */
+
+
+
+/*
+=====================
+8. Newsletter
+=====================
+ */
+
+#newsletter-wrapper{
+    background-color: #eff9f8;
+}
+form{
+  padding: 5px 125px 40px 125px;
+
+}
+form table{
+  padding-left: 7px;
+  margin-top: 15px;
+}
+label{
+  display: inline-block;
+  padding-right: 5px;
+  font-size: 13px;
+  color: #000807;
+
+}
+
+label[for="email"]{
+  margin-top: 7px;
+}
+#email{
+  width: 98%;
+  margin-bottom: 7px;
+
+}
+
+input[type="text"], input[type="email"]{
+  padding-left: 5px;
+  margin-right: 8px;
+  height: 28px;
+  font-size: 15px;
+  border: 1px solid #808080;
+}
+
+input[type="text"]:focus, input[type="email"]:focus{
+  border: 1px solid #00B5AD;
+  outline: none;
+}
+label[for="sprache"]{
+  margin-top: 10px;
+}
+select{
+  outline: none;
+}
+select:focus, select:active, select:hover{
+  outline: #00B5AD auto 5px;
+}
+
+input[type="submit"], input[type="reset"]{
+  font-size: 16px;
+  height: 30px;
+  margin-right: 8px;
+  border: 1px solid #00B5AD;
+}
+
+input[type="submit"]:focus, input[type="reset"]:focus{
+  border: 1px solid #00B5AD;
+  transform: translateY(1px);
+  outline: none;
+}
+ #sprach-label{
+   margin-top: 10px;
+ }
+select{
+  width: 384px;
+  font-size: 15px;
+  height: 30px;
+}
+.newsletter-checkbox{
+  display: inline-block;
+  margin-top: 12px;
+  font-size: 15px;
+}
+input[type="checkbox"]{
+  margin-left: 4px;
+  margin-bottom: 30px;
+  transform: scale(1.5);
+  margin-right: 8px;
+  margin-top: 5px;
+}
+input:hover, select:hover{
+  border: 1px solid #007873;
+}
+/* end newsletter  section*/
+
+
+/*
+=====================
+9. Footer
+=====================
+ */
+footer{
+}
+
+#footer-container{
+  display: flex;
+
+}
+#footer-container div{
+  margin-top: 25px;
+  margin-right: 50px;
+  margin-bottom: 10px;
+  font-size: 13px;
+}
+
+#footer-container div:first-child{
+  padding-left: 8px;
+}
+/* end footer */
