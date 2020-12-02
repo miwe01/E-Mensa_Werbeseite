@@ -218,7 +218,7 @@
                 mysqli_close($link);
                 ?>
             </table>
-            <a href="wunschgericht.php"><h3>Ein neues Wunschgericht einschicken</h3></a>
+            <a href="/wunschgericht"><h3>Ein neues Wunschgericht einschicken</h3></a>
             <!-- karte ende -->
         </div>
     </div>

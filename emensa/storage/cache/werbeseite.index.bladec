@@ -18,8 +18,5 @@
 <?php echo $this->yieldContent('newsletter'); ?>
 <?php echo $this->yieldContent('footer'); ?>
 
-
-
-
 </body>
 </html>

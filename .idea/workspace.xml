@@ -26,69 +26,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a085a392-cd31-4eab-89f3-1c367f081829" name="Default Changelist" comment="M4 MVC Struktur + Aufgabe 6 + Aufgabe7">
-      <change afterPath="$PROJECT_DIR$/emensa/controllers/WerbeseiteController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/emensa/public/css/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/emensa/storage/cache/demo.dbdata.bladec" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/emensa/storage/cache/demo.demo.bladec" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/emensa/storage/cache/examples.m4_6a_queryparameter.bladec" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/emensa/storage/cache/examples.m4_6b_kategorie.bladec" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/emensa/storage/cache/examples.m4_6c_gerichte.bladec" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/emensa/storage/cache/examples.m4_6d_layout.bladec" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/emensa/storage/cache/examples.m4_6d_layout1.bladec" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/emensa/storage/cache/examples.m4_6d_layout2.bladec" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/emensa/storage/cache/home.bladec" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/emensa/storage/cache/werbeseite.index.bladec" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/emensa/storage/cache/werbeseite.layout.bladec" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/emensa/views/examples/m4_6a_queryparameter.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/emensa/views/examples/m4_6b_kategorie.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/emensa/views/examples/m4_6c_gerichte.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/emensa/views/examples/m4_6d_layout.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/emensa/views/examples/m4_6d_layout1.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/emensa/views/examples/m4_6d_layout2.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/emensa/views/werbeseite/index.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/emensa/views/werbeseite/layout.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/~WRL0003.tmp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/E-Mensa_Werbeseite.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/E-Mensa_Werbeseite.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/emensa/storage/cache/werbeseite.wunschgericht.bladec" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/emensa/views/werbeseite/wunschgericht.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gruppennummer_dossier.docx" beforeDir="false" afterPath="$PROJECT_DIR$/Gruppennummer_dossier.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/emensa/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/emensa/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/emensa/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/emensa/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/emensa/config/db.php" beforeDir="false" afterPath="$PROJECT_DIR$/emensa/config/db.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/emensa/config/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/emensa/config/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/emensa/controllers/ExampleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/emensa/controllers/ExampleController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/emensa/models/gericht.php" beforeDir="false" afterPath="$PROJECT_DIR$/emensa/models/gericht.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/emensa/models/kategorie.php" beforeDir="false" afterPath="$PROJECT_DIR$/emensa/models/kategorie.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/emensa/vendor/autoload.php" beforeDir="false" afterPath="$PROJECT_DIR$/emensa/vendor/autoload.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/emensa/vendor/composer/ClassLoader.php" beforeDir="false" afterPath="$PROJECT_DIR$/emensa/vendor/composer/ClassLoader.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/emensa/vendor/composer/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/emensa/vendor/composer/LICENSE" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/emensa/vendor/composer/autoload_classmap.php" beforeDir="false" afterPath="$PROJECT_DIR$/emensa/vendor/composer/autoload_classmap.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/emensa/vendor/composer/autoload_namespaces.php" beforeDir="false" afterPath="$PROJECT_DIR$/emensa/vendor/composer/autoload_namespaces.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/emensa/vendor/composer/autoload_psr4.php" beforeDir="false" afterPath="$PROJECT_DIR$/emensa/vendor/composer/autoload_psr4.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/emensa/vendor/composer/autoload_real.php" beforeDir="false" afterPath="$PROJECT_DIR$/emensa/vendor/composer/autoload_real.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/emensa/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/emensa/vendor/composer/autoload_static.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/emensa/vendor/composer/installed.json" beforeDir="false" afterPath="$PROJECT_DIR$/emensa/vendor/composer/installed.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/emensa/vendor/eftec/bladeone/.php_cs" beforeDir="false" afterPath="$PROJECT_DIR$/emensa/vendor/eftec/bladeone/.php_cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/emensa/vendor/eftec/bladeone/BladeOneCache.md" beforeDir="false" afterPath="$PROJECT_DIR$/emensa/vendor/eftec/bladeone/BladeOneCache.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/emensa/vendor/eftec/bladeone/BladeOneHtml.md" beforeDir="false" afterPath="$PROJECT_DIR$/emensa/vendor/eftec/bladeone/BladeOneHtml.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/emensa/vendor/eftec/bladeone/BladeOneLang.md" beforeDir="false" afterPath="$PROJECT_DIR$/emensa/vendor/eftec/bladeone/BladeOneLang.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/emensa/vendor/eftec/bladeone/BladeOneLogic.md" beforeDir="false" afterPath="$PROJECT_DIR$/emensa/vendor/eftec/bladeone/BladeOneLogic.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/emensa/vendor/eftec/bladeone/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/emensa/vendor/eftec/bladeone/LICENSE" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/emensa/vendor/eftec/bladeone/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/emensa/vendor/eftec/bladeone/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/emensa/vendor/eftec/bladeone/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/emensa/vendor/eftec/bladeone/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/emensa/vendor/eftec/bladeone/lib/BladeOne.php" beforeDir="false" afterPath="$PROJECT_DIR$/emensa/vendor/eftec/bladeone/lib/BladeOne.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/emensa/vendor/eftec/bladeone/lib/BladeOneCache.php" beforeDir="false" afterPath="$PROJECT_DIR$/emensa/vendor/eftec/bladeone/lib/BladeOneCache.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/emensa/vendor/eftec/bladeone/lib/BladeOneCacheRedis.php" beforeDir="false" afterPath="$PROJECT_DIR$/emensa/vendor/eftec/bladeone/lib/BladeOneCacheRedis.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/emensa/vendor/eftec/bladeone/lib/BladeOneCustom.php" beforeDir="false" afterPath="$PROJECT_DIR$/emensa/vendor/eftec/bladeone/lib/BladeOneCustom.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/emensa/vendor/eftec/bladeone/lib/BladeOneHtml.php" beforeDir="false" afterPath="$PROJECT_DIR$/emensa/vendor/eftec/bladeone/lib/BladeOneHtml.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/emensa/vendor/eftec/bladeone/lib/BladeOneHtmlBootstrap.php" beforeDir="false" afterPath="$PROJECT_DIR$/emensa/vendor/eftec/bladeone/lib/BladeOneHtmlBootstrap.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/emensa/vendor/eftec/bladeone/lib/BladeOneLang.php" beforeDir="false" afterPath="$PROJECT_DIR$/emensa/vendor/eftec/bladeone/lib/BladeOneLang.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/emensa/vendor/eftec/bladeone/phpcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/emensa/vendor/eftec/bladeone/phpcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/emensa/vendor/eftec/bladeone/readme.template.md" beforeDir="false" afterPath="$PROJECT_DIR$/emensa/vendor/eftec/bladeone/readme.template.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/werbeseite/data.txt" beforeDir="false" afterPath="$PROJECT_DIR$/emensa/public/files/data.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/werbeseite/gerichte.txt" beforeDir="false" afterPath="$PROJECT_DIR$/emensa/public/files/gerichte.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/werbeseite/v_gerichte.txt" beforeDir="false" afterPath="$PROJECT_DIR$/emensa/public/files/v_gerichte.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/~$uppennummer_dossier.docx" beforeDir="false" afterPath="$PROJECT_DIR$/~$uppennummer_dossier.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emensa/controllers/WerbeseiteController.php" beforeDir="false" afterPath="$PROJECT_DIR$/emensa/controllers/WerbeseiteController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emensa/storage/cache/werbeseite.index.bladec" beforeDir="false" afterPath="$PROJECT_DIR$/emensa/storage/cache/werbeseite.index.bladec" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emensa/storage/cache/werbeseite.layout.bladec" beforeDir="false" afterPath="$PROJECT_DIR$/emensa/storage/cache/werbeseite.layout.bladec" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emensa/views/werbeseite/layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/emensa/views/werbeseite/layout.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/~$uppennummer_dossier.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/~WRL0003.tmp" beforeDir="false" />
     </list>
     <list id="a3a1b7f1-5c4d-4e0e-b2c7-d4c9b4eb78d9" name="M3 Aufgabe 2 finale Version" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -127,7 +74,7 @@
     <property name="DatabaseDriversLRU" value="mariadb" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/emensa/public/websites" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -138,11 +85,14 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\mika-laptop\PhpstormProjects\E-Mensa_Werbeseite\emensa\public\websites" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\mika-laptop\PhpstormProjects\E-Mensa_Werbeseite\emensa\views\werbeseite" />
       <recent name="C:\Users\mika-laptop\PhpstormProjects\E-Mensa_Werbeseite\emensa\public\files" />
       <recent name="C:\Users\mika-laptop\PhpstormProjects\E-Mensa_Werbeseite\emensa\public\css" />
       <recent name="C:\Users\mika-laptop\PhpstormProjects\E-Mensa_Werbeseite\emensa\views\werbeseite\css" />
-      <recent name="C:\Users\mika-laptop\PhpstormProjects\E-Mensa_Werbeseite\emensa\views\werbeseite" />
     </key>
   </component>
   <component name="RunManager">
@@ -186,7 +136,7 @@
       <workItem from="1606768399552" duration="26000" />
       <workItem from="1606820006192" duration="9188000" />
       <workItem from="1606838999926" duration="10060000" />
-      <workItem from="1606903498176" duration="7788000" />
+      <workItem from="1606903498176" duration="11933000" />
     </task>
     <task id="LOCAL-00001" summary="COMMIT">
       <created>1603724450807</created>
@@ -300,7 +250,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606750862666</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="M4 MVC Struktur + Aufgabe 6 + Aufgabe7">
+      <created>1606913877601</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1606913877602</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -380,22 +337,22 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="548" y="166" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1606768423235" />
-    <state width="1493" height="115" key="GridCell.Tab.0.bottom" timestamp="1606913815444">
+    <state width="1493" height="115" key="GridCell.Tab.0.bottom" timestamp="1606915254995">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="115" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1606913815444" />
-    <state width="1493" height="115" key="GridCell.Tab.0.center" timestamp="1606913815442">
+    <state width="1493" height="115" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1606915254995" />
+    <state width="1493" height="115" key="GridCell.Tab.0.center" timestamp="1606915254995">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="115" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1606913815442" />
-    <state width="1493" height="115" key="GridCell.Tab.0.left" timestamp="1606913815442">
+    <state width="1493" height="115" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1606915254995" />
+    <state width="1493" height="115" key="GridCell.Tab.0.left" timestamp="1606915254994">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="115" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1606913815442" />
-    <state width="1493" height="115" key="GridCell.Tab.0.right" timestamp="1606913815442">
+    <state width="1493" height="115" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1606915254994" />
+    <state width="1493" height="115" key="GridCell.Tab.0.right" timestamp="1606915254995">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="115" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1606913815442" />
+    <state width="1493" height="115" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1606915254995" />
     <state x="147" y="64" key="MergeDialog" timestamp="1605556005923">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -417,10 +374,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="277" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1606821485372" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1606750868843">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1606913889278">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1606750868843" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1606913889278" />
     <state x="451" y="183" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1603990903169" />
     <state x="586" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1606913123480">
       <screen x="0" y="0" width="1536" height="824" />
