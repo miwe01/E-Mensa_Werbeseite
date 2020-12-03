@@ -9,6 +9,5 @@
 @else
     @extends('examples.m4_6d_layout2')
 @endif
-
 </body>
 </html>

@@ -158,7 +158,7 @@ $_SESSION['besuche']++;
 
         $link = mysqli_connect("localhost", // Host der Datenbank
             "root",                 // Benutzername zur Anmeldung
-            "",    // Passwort
+            "test..123",    // Passwort
             "emensawerbeseite",     // Auswahl der Datenbanken (bzw. des Schemas)
             3306// optional port der Datenbank
         );
@@ -199,7 +199,7 @@ $_SESSION['besuche']++;
             //5 Wunschgerichte abrufen
             $link = mysqli_connect("localhost", // Host der Datenbank
                 "root",                 // Benutzername zur Anmeldung
-                "",    // Passwort
+                "test..123",    // Passwort
                 "emensawerbeseite",     // Auswahl der Datenbanken (bzw. des Schemas)
                 3306// optional port der Datenbank
             );

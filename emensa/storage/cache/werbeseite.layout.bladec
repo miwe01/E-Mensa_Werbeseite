@@ -176,7 +176,7 @@
  ?>
  </table>
  <!-- karte ende -->
- <!-- Liste der ältesten 5 Wunschgerichte -->
+ <!-- Liste der neusten 5 Wunschgerichte -->
  <h3>Wunschgerichte</h3>
  <table class="speisen-table">
  <tr>
@@ -202,7 +202,7 @@
  FROM wunschgericht
  JOIN ersteller
  ON wunschgericht.benutzerid = ersteller.benutzerid
- ORDER BY erstellungsdatum ASC LIMIT 5";
+ ORDER BY erstellungsdatum DESC LIMIT 5";
 
  $result = mysqli_query($link, $sql);
  if (!$result) {
@@ -231,6 +231,7 @@
  session_start();
  if (isset($_SESSION["besuche"]))
  $_SESSION['besuche']++;
+ else $_SESSION['besuche'] = 0;
 
 
  $anzahlspeisen = 0;

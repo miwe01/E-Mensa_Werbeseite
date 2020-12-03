@@ -46,7 +46,7 @@ function is_temp_mail($mail) {
 
             $link = mysqli_connect("localhost", // Host der Datenbank
                 "root",                 // Benutzername zur Anmeldung
-                "",    // Passwort
+                "test..123",    // Passwort
                 "emensawerbeseite",     // Auswahl der Datenbanken (bzw. des Schemas)
                 3306// optional port der Datenbank
             );

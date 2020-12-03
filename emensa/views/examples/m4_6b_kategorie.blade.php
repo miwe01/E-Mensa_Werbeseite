@@ -1,18 +1,14 @@
-<!DOCTYPE html>
+<?php
+?>
 <html>
 <head>
-    <title>m4 6b</title>
+    <title>Demo: @yield('title')</title>
 </head>
-<style>
-    li:nth-child(odd){
-        font-weight: bold;
-    }
-</style>
 <body>
-<ul>
-@foreach($kategorien as $kategorie)
-        <li> {{$kategorie['name']}} </li>
+<table>
+@foreach ($data as $object)
+    <tr><td>{{ $object['name'] }}</td></tr>
 @endforeach
-</ul>
+</table>
 </body>
 </html>

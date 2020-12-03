@@ -1,17 +1,18 @@
-<!DOCTYPE html>
+<?php
+?>
 <html>
 <head>
-    <title>m4 6b</title>
+    <title>Demo: @yield('title')</title>
 </head>
 <body>
-<ul>
-    @if(empty($gerichte))
-        Es sind keine Gerichte vorhanden
+<table>
+    @if (empty($data))
+        Es sind keine Gerichte vorhanden;
     @else
-    @foreach($gerichte as $gericht)
-        <li> {{$gericht["name"]. ", " .  $gericht["preis_intern"]. "€"}} </li>
-    @endforeach
+        @foreach ($data as $object)
+            <tr><td>{{ $object['name'] }}</td><td>{{ $object['preis_intern'] }}</td></tr>
+        @endforeach
     @endif
-</ul>
+</table>
 </body>
 </html>
