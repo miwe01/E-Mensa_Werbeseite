@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 function is_temp_mail($mail) {
     $mail_domains_ko = array('rcpt.at','damnthespam.at','wegwerfmail.de');
 
