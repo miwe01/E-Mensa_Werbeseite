@@ -26,19 +26,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a085a392-cd31-4eab-89f3-1c367f081829" name="Default Changelist" comment="M5 Aufgabe1 &amp; 5">
-      <change afterPath="$PROJECT_DIR$/emensa/controllers/AnmeldungController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/emensa/models/anmeldung.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/emensa/storage/cache/login.login.bladec" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/emensa/storage/cache/werbeseite.meinProfil.bladec" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/emensa/views/admin/adminkonto.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/emensa/views/login/login.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/emensa/views/werbeseite/meinProfil.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/~$uppennummer_dossier.docx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gruppennummer_dossier.docx" beforeDir="false" afterPath="$PROJECT_DIR$/Gruppennummer_dossier.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/emensa/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/emensa/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emensa/config/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/emensa/config/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emensa/public/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/emensa/public/css/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emensa/storage/cache/login.login.bladec" beforeDir="false" afterPath="$PROJECT_DIR$/emensa/storage/cache/login.login.bladec" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emensa/storage/cache/werbeseite.layout.bladec" beforeDir="false" afterPath="$PROJECT_DIR$/emensa/storage/cache/werbeseite.layout.bladec" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emensa/storage/cache/werbeseite.meinProfil.bladec" beforeDir="false" afterPath="$PROJECT_DIR$/emensa/storage/cache/werbeseite.meinProfil.bladec" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/emensa/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/emensa/views/home.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/emensa/views/werbeseite/wunschgericht.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/emensa/views/werbeseite/wunschgericht.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emensa/views/login/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/emensa/views/login/login.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emensa/views/werbeseite/layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/emensa/views/werbeseite/layout.blade.php" afterDir="false" />
     </list>
     <list id="a3a1b7f1-5c4d-4e0e-b2c7-d4c9b4eb78d9" name="M3 Aufgabe 2 finale Version" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -88,14 +84,14 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\mika-laptop\PhpstormProjects\E-Mensa_Werbeseite\emensa\public\websites" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\mika-laptop\PhpstormProjects\E-Mensa_Werbeseite\emensa\views\werbeseite" />
       <recent name="C:\Users\mika-laptop\PhpstormProjects\E-Mensa_Werbeseite\emensa\public\files" />
       <recent name="C:\Users\mika-laptop\PhpstormProjects\E-Mensa_Werbeseite\emensa\public\css" />
       <recent name="C:\Users\mika-laptop\PhpstormProjects\E-Mensa_Werbeseite\emensa\views\werbeseite\css" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\mika-laptop\PhpstormProjects\E-Mensa_Werbeseite\emensa\public\websites" />
     </key>
   </component>
   <component name="RunManager">
@@ -147,7 +143,7 @@
       <workItem from="1607444479164" duration="594000" />
       <workItem from="1607625592548" duration="10003000" />
       <workItem from="1607677697023" duration="5794000" />
-      <workItem from="1607705238522" duration="8329000" />
+      <workItem from="1607705238522" duration="9775000" />
     </task>
     <task id="LOCAL-00001" summary="COMMIT">
       <created>1603724450807</created>
@@ -268,7 +264,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606913877602</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="M5 Aufgabe1 &amp; 5">
+      <created>1607714244940</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1607714244940</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -349,22 +352,22 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="548" y="166" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1607708117304" />
-    <state width="1024" height="215" key="GridCell.Tab.0.bottom" timestamp="1607714088024">
+    <state width="1493" height="161" key="GridCell.Tab.0.bottom" timestamp="1607714271235">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="215" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1607714088024" />
-    <state width="1024" height="215" key="GridCell.Tab.0.center" timestamp="1607714088024">
+    <state width="1493" height="161" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1607714271235" />
+    <state width="1493" height="161" key="GridCell.Tab.0.center" timestamp="1607714271235">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="215" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1607714088024" />
-    <state width="1024" height="215" key="GridCell.Tab.0.left" timestamp="1607714088023">
+    <state width="1493" height="161" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1607714271235" />
+    <state width="1493" height="161" key="GridCell.Tab.0.left" timestamp="1607714271235">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="215" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1607714088023" />
-    <state width="1024" height="215" key="GridCell.Tab.0.right" timestamp="1607714088024">
+    <state width="1493" height="161" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1607714271235" />
+    <state width="1493" height="161" key="GridCell.Tab.0.right" timestamp="1607714271235">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="215" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1607714088024" />
+    <state width="1493" height="161" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1607714271235" />
     <state x="147" y="64" key="MergeDialog" timestamp="1607714084145">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -390,10 +393,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="546" y="128" key="VCS.ChangeListViewerDialog/0.0.1536.824@0.0.1536.824" timestamp="1607006271775" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1606913889278">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1607714257941">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1606913889278" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1607714257941" />
     <state x="451" y="183" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1603990903169" />
     <state x="566" y="225" width="403" height="370" key="com.intellij.database.psi.DbRenamePsiElementProcessor.DbRenameDialog" timestamp="1607678144649">
       <screen x="0" y="0" width="1536" height="824" />
@@ -412,10 +415,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="809" y="189" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1607712980102" />
-    <state x="498" y="178" width="672" height="538" key="search.everywhere.popup" timestamp="1607714124568">
+    <state x="498" y="178" width="672" height="538" key="search.everywhere.popup" timestamp="1607715209528">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="498" y="178" width="672" height="538" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1607714124568" />
+    <state x="498" y="178" width="672" height="538" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1607715209528" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1603990760259" />
   </component>
 </project>

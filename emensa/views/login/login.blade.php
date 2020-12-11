@@ -10,6 +10,11 @@
     <title>Anmeldung</title>
 </head>
 <body>
+<style>
+    .fehler{
+        border: 1px solid red;
+    }
+</style>
 
 <form method="post" id="wunsch" action="/anmeldung_verfizieren">
     @csrf

@@ -1,3 +1,8 @@
+<?php
+if(session_id() == '' || !isset($_SESSION)) {
+    session_start();
+}
+?>
 @extends('werbeseite.index')
 @section('header')
     <!-- start header -->
@@ -15,6 +20,22 @@
             </ul>
         </nav>
         <!-- end navigation -->
+        <div class="logging">
+
+        @if(isset($_SESSION["email"]))
+                @php
+                    $email = explode('@', $_SESSION["email"]);
+                     $name = ucfirst($email[0]);
+                    $_SESSION["name"] = $name;
+                @endphp
+                <a href="/profil">Hallo {{$name}}</a><br><br>
+                <a class="log" href="/abmeldung">Ausloggen</a>
+        @else
+            <a class="log" href="/anmeldung">Einloggen</a>
+            @endif
+        </div>
+
+
     </header>
     <!-- end header -->
 @endsection
