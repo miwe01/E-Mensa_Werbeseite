@@ -110,6 +110,7 @@ footer{
  */
 
 header{
+  position: relative;
   display: flex;
   align-items: flex-end;
   padding: 30px 35px 10px 10px;
@@ -129,6 +130,14 @@ header{
 #ul-nav li{
   margin: 0 10px;
 }
+.logging{
+  position: absolute;
+  right: 10px;
+}
+ .log{
+   right: 15px;
+ }
+
 /* end header */
 
 

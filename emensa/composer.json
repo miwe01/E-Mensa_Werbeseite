@@ -1,6 +1,7 @@
 {
     "name": "emensa/mvc",
     "require": {
-        "eftec/bladeone": "^3.47"
+        "eftec/bladeone": "^3.47",
+      "ext-mysqli": "*"
     }
 }

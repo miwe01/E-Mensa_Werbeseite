@@ -1,3 +1,8 @@
+<?php
+if(session_id() == '' || !isset($_SESSION)) {
+    session_start();
+}
+?>
 <!DOCTYPE html>
 <html lang="de">
 <head>
