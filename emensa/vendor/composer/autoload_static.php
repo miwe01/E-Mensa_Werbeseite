@@ -11,6 +11,14 @@ class ComposerStaticInit5137a0d339709badc657d3e1a0e1cf80
         array (
             'eftec\\bladeone\\' => 15,
         ),
+        'P' => 
+        array (
+            'Psr\\Log\\' => 8,
+        ),
+        'M' => 
+        array (
+            'Monolog\\' => 8,
+        ),
     );
 
     public static $prefixDirsPsr4 = array (
@@ -18,6 +26,18 @@ class ComposerStaticInit5137a0d339709badc657d3e1a0e1cf80
         array (
             0 => __DIR__ . '/..' . '/eftec/bladeone/lib',
         ),
+        'Psr\\Log\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/log/Psr/Log',
+        ),
+        'Monolog\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/monolog/monolog/src/Monolog',
+        ),
+    );
+
+    public static $classMap = array (
+        'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
@@ -25,6 +45,7 @@ class ComposerStaticInit5137a0d339709badc657d3e1a0e1cf80
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInit5137a0d339709badc657d3e1a0e1cf80::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInit5137a0d339709badc657d3e1a0e1cf80::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInit5137a0d339709badc657d3e1a0e1cf80::$classMap;
 
         }, null, ClassLoader::class);
     }

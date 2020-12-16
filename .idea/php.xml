@@ -4,6 +4,8 @@
     <include_path>
       <path value="$PROJECT_DIR$/emensa/vendor/eftec/bladeone" />
       <path value="$PROJECT_DIR$/emensa/vendor/composer" />
+      <path value="$PROJECT_DIR$/emensa/vendor/monolog/monolog" />
+      <path value="$PROJECT_DIR$/emensa/vendor/psr/log" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.4" />

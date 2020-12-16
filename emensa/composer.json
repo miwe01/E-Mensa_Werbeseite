@@ -2,6 +2,10 @@
     "name": "emensa/mvc",
     "require": {
         "eftec/bladeone": "^3.47",
-      "ext-mysqli": "*"
+        "monolog/monolog": "2.2.*",
+        "ext-mysqli": "*"
+    },
+    "config": {
+        "disable-tls": true
     }
 }

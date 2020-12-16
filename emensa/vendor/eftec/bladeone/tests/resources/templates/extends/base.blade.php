@@ -1,0 +1,3 @@
+Base({{$globalme}})...
+
+@yield('from_child')

@@ -270,6 +270,10 @@ header{
   font-size: 18px;
 }
 
+.allergen-td:not(:first-child){
+  font-size: 17px;
+}
+
 .allergen-table tr:nth-child(even) {
   background-color: white;
   color: black;
@@ -279,6 +283,16 @@ header{
 .allergen-table tr:nth-child(odd) {
   background-color: #F2F2F2;
   color: black;
+}
+
+.wunschspeisen-td:first-child{
+  padding: 4px 7px 4px 7px;
+  /*background-color: #00AA9E; */
+  font-size: 18px;
+}
+/* nicht die erste td Spalte */
+.wunschspeisen-td:not(:first-child){
+  font-size: 18px;
 }
 
 sub{
