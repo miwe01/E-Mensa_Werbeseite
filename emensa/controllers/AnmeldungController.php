@@ -9,12 +9,14 @@ class AnmeldungController{
         return view('login.login',[]);
     }
     public function anmeldung_verfizieren(RequestData $rd){
+        $log = logger();
         $email = "";
         $passwort = "";
         if (!empty($_POST["email"]) && !empty($_POST["passwort"])) {
             // Wenn Benutzer mit Passwort stimmt
             if(checkUser($_POST["email"], $_POST["passwort"])) {
                 anmeldungIncrement($_POST["email"]);
+                $log->info('Erfolgreiche Anmeldung von.' . $_POST["email"]);
                 // speichert Email in Session
                 $_SESSION["email"] = $_POST["email"];
                 return view('werbeseite.layout', []);
@@ -27,6 +29,7 @@ class AnmeldungController{
         }
         if(isset($_SESSION["fehler_passwort"])){
             $passwort = 'Passwort falsch';
+            $log->warning('Fehlgeschlagene Anmeldung von' . $_POST["email"]);
             unset($_SESSION["fehler_passwort"]);
         }
 

@@ -1,6 +1,8 @@
 <?php
 if(session_id() == '' || !isset($_SESSION)) {
     session_start();
+    $log = logger();
+    $log->info('Aufruf der Hauptseite.');
 }
 ?>
 @extends('werbeseite.index')
