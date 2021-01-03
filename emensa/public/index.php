@@ -2,6 +2,7 @@
 const PUBLIC_DIRNAME = "public";
 const CONFIG_WEBROUTES = '../config/web.php';
 const CONFIG_DB = '../config/db.php';
+const LOGLOGIN = 'loginstream';
 
 require_once $_SERVER['DOCUMENT_ROOT']."/../vendor/autoload.php";
 use eftec\bladeone\BladeOne;
@@ -181,7 +182,7 @@ function view($viewname, $viewargs) {
 }
 
 function logger() {
-    $logger = new Logger(loginstream);
+    $logger = new Logger(LOGLOGIN);
     $logger->pushHandler(new StreamHandler('../storage/logs/logins.log', Logger::INFO));
 
     return $logger;

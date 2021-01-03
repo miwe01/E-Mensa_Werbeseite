@@ -16,7 +16,7 @@ class AnmeldungController{
             // Wenn Benutzer mit Passwort stimmt
             if(checkUser($_POST["email"], $_POST["passwort"])) {
                 anmeldungIncrement($_POST["email"]);
-                $log->info('Erfolgreiche Anmeldung von.' . $_POST["email"]);
+                $log->info('Erfolgreiche Anmeldung von ' . $_POST["email"]);
                 // speichert Email in Session
                 $_SESSION["email"] = $_POST["email"];
                 return view('werbeseite.layout', []);
@@ -29,7 +29,7 @@ class AnmeldungController{
         }
         if(isset($_SESSION["fehler_passwort"])){
             $passwort = 'Passwort falsch';
-            $log->warning('Fehlgeschlagene Anmeldung von' . $_POST["email"]);
+            $log->warning('Fehlgeschlagene Anmeldung von ' . $_POST["email"]);
             unset($_SESSION["fehler_passwort"]);
         }
 
@@ -44,6 +44,8 @@ class AnmeldungController{
     }
 
     public function abmeldung(){
+        $log = logger();
+        $log->info('Erfolgreiche Abmeldung.');
         session_destroy();
         return view('werbeseite.layout',[]);
     }
