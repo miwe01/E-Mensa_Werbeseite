@@ -8,6 +8,7 @@ class AnmeldungController{
     public function anmeldung(){
         return view('login.login',[]);
     }
+
     public function anmeldung_verfizieren(RequestData $rd){
         $log = logger();
         $email = "";

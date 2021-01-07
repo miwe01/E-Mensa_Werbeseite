@@ -65,12 +65,6 @@ function anmeldungIncrement($email) {
         $row = mysqli_fetch_assoc($result);
         // nimmt sich nur Passwort
         $id = $row["id"];
-
-
-        /*$sql = "UPDATE benutzer
-                SET anzahlanmeldungen = anzahlanmeldungen +1
-                WHERE email = '$email'";
-        $result = mysqli_query($link, $sql);*/
         mysqli_query($link, "CALL anmeldungIncrement('$id')");
 
         mysqli_close($link);
