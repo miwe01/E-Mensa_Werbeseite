@@ -127,6 +127,100 @@ public function meinebewertungen(RequestData $rd){
     }
     return view('werbeseite.meinebewertungen', []);
 }
+
+    public function bewertunghighlight(RequestData $rd){
+        $zeit = $_GET['zeitpunkt'];
+
+        $link = mysqli_connect("localhost", // Host der Datenbank
+            "root",                 // Benutzername zur Anmeldung
+            "test..123",    // Passwort
+            "emensawerbeseite",     // Auswahl der Datenbanken (bzw. des Schemas)
+            3306// optional port der Datenbank
+        );
+
+        $sql = "UPDATE benutzer_bewertet_gericht SET Hervorgehoben=1 where Bewertungszeitpunkt ='$zeit'";
+        $result = mysqli_query($link, $sql);
+        if (!$result) {
+            echo "Error";
+            exit();
+        }
+
+        mysqli_close($link);
+
+        // Gibt Gerichtname und passendes Bild auf Seite aus
+        if (isset($_SESSION["gerichtid"])){
+            $link = mysqli_connect("localhost", // Host der Datenbank
+                "root",                 // Benutzername zur Anmeldung
+                "test..123",    // Passwort
+                "emensawerbeseite",     // Auswahl der Datenbanken (bzw. des Schemas)
+                3306// optional port der Datenbank
+            );
+
+            $id = mysqli_real_escape_string($link, $_SESSION["gerichtid"]);
+            $sql = "SELECT gericht.name, gericht.bildname FROM gericht WHERE gericht.id='$id'";
+            $result = mysqli_query($link, $sql);
+            if (!$result) {
+                echo "Error";
+                exit();
+            }
+
+            while ($row = mysqli_fetch_assoc($result)) {
+                echo '<h1>' . $row['name'] . '</h1> <img src="/img/gerichte/'.$row['bildname'] . '" alt="' . $row['bildname'] . '" width="auto" height="300px">';
+            }
+
+            mysqli_free_result($result);
+            mysqli_close($link);
+        }
+        return view('werbeseite.bewertung', []);
+    }
+
+    public function bewertungnothighlight(RequestData $rd){
+        $zeit = $_GET['zeitpunkt'];
+        $bemerk = $_GET['bemerkung'];
+
+        $link = mysqli_connect("localhost", // Host der Datenbank
+            "root",                 // Benutzername zur Anmeldung
+            "test..123",    // Passwort
+            "emensawerbeseite",     // Auswahl der Datenbanken (bzw. des Schemas)
+            3306// optional port der Datenbank
+        );
+
+        $sql = "UPDATE benutzer_bewertet_gericht SET Hervorgehoben=0 where Bewertungszeitpunkt ='$zeit' AND Bemerkung ='$bemerk'";
+        $result = mysqli_query($link, $sql);
+        if (!$result) {
+            echo "Error";
+            exit();
+        }
+
+        mysqli_close($link);
+
+        // Gibt Gerichtname und passendes Bild auf Seite aus
+        if (isset($_SESSION["gerichtid"])){
+            $link = mysqli_connect("localhost", // Host der Datenbank
+                "root",                 // Benutzername zur Anmeldung
+                "test..123",    // Passwort
+                "emensawerbeseite",     // Auswahl der Datenbanken (bzw. des Schemas)
+                3306// optional port der Datenbank
+            );
+
+            $id = mysqli_real_escape_string($link, $_SESSION["gerichtid"]);
+            $sql = "SELECT gericht.name, gericht.bildname FROM gericht WHERE gericht.id='$id'";
+            $result = mysqli_query($link, $sql);
+            if (!$result) {
+                echo "Error";
+                exit();
+            }
+
+            while ($row = mysqli_fetch_assoc($result)) {
+                echo '<h1>' . $row['name'] . '</h1> <img src="/img/gerichte/'.$row['bildname'] . '" alt="' . $row['bildname'] . '" width="auto" height="300px">';
+            }
+
+            mysqli_free_result($result);
+            mysqli_close($link);
+        }
+        return view('werbeseite.bewertung', []);
+    }
+
 }
 
 ?>

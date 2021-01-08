@@ -15,6 +15,7 @@
 <?php echo $this->yieldContent('mensa'); ?>
 <?php echo $this->yieldContent('speise'); ?>
 <?php echo $this->yieldContent('zahlen'); ?>
+<?php echo $this->yieldContent('meinungen'); ?>
 <?php echo $this->yieldContent('newsletter'); ?>
 <?php echo $this->yieldContent('footer'); ?>
 

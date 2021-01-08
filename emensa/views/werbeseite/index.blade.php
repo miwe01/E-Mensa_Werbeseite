@@ -15,6 +15,7 @@
 @yield('mensa')
 @yield('speise')
 @yield('zahlen')
+@yield('meinungen')
 @yield('newsletter')
 @yield('footer')
 

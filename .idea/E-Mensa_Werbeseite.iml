@@ -6,6 +6,28 @@
       <excludeFolder url="file://$MODULE_DIR$/emensa/vendor/eftec/bladeone" />
       <excludeFolder url="file://$MODULE_DIR$/emensa/vendor/monolog/monolog" />
       <excludeFolder url="file://$MODULE_DIR$/emensa/vendor/psr/log" />
+      <excludeFolder url="file://$MODULE_DIR$/emensa/vendor/voku/portable-ascii" />
+      <excludeFolder url="file://$MODULE_DIR$/emensa/vendor/doctrine/inflector" />
+      <excludeFolder url="file://$MODULE_DIR$/emensa/vendor/illuminate/collections" />
+      <excludeFolder url="file://$MODULE_DIR$/emensa/vendor/illuminate/container" />
+      <excludeFolder url="file://$MODULE_DIR$/emensa/vendor/illuminate/contracts" />
+      <excludeFolder url="file://$MODULE_DIR$/emensa/vendor/illuminate/database" />
+      <excludeFolder url="file://$MODULE_DIR$/emensa/vendor/illuminate/macroable" />
+      <excludeFolder url="file://$MODULE_DIR$/emensa/vendor/illuminate/support" />
+      <excludeFolder url="file://$MODULE_DIR$/emensa/vendor/symfony/console" />
+      <excludeFolder url="file://$MODULE_DIR$/emensa/vendor/symfony/polyfill-ctype" />
+      <excludeFolder url="file://$MODULE_DIR$/emensa/vendor/symfony/polyfill-intl-grapheme" />
+      <excludeFolder url="file://$MODULE_DIR$/emensa/vendor/symfony/polyfill-intl-normalizer" />
+      <excludeFolder url="file://$MODULE_DIR$/emensa/vendor/symfony/polyfill-mbstring" />
+      <excludeFolder url="file://$MODULE_DIR$/emensa/vendor/symfony/polyfill-php73" />
+      <excludeFolder url="file://$MODULE_DIR$/emensa/vendor/psr/simple-cache" />
+      <excludeFolder url="file://$MODULE_DIR$/emensa/vendor/symfony/polyfill-php80" />
+      <excludeFolder url="file://$MODULE_DIR$/emensa/vendor/psr/container" />
+      <excludeFolder url="file://$MODULE_DIR$/emensa/vendor/symfony/service-contracts" />
+      <excludeFolder url="file://$MODULE_DIR$/emensa/vendor/symfony/string" />
+      <excludeFolder url="file://$MODULE_DIR$/emensa/vendor/symfony/translation" />
+      <excludeFolder url="file://$MODULE_DIR$/emensa/vendor/symfony/translation-contracts" />
+      <excludeFolder url="file://$MODULE_DIR$/emensa/vendor/nesbot/carbon" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

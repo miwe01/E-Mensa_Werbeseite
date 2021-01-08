@@ -17,6 +17,8 @@ return array(
     '/profil' =>'AnmeldungController@profil',
 
     '/bewertung' => 'WerbeseiteController@bewertung',
+    '/bewertunghighlight' => 'WerbeseiteController@bewertunghighlight',
+    '/bewertungnothighlight' => 'WerbeseiteController@bewertungnothighlight',
     '/meinebewertungen' => 'WerbeseiteController@meinebewertungen',
 
     '/m4_6a_queryparameter' => 'ExampleController@m4_6a_queryparameter',

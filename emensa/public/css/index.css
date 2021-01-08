@@ -69,7 +69,7 @@ input, select{
 =====================
  */
 
-#mensa-section, #speise-wrapper, #newsletter-wrapper, #zahlen-section, header, footer{
+#mensa-section, #speise-wrapper, #meinungen-wrapper, #newsletter-wrapper, #zahlen-section, header, footer{
   width: 75%;
   margin: 2px auto;
 
@@ -174,7 +174,7 @@ header{
     background-color: #eff9f8;
 }
 #speisen{
-  margin-bottom: 13px;
+  padding-bottom: 13px;
 }
 /* start table */
 
@@ -189,7 +189,7 @@ header{
   width: 100%;
   max-width: 900PX;
   border: 2px solid black;
-  margin-bottom: 50px;
+  padding-bottom: 50px;
 }
 /* alle Zellen in Speisekarte*/
 .speisen-td-th{
@@ -374,6 +374,20 @@ a > h3:hover{
   100% {color: green; }
 }
 /* end zahlen  section*/
+
+/*
+=====================
+6.5 Meinungen section
+=====================
+ */
+#meinungen-wrapper{
+  background-color: #eff9f8;
+}
+#h2-meinungen{
+  padding-bottom: 13px;
+}
+
+/* end meinungen section*/
 
 /*
 =====================

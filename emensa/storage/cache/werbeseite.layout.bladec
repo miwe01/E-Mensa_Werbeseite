@@ -364,6 +364,59 @@
  <!-- end Zahlen -->
 <?php $this->stopSection(); ?>
 
+<?php $this->startSection('meinungen'); ?>
+ <!-- start Meinungen der Gäste -->
+ <div id="meinungen-wrapper">
+ <div id="speisekarte">
+ <h2 id="h2-meinungen">Meinungen unserer Gäste</h2>
+ <table class="speisen-table">
+ <tr>
+ <th class="speisen-td-th speisen-th">Speise</th>
+ <th class="speisen-td-th speisen-th">Bemerkung</th>
+ <th class="speisen-td-th speisen-th">Bewertung</th>
+ </tr>
+ <?php
+ //Hervorgehobene Bewertungen abrufen
+ $link = mysqli_connect("localhost", // Host der Datenbank
+ "root",                 // Benutzername zur Anmeldung
+ "test..123",    // Passwort
+ "emensawerbeseite",     // Auswahl der Datenbanken (bzw. des Schemas)
+ 3306// optional port der Datenbank
+ );
+
+ if (!$link) {
+ echo "Verbindung fehlgeschlagen: ", mysqli_connect_error();
+ exit();
+ }
+
+ $sql = "SELECT g.name as gerichtname, Sternbewertung, Bemerkung
+ FROM benutzer_bewertet_gericht bbg
+ INNER JOIN gericht g
+ ON IDGericht = g.id
+ WHERE Hervorgehoben=1
+ ORDER BY Bewertungszeitpunkt DESC";
+
+ $result = mysqli_query($link, $sql);
+ if (!$result) {
+ echo "Fehler während der Abfrage:  ", mysqli_error($link);
+ exit();
+ }
+
+ while ($row = mysqli_fetch_assoc($result)) {
+ echo '<tr><td class="wunschspeisen-td">'.$row['gerichtname'].'</td>
+ <td class="wunschspeisen-td">'.$row['Bemerkung']. '</td>
+ <td class="wunschspeisen-td">' . $row['Sternbewertung'] . ' Sterne</td></tr>';
+ }
+
+ mysqli_free_result($result);
+ mysqli_close($link);
+ ?>
+ </table>
+ </div>
+ </div>
+ <!-- end Meinungen der Gäste -->
+<?php $this->stopSection(); ?>
+
 <?php $this->startSection('newsletter'); ?>
  <!-- start Newsletter -->
  <div id="newsletter-wrapper">

@@ -62,7 +62,7 @@ if(session_id() == '' || !isset($_SESSION)) {
         );
         // 6)
         $id = mysqli_real_escape_string($link, $_SESSION["gerichtid"]);
-        $sql = "SELECT b.email, Sternbewertung, Bemerkung, Hervorgehoben
+        $sql = "SELECT b.email, b.admin, Sternbewertung, Bemerkung, Hervorgehoben, Bewertungszeitpunkt
                 FROM benutzer_bewertet_gericht bbg
                 INNER JOIN benutzer b
                 ON IDBenutzer = b.id
@@ -80,15 +80,15 @@ if(session_id() == '' || !isset($_SESSION)) {
         if(mysqli_num_rows($result) == 0){
             echo "Es gibt noch keine Bewertungen<br><br>";
         }else{
-            echo "<table><tr> <th>Email</th><th>Bewertung</th><th>Bemerkung</th></tr>";
+            echo "<table><tr> <th>Email</th><th>Bewertung</th><th>Bemerkung</th>";
             while ($row = mysqli_fetch_assoc($result)) {
                 if ($row['Hervorgehoben'] == 1){
                     echo '<tr><td><b>' . $row['email'] . '</b></td><td><b>' . $row['Sternbewertung'] . ' Sterne</b></td><td><b>' .
-                        $row['Bemerkung'] . '</b></tr>';
+                        $row['Bemerkung'] . '</b><td><b><a href="/bewertungnothighlight?zeitpunkt='. $row['Bewertungszeitpunkt'] .'&bemerkung='. $row['Bemerkung'] . '">Hervorhebung abwählen</a></b></td></tr>';
                 }
                 else{
                     echo '<tr><td>' . $row['email'] . '</td><td>' . $row['Sternbewertung'] . ' Sterne</td><td>' .
-                        $row['Bemerkung'] . '</tr>';
+                        $row['Bemerkung'] . '<td><a href="/bewertunghighlight?zeitpunkt='. $row['Bewertungszeitpunkt'] .'&bemerkung='. $row['Bemerkung'] . '">Hervorheben</a></td></tr>';
                 }
 
             }
