@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<!--
+- Praktikum DBWT. Autoren:
+- Mika, Weber, 3252173
+- Ben, Loos, 3207009
+-->
+<html lang="de">
+<head>
+ <meta charset="utf-8">
+ <title>Ihre E-Mensa</title>
+ <link href="css/index.css" rel="stylesheet" type="text/css" >
+</head>
+<body>
+<?php echo $this->yieldContent('header'); ?>
+<?php echo $this->yieldContent('mensa'); ?>
+<?php echo $this->yieldContent('speise'); ?>
+<?php echo $this->yieldContent('zahlen'); ?>
+<?php echo $this->yieldContent('newsletter'); ?>
+<?php echo $this->yieldContent('footer'); ?>
+
+</body>
+</html>
