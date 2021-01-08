@@ -5,7 +5,7 @@ if(session_id() == '' || !isset($_SESSION)) {
 function checkUser($email, $passwort){
     // Zeitzone auswählen und Zeit erstellen
     date_default_timezone_set('Europe/Berlin');
-    $datetime = date('Y-m-d H:i:s') ;
+    $datetime = date('Y-m-d H:i:s');
 
     $salt = "dbwt";
     $link = connectdb();

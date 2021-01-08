@@ -1,9 +1,8 @@
 <?php
-if(session_id() == '' || !isset($_SESSION)) {
-    session_start();
-    $log = logger();
-    $log->info('Aufruf der Hauptseite.');
-}
+
+//   $log = logger();
+//    $log->info('Aufruf der Hauptseite.');
+
 ?>
 @extends('werbeseite.index')
 @section('header')
@@ -66,6 +65,11 @@ if(session_id() == '' || !isset($_SESSION)) {
     <div id="speise-wrapper">
         <div id="speisekarte">
             <h2 id="speisen">Köstlichkeiten, die Sie erwarten</h2>
+            <?php
+            if (isset($_SESSION["email"]))
+                echo '<a href="/meinebewertungen"><h4>Meine Bewertungen</h4></a>';
+            ?>
+
             <h3>Nicht vegetarische Speisen</h3>
             <!-- nicht vegetarische Karte -->
             <table class="speisen-table">
@@ -74,6 +78,12 @@ if(session_id() == '' || !isset($_SESSION)) {
                     <th class="speisen-td-th speisen-th">Preis intern</th>
                     <th class="speisen-td-th speisen-th">Preis extern</th>
                     <th class="speisen-td-th speisen-th">Bild</th>
+                    <!-- Wenn User eingeloggt kann er bewerten -->
+                    <?php
+                    if (isset($_SESSION["email"]))
+                        echo '<th class="speisen-td-th speisen-th">Bewertung</th>';
+                    ?>
+
                 </tr>
                 <?php
                 //Speisen aus der Datenbank holen
@@ -87,26 +97,32 @@ if(session_id() == '' || !isset($_SESSION)) {
                 );
 
                 if (!$link) {
+
                     echo "Error";
                     exit();
                 }
 
-                $sql = "SELECT gericht.name,  Group_Concat(allergen.code) AS 'Allergen', gericht.preis_intern, gericht.preis_extern, gericht.bildname
-          FROM gericht
-          LEFT JOIN gericht_hat_allergen
-          ON gericht.id = gericht_hat_allergen.gericht_id
-          LEFT JOIN allergen
-          ON gericht_hat_allergen.code = allergen.code
-          WHERE gericht.vegetarisch = 0
-          GROUP BY gericht.name LIMIT 5;";
+                $sql = "SELECT gericht.id, gericht.name,  Group_Concat(allergen.code) AS 'Allergen', gericht.preis_intern, gericht.preis_extern, gericht.bildname
+                FROM gericht
+                LEFT JOIN gericht_hat_allergen
+                ON gericht.id = gericht_hat_allergen.gericht_id
+                LEFT JOIN allergen
+                ON gericht_hat_allergen.code = allergen.code
+                WHERE gericht.vegetarisch = 0
+                GROUP BY gericht.name LIMIT 5;";
 
                 $result = mysqli_query($link, $sql);
                 if (!$result) {
+                    echo "Failed to connect to MySQL: " . mysqli_connect_error();
                     echo "Error";
                     exit();
                 }
                 while ($row = mysqli_fetch_assoc($result)) {
-                    echo '<tr><td class="speisen-td">'.$row['name'].'<sub><b>'.$row['Allergen'].'</b></sub></td><td class="speisen-td">'.$row['preis_intern']. '</td><td class="speisen-td">'.$row['preis_extern']. '</td><td class="speisen-td"><img src="/img/gerichte/'.$row['bildname'].'" width="100" height="75"></td></tr>';
+                    echo '<tr><td class="speisen-td">'.$row['name'].'<sub><b>'.$row['Allergen'].'</b></sub></td><td class="speisen-td">'.$row['preis_intern']. '€</td><td class="speisen-td">'.$row['preis_extern']. '€</td><td class="speisen-td"><img src="/img/gerichte/'.$row['bildname'].'" width="100" height="75"></td>';
+
+                    if (isset($_SESSION["email"]))
+                        echo '<td><a href="/bewertung?gerichtid='. $row["id"] .' ">Bewerten</a></tr>';
+
                     $allergenList = array_merge($allergenList,explode(',',$row['Allergen']));
                 }
                 mysqli_free_result($result);
@@ -122,6 +138,11 @@ if(session_id() == '' || !isset($_SESSION)) {
                     <th class="speisen-td-th speisen-th">Preis intern</th>
                     <th class="speisen-td-th speisen-th">Preis extern</th>
                     <th class="speisen-td-th speisen-th">Bild</th>
+                    <!-- Wenn User eingeloggt kann er bewerten -->
+                    <?php
+                    if (isset($_SESSION["email"]))
+                        echo '<th class="speisen-td-th speisen-th">Bewertung</th>';
+                    ?>
                 </tr>
                 <?php
                 //Vegetarische Speisen aus der Datenbank holen
@@ -137,7 +158,7 @@ if(session_id() == '' || !isset($_SESSION)) {
                     exit();
                 }
 
-                $sql = "SELECT gericht.name, Group_Concat(allergen.code) AS 'Allergen', gericht.preis_intern, gericht.preis_extern, gericht.bildname
+                $sql = "SELECT gericht.id, gericht.name, Group_Concat(allergen.code) AS 'Allergen', gericht.preis_intern, gericht.preis_extern, gericht.bildname
           FROM gericht
           LEFT JOIN gericht_hat_allergen
           ON gericht.id = gericht_hat_allergen.gericht_id
@@ -152,7 +173,9 @@ if(session_id() == '' || !isset($_SESSION)) {
                     exit();
                 }
                 while ($row = mysqli_fetch_assoc($result)) {
-                    echo '<tr><td class="speisen-td">'.$row['name'].'<sub><b>'.$row['Allergen'].'</b></sub></td><td class="speisen-td">'.$row['preis_intern']. '</td><td class="speisen-td">'.$row['preis_extern']. '</td><td class="speisen-td"><img src="/img/gerichte/'.$row['bildname'].'" width="100" height="75"></td></tr>';
+                    echo '<tr><td class="speisen-td">'.$row['name'].'<sub><b>'.$row['Allergen'].'</b></sub></td><td class="speisen-td">'.$row['preis_intern']. '€</td><td class="speisen-td">'.$row['preis_extern']. '€</td><td class="speisen-td"><img src="/img/gerichte/'.$row['bildname'].'" width="100" height="75"></td>';
+                    if (isset($_SESSION["email"]))
+                        echo '<td><a href="/bewertung?gerichtid='. $row["id"] .' ">Bewerten</a></tr>';
                     $allergenList = array_merge($allergenList,explode(',',$row['Allergen']));
                 }
 
