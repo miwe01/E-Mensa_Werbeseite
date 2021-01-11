@@ -5,6 +5,7 @@ const CONFIG_DB = '../config/db.php';
 const LOGLOGIN = 'loginstream';
 
 require_once $_SERVER['DOCUMENT_ROOT']."/../vendor/autoload.php";
+require_once "../config/orm.php";
 use eftec\bladeone\BladeOne;
 use Monolog\Logger;
 use Monolog\Handler\StreamHandler;

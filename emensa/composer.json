@@ -3,9 +3,15 @@
     "require": {
         "eftec/bladeone": "^3.47",
         "monolog/monolog": "2.2.*",
-        "ext-mysqli": "*"
+        "ext-mysqli": "*",
+        "illuminate/database": "^8.21"
     },
     "config": {
         "disable-tls": true
+    },
+    "autoload": {
+        "classmap": [
+            "models"
+        ]
     }
 }
