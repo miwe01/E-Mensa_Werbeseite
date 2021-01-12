@@ -5,7 +5,7 @@ $capsule = new Capsule;
 $capsule->addConnection([
     "driver" => "mysql",
     "host" => "localhost",
-    "database" => "emensawerbeweite",
+    "database" => "emensawerbeseite",
     "username" => "root",
     "password" => "test..123"
 ]);

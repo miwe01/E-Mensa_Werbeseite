@@ -49,7 +49,7 @@
  $row = mysqli_fetch_assoc($result);
  $benutzerID = $row['id'];
 
- $sql = "SELECT g.id as gerichtid, b.id as benutzerid, g.name as gerichtname, Sternbewertung, Bemerkung, Hervorgehoben
+ $sql = "SELECT bbg.id as Bewertungsid, bbg.Sternbewertung, bbg.Bemerkung, bbg.Hervorgehoben, g.name as gerichtname
  FROM benutzer_bewertet_gericht bbg
  INNER JOIN benutzer b
  ON IDBenutzer = b.id
@@ -62,7 +62,7 @@
  echo "Error";
  exit();
  }
- echo "<table><tr> <th>Email</th><th>Bewertung</th><th>Bemerkung</th><th>Löschen</th></tr>";
+ echo "<table><tr> <th>Gericht</th><th>Bewertung</th><th>Bemerkung</th><th>Löschen</th></tr>";
  while ($row = mysqli_fetch_assoc($result)) {
  if ($row['Hervorgehoben'] == 1){
  echo '<tr><td><b>' . $row['gerichtname'] . '</b></td><td><b>' . $row['Sternbewertung'] . ' Sterne</b></td><td><b>' .
@@ -70,8 +70,7 @@
 
  /* Lösch vorgang */
  echo '<td>
- <b><a href="/meinebewertungen?gid=' . $row['gerichtid'] .'&bid='. $row['benutzerid']
- .'&stern=' . $row['Sternbewertung'] .'&bemerkung=' . $row['Bemerkung'] . ' ">
+ <b><a href="/meinebewertungen?delete=true&bewertungid= ' . $row['Bewertungsid'] . ' ">
  Löschen
  </a></b>
  </td>
@@ -84,8 +83,7 @@
 
  /* Lösch vorgang */
  echo '<td>
- <b><a href="/meinebewertungen?gid=' . $row['gerichtid'] .'&bid='. $row['benutzerid']
- .'&stern=' . $row['Sternbewertung'] .'&bemerkung=' . $row['Bemerkung'] . ' ">
+ <b><a href="/meinebewertungen?delete=true&bewertungid= ' . $row['Bewertungsid'] . ' ">
  Löschen
  </a></b>
  </td>
